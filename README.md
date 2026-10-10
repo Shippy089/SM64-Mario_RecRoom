@@ -111,7 +111,7 @@ This is a work in progress by one person. Where things stand:
 | Mario in the Rec Center: controls, camera, sound | Most quest routes (Jumbotron, Crimson Cauldron, Crescendo); a Golden Trophy route fight still times out |
 | Starting in the Park with the Wing cap on | Finishing a whole quest with an S rank |
 | Quests: start, fight, open doors, Mario in the next room | Game controllers: mapping tables only, no real pad tried |
-| Fighting goblins and taking damage | Builds other than September 9, 2019 (they install as *compatible build*) |
+| Fighting goblins and taking damage | Builds other than the tested one (they install as *compatible build*) |
 | Firing a cannon with the lighter (Lost Skulls) | |
 | SM64 lava: burn hop, fire puffs, health loss, death ends the quest cleanly | |
 | Constant flying, the Wing cap's wings, the orange world-edge tape | |

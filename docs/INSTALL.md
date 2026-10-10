@@ -47,7 +47,7 @@ current Rec Room install.
    the *Manifests* tab).
 2. Each row is one build: the date it went out and its **manifest ID**, a long number such as `3817258843939969587`. SteamDB may
    ask you to sign in with Steam before it shows the full history.
-3. Pick a date between 2018 and 2019 and copy its manifest ID. The September 9, 2019 one above is the tested build; any other
+3. Pick a date between 2018 and 2019 and copy its manifest ID. The one above is the tested build; any other
    date is a *compatible build* if it passes setup's check.
 
 Rooms and quests depend on the date: a build from early 2018 doesn't have the quests that came out later, and the Map tab only
@@ -70,10 +70,10 @@ Rec Room is free, but Steam only serves its files to an account that has it in i
 store page once (or install it normally) before downloading. Then, in a terminal, with your own Steam user name:
 
 ```
-DepotDownloader -app 471710 -depot 471711 -manifest 3817258843939969587 -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2019-09-09
+DepotDownloader -app 471710 -depot 471711 -manifest 3817258843939969587 -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-tested
 ```
 
-That is the tested September 9, 2019 build. For another date, change `-manifest` and the folder name:
+That is the tested build. For another date, change `-manifest` and the folder name:
 
 ```
 DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID_FROM_STEAMDB -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2018-11
@@ -81,7 +81,7 @@ DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID_FROM_STEAMDB -us
 
 - DepotDownloader asks for your password, and a Steam Guard code if your account uses one, in the terminal. Type them there
   yourself; they go only to Steam. `-remember-password` saves a login key so the next download doesn't ask again.
-- The September 9, 2019 build is about 4 GB. If the download stops, run the same command again with `-validate` added: it checks what's there and fetches
+- Expect about 4 GB. If the download stops, run the same command again with `-validate` added: it checks what's there and fetches
   only what's missing or broken.
 - When it finishes, the folder holds `Recroom_Release.exe`. That folder is the one to give the launcher (the setup wizard also
   finds folders it can see; see Setting up below).
@@ -290,7 +290,7 @@ The loading bar shows the first problem the mod logs. The usual ones:
 - **"This Rec Room build has anti-cheat"**: use an older build without anti-cheat (2018-2019).
 - **"too old for BepInEx 6"**: the build's IL2CPP metadata is older than version 24. Use a 2018-2019 build.
 - **"Compatible build"**: it installs and starts; if Mario doesn't appear, `BepInEx\LogOutput.log` says which part didn't fit
-  that build. The September 9, 2019 build above is the tested one.
+  that build. The tested build above is the one known to work.
 - **"BepInEx's interop cache was incomplete"**: fixed for you. BepInEx rebuilds it on that start (a few minutes).
 - **A `BepInEx-before-mario-<date>` folder appeared**: setup moved files that were in the way there (an old loader, a
   hand-copied mod). Nothing was deleted; remove the folder once everything works.
