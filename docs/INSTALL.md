@@ -7,14 +7,14 @@ will know exactly what is missing.
 
 | | From a release zip | Building from source |
 |---|---|---|
-| The **.NET 10 SDK** — [download](https://dotnet.microsoft.com/download/dotnet/10.0) | no — the launcher carries its own .NET | yes |
+| The **.NET 10 SDK** ([download](https://dotnet.microsoft.com/download/dotnet/10.0)) | no, the launcher carries its own .NET | yes |
 | The **September 9, 2019 Rec Room client** (below) | yes | yes |
 | Your **Super Mario 64 ROM** (USA, .z64) | yes | yes |
 | **BepInEx 6**, the mod loader (below) | yes | yes |
-| **zig**, to compile the native Mario library once | no — the zip includes it, already built | yes |
+| **zig**, to compile the native Mario library once | no, the zip has it already built | yes |
 | An internet connection for the **first start** (BepInEx downloads Unity's base files once) | yes | yes |
 
-Unzip the release into a folder you can write to — your Desktop or Documents, not Program Files, and not inside the Rec Room
+Unzip the release into a folder you can write to: your Desktop or Documents, not Program Files, and not inside the Rec Room
 client folder. Everything below (settings, logs) is kept in that folder. `VERSION.txt` in it says which build you have.
 
 ## 1. The September 9, 2019 Rec Room client
@@ -28,7 +28,7 @@ The mod is built and tested on one exact build of Rec Room (it checks the files)
 | Manifest | 3817258843939969587 (built 2019-09-09 22:55 UTC) |
 
 Download that manifest with a Steam depot tool such as DepotDownloader, signed in with your own Steam account, into its
-own folder — for example `C:\Games\RecRoom-2019`. Don't point the mod at your normal, current Rec Room install.
+own folder, for example `C:\Games\RecRoom-2019`. Don't point the mod at your normal, current Rec Room install.
 
 The mod runs this client **offline**: it never connects to Rec Room's servers.
 
@@ -50,7 +50,7 @@ A dump of your own Super Mario 64 cartridge, **USA** version, in `.z64` (big-end
 
 The mod loader. **A release zip includes it** (`BepInEx-pack\BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788.zip`, unmodified, with its licences), and setup
 uses it by default, so there is nothing to download. Building from the repository instead? Use the bleeding-edge
-`BepInEx-Unity.IL2CPP-win-x64` build listed in `docs/VERSIONS.md` — other builds may not load this 2019 client — and point
+`BepInEx-Unity.IL2CPP-win-x64` build listed in `docs/VERSIONS.md` (other builds may not load this 2019 client) and point
 `[paths] bepinex` in `mario.ini` (or the wizard) at the downloaded `.zip`; there is no need to unpack it.
 
 **Already have BepInEx 6 in the client?** Setup uses it as it is and only adds the mod; uninstall leaves it there. An old
@@ -101,13 +101,13 @@ Troubleshooting). When it reads 100 % Mario is in the room.
 
 The **Map** tab picks where **Play** starts:
 
-- **Rec Center** — free play in the hub.
-- **Other rooms of your client** — the Park, the Bowling Alley, ... Everything the launcher finds in your own client build is listed
+- **Rec Center**: free play in the hub.
+- **Other rooms of your client**: the Park, the Bowling Alley, ... Everything the launcher finds in your own client build is listed
   under "Other rooms". Pick one and Play starts there; it is stored as `[start] hangout = <scene name>` in `mario.ini`
   (for example `hangout = Park`), and clearing it (or picking the Rec Center) goes back to the Rec Center. Mario starts in the
   room the game loads for that scene. A few scenes are only part of a bigger room and cannot start by themselves: the log
   (and the loading bar) then say that no room loads that scene.
-- **A quest, or any room of one** — Mario starts the quest (from its first room, or the room you pick) and plays it by the original
+- **A quest, or any room of one**: Mario starts the quest (from its first room, or the room you pick) and plays it by the original
   rules. Starting in a later room is not a full run, so scores from it don't count as one.
 
 Only Play (the Rec Center or another room) and quests are started from the Map tab; routes have their own tab.
@@ -205,39 +205,39 @@ refuses, changing nothing, if something is missing or if several different clien
 `Start-Mario stop` (closes the game the normal way, like its window's X), `Start-Mario check`, `Start-Mario flags` (prints what a
 start would pass to the game, without starting anything). Rec Room with Mario starts **from the menu only** (Play, a quest or a
 route): each start gets a one-time pass, and Rec Room started any other way runs without Mario.
-Rec Room can run only once: if it is already running, Play says so and does nothing — close it first
+Rec Room can run only once: if it is already running, Play says so and does nothing. Close it first
 (**S** in the launcher, or `Start-Mario stop`).
 
 ## Troubleshooting
 
 The loading bar shows the first problem the mod logs. The usual ones:
 
-- **The wizard didn't find my files** — it only looks in the places named above, a few folders deep, and stops after about
+- **The wizard didn't find my files.** It only looks in the places named above, a few folders deep, and stops after about
   five seconds. Press **T** to type the path, or move the files into Downloads. `MARIO_NO_AUTODETECT=1` turns the automatic
   search off (the **S** key still searches).
-- **"This Rec Room build has no room Mario can start in called '...'"** — the `hangout` setting names a scene your client does not
+- **"This Rec Room build has no room Mario can start in called '...'"**: the `hangout` setting names a scene your client does not
   load as a room. Pick a room on the Map tab, or clear `hangout` in `mario.ini` to start in the Rec Center.
-- **"Rec Room took too long to load (stuck at '...')"** — the game did not finish loading the room in time (a slow disk, a very
+- **"Rec Room took too long to load (stuck at '...')"**: the game did not finish loading the room in time (a slow disk, a very
   first start, or a room that doesn't work). Close it and start again; if it repeats, send `BepInEx\LogOutput.log`.
-- **"Rec Room changed the room, player or camera under Mario, so Mario stopped"** — the original game moved things Mario was
+- **"Rec Room changed the room, player or camera under Mario, so Mario stopped"**: the original game moved things Mario was
   attached to. Close it and start again.
-- **"BepInEx could not load the Mario mod"** — run Setup again (Setup tab).
-- **"Rec Room is already running"** — another copy of the 2019 client is open. Close it, then press Play.
-- **"The Rec Room client isn't set up" / "Mario isn't installed in the Rec Room client folder yet"** — run Setup (the wizard), or
+- **"BepInEx could not load the Mario mod"**: run Setup again (Setup tab).
+- **"Rec Room is already running"**: another copy of the 2019 client is open. Close it, then press Play.
+- **"The Rec Room client isn't set up" / "Mario isn't installed in the Rec Room client folder yet"**: run Setup (the wizard), or
   fix the paths on the Setup tab.
-- **"This Rec Room build has anti-cheat"** — use the September 9, 2019 build, or another older build without anti-cheat.
-- **"Untested build"** — it installs and starts; if Mario doesn't appear, `BepInEx\LogOutput.log` says which part didn't fit
+- **"This Rec Room build has anti-cheat"**: use the September 9, 2019 build, or another older build without anti-cheat.
+- **"Untested build"**: it installs and starts; if Mario doesn't appear, `BepInEx\LogOutput.log` says which part didn't fit
   that build. The September 9, 2019 build above is the one that is known to work.
-- **"BepInEx's interop cache was incomplete"** — fixed for you: BepInEx rebuilds it on that start (a few minutes).
-- **A `BepInEx-before-mario-<date>` folder appeared** — setup moved files that were in the way there (an old loader, a
+- **"BepInEx's interop cache was incomplete"**: fixed for you. BepInEx rebuilds it on that start (a few minutes).
+- **A `BepInEx-before-mario-<date>` folder appeared**: setup moved files that were in the way there (an old loader, a
   hand-copied mod). Nothing was deleted; remove the folder once everything works.
-- **"Not Super Mario 64 (USA) in .z64 format"** (or "not found") — check the path, the region and the byte order.
-- **The bar sits still on "Starting Rec Room" or says BepInEx has not started** — BepInEx is not installed in the client folder
+- **"Not Super Mario 64 (USA) in .z64 format"** (or "not found"): check the path, the region and the byte order.
+- **The bar sits still on "Starting Rec Room" or says BepInEx has not started**: BepInEx is not installed in the client folder
   (run Setup again), or antivirus blocked `winhttp.dll`.
-- **Nothing for a long time on a first start** — normal for the first few minutes (see above). With no internet connection the
+- **Nothing for a long time on a first start**: normal for the first few minutes (see above). With no internet connection the
   first start cannot finish: connect and start again.
-- **Rec Room closes during the first start** — look at `logs\<date>\player.log`; BepInEx's own log is in the client
+- **Rec Room closes during the first start**: look at `logs\<date>\player.log`; BepInEx's own log is in the client
   folder under `BepInEx\LogOutput.log`.
 - Everything the mod does is written to `BepInEx\LogOutput.log` with a `mario-` prefix (the launcher's Log tab shows the recent lines).
-- **Windows says it protected your PC** when you open `Start-Mario.cmd` — the launcher is not code-signed. *More info*, then
+- **Windows says it protected your PC** when you open `Start-Mario.cmd`. The launcher is not code-signed. *More info*, then
   *Run anyway*, if you trust where you got the zip.

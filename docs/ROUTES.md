@@ -1,7 +1,7 @@
 # Writing routes
 
 A **route** is a JSON file that makes Mario play by himself. The mod reads it one step at a time and turns each step into
-ordinary SM64 controller input (stick, A, B, Z) — the same buttons you'd press. Nothing teleports Mario or changes the game.
+ordinary SM64 controller input (stick, A, B, Z), the same buttons you'd press. Nothing teleports Mario or changes the game.
 
 Start one from the launcher's **Routes** tab (pick it, then Play).
 
@@ -56,14 +56,14 @@ before it starts, with a message naming the step. A file may be at most 256 KiB.
 | `mayhem` | the route's `style` | `false` turns the mayhem style off for this one step (`true` turns it on in a classic route). |
 | `guard` | `true` | The safety guard refuses input that would walk Mario into lava, a killzone or a deadly drop. Jumps, flips, dives and ground pounds always skip the guard. |
 
-A direction can be given either as `x`,`z` (a point to face/head toward) **or** as `yaw` — not both. `x` and `z`
+A direction can be given either as `x`,`z` (a point to face/head toward) **or** as `yaw`, not both. `x` and `z`
 always go together.
 
 ---
 
 ## Moving
 
-### `goto` — walk or run to a point
+### `goto`: walk or run to a point
 | Key | Default | Meaning |
 |---|---|---|
 | `x`, `z` (and optional `y`) | – | Where to go. Or use `target: "enemy"` to go to the nearest enemy. |
@@ -77,7 +77,7 @@ always go together.
 | `engage` | route default | Stop to fight when an enemy targets Mario within ~3.5 m (or hurts him), then continue. Only for `goto` with `x`,`z` (not `target`). |
 | `disengageWedges` | 2 | At this health or lower, dodge enemies instead of fighting them (0 = never). |
 
-### `face` — turn on the spot
+### `face`: turn on the spot
 Exactly one of `yaw`, `x`,`z` or `target` (`"enemy"` etc.). `toleranceDegrees` (10).
 
 ### Jumps
@@ -100,7 +100,7 @@ Exactly one of `yaw`, `x`,`z` or `target` (`"enemy"` etc.). `toleranceDegrees` (
 
 ## Fighting
 
-### `fight` — clear nearby enemies
+### `fight`: clear nearby enemies
 | Key | Default | Meaning |
 |---|---|---|
 | `radius` | 15 | Fight enemies within this distance. |
@@ -127,13 +127,13 @@ Like `fight`, for a quest boss. `enemyType` (3), `radius` (15), `addRadius` (10,
 `punch` (no keys), `kick` (`style`: `ground` or `air`), `press-b` (`ticks`, default 10).
 
 ### `nearest-enemy`
-Logs the nearest enemy within `radius` (15) — handy while writing a route.
+Logs the nearest enemy within `radius` (15). Handy while writing a route.
 
 ---
 
 ## Doors
 
-### `use-door` — leave the room through the quest door
+### `use-door`: leave the room through the quest door
 | Key | Default | Meaning |
 |---|---|---|
 | `x`, `z` | – | Where to stand: inside the door's unlock area. |
@@ -211,5 +211,5 @@ display only: it is not part of the route's input, it never takes clicks, and it
   `fight-adaptive decision=…` lines explaining each choice.
 - `Start-Mario flags route my-route.json` prints the game flags the route would start with, without starting the game;
   the route itself is validated when the game starts it, and a bad key is reported with its step number.
-- Routes only ever press buttons. If a route can't do something with buttons, a human couldn't either — and that's the
+- Routes only ever press buttons. If a route can't do something with buttons, a human couldn't either, and that's the
   point.
