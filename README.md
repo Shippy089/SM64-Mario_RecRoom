@@ -1,13 +1,13 @@
 <div align="center">
 
-# Mario for Rec Room (2019)
+# Mario for Rec Room
 
-**Super Mario 64's Mario in the September 9, 2019 build of Rec Room. Offline, single player, real SM64 physics.**
+**Super Mario 64's Mario in old builds of Rec Room (2018-2019). Offline, single player, real SM64 physics.**
 
 [![Latest release](https://img.shields.io/github/v/release/Shippy089/SM64-Mario_RecRoom?label=download&color=e52521)](https://github.com/Shippy089/SM64-Mario_RecRoom/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-049cd8)](LICENSE.txt)
 ![Windows 10/11 x64](https://img.shields.io/badge/Windows-10%20%2F%2011%20x64-fbd000)
-![Rec Room 2019-09-09](https://img.shields.io/badge/Rec%20Room-Sept%209%2C%202019-43b047)
+![Rec Room 2018-2019 builds](https://img.shields.io/badge/Rec%20Room-2018--2019%20builds-43b047)
 ![Offline only](https://img.shields.io/badge/online-never-555555)
 
 **[Download the latest release](https://github.com/Shippy089/SM64-Mario_RecRoom/releases/latest)** · [Install guide](docs/INSTALL.md) · [Routes](docs/ROUTES.md)
@@ -17,7 +17,7 @@ by Shippy089
 </div>
 
 > [!IMPORTANT]
-> You need your own **Super Mario 64 (USA) ROM** and your own copy of the **September 9, 2019 Rec Room client**. Neither is
+> You need your own **Super Mario 64 (USA) ROM** and your own copy of an **old Rec Room client (2018-2019)**. Neither is
 > included, neither is downloaded for you, and the mod never talks to Rec Room's servers.
 
 > [!NOTE]
@@ -26,8 +26,8 @@ by Shippy089
 
 ## What it is
 
-The real Super Mario 64 Mario, running on [libsm64], dropped into the 2019 Rec Room: the Rec Center, the Park, the other
-rooms, and the five quests. He moves the way he did on the N64. Triple jumps, backflips, wall kicks, long jumps, dives,
+The real Super Mario 64 Mario, running on [libsm64], dropped into an old Rec Room build: the Rec Center, the Park, the other
+rooms, and the quests that build has. He moves the way he did on the N64. Triple jumps, backflips, wall kicks, long jumps, dives,
 punches, ground pounds, the 8-wedge health meter and his voice are all there.
 
 Rec Room itself isn't changed. Same rooms, same enemies, same doors, same quest rules and scoring. Mario gets no special
@@ -39,8 +39,8 @@ It's offline and single player. No servers, no other players, no accounts.
 
 - **Any room.** The Rec Center or any other room in your client build (the Park, the Bowling Alley, the paintball maps and so
   on), picked on the **Map** tab. If a scene is only part of a bigger room, the log says so and it isn't loaded.
-- **All five 2019 quests.** Golden Trophy, Jumbotron, Crimson Cauldron, Lost Skulls and Crescendo of the Blood Moon, from the
-  start or from any room. Mario goes through the doors himself.
+- **The quests.** Golden Trophy, Jumbotron, Crimson Cauldron, Lost Skulls and Crescendo of the Blood Moon (whichever your build
+  has), from the start or from any room. Mario goes through the doors himself.
 - **Combat.** His punches, kicks and stomps hurt Rec Room enemies, and their attacks hurt him. Quests only; the Rec Center
   and the other rooms have no combat to hook into.
 - **SM64 lava.** Mario burns, hops, loses health and smokes instead of the quest ending on contact. On by default
@@ -61,9 +61,10 @@ It's offline and single player. No servers, no other players, no accounts.
 
 ## Getting started
 
-**You need** Windows 10 or 11 (64-bit), the **September 9, 2019 Rec Room client** and a **Super Mario 64 (USA) ROM**. **BepInEx
+**You need** Windows 10 or 11 (64-bit), an **old Rec Room client (2018-2019)** and a **Super Mario 64 (USA) ROM**. **BepInEx
 6** (the mod loader) comes in the zip, and the launcher has .NET built in, so there's nothing else to install.
-[docs/INSTALL.md](docs/INSTALL.md) covers where each part comes from and what the launcher checks. Allow about 15 minutes the
+[docs/INSTALL.md](docs/INSTALL.md) covers where each part comes from (including how to download an old build with SteamDB and
+DepotDownloader) and what the launcher checks. Allow about 15 minutes the
 first time.
 
 1. **Unzip** the release into a folder you can write to, like Desktop or Documents. Not Program Files, and not by running it
@@ -76,7 +77,7 @@ first time.
    path.
 4. Press **P** (or **▶ PLAY**, then Enter). A *Hello Mario* loading bar follows the game while it starts; Mario is there when
    it fills. **The first start takes a few minutes and needs the internet once**, while BepInEx downloads Unity's base files
-   and prepares itself for the 2019 client. Later starts take under a minute.
+   and prepares itself for your client. Later starts take under a minute.
 5. Play. W A S D moves, Space jumps, left click punches and grabs, Shift crouches, the mouse turns the camera
    ([all controls](docs/INSTALL.md#controls-keyboard)). Esc pauses Mario's controls.
 
@@ -110,7 +111,7 @@ This is a work in progress by one person. Where things stand:
 | Mario in the Rec Center: controls, camera, sound | Most quest routes (Jumbotron, Crimson Cauldron, Crescendo); a Golden Trophy route fight still times out |
 | Starting in the Park with the Wing cap on | Finishing a whole quest with an S rank |
 | Quests: start, fight, open doors, Mario in the next room | Game controllers: mapping tables only, no real pad tried |
-| Fighting goblins and taking damage | Other Rec Room builds (they install as *untested*) |
+| Fighting goblins and taking damage | Builds other than September 9, 2019 (they install as *compatible build*) |
 | Firing a cannon with the lighter (Lost Skulls) | |
 | SM64 lava: burn hop, fire puffs, health loss, death ends the quest cleanly | |
 | Constant flying, the Wing cap's wings, the orange world-edge tape | |
@@ -118,8 +119,9 @@ This is a work in progress by one person. Where things stand:
 
 ## Known limits
 
-- **One tested client.** Built and tested on the September 9, 2019 build. Other IL2CPP builds install as *untested* and may
-  not work. Builds with anti-cheat, and your live Steam install, are always refused; the mod never works around anti-cheat.
+- **Any old build, one tested.** Any IL2CPP Rec Room build without anti-cheat installs, 2018-2019 builds being the target.
+  Only the September 9, 2019 build has been tested; parts of the mod may not fit others. Builds with anti-cheat, and your live
+  Steam install, are always refused; the mod never works around anti-cheat.
 - **150 m world.** SM64 uses 16-bit coordinates, so the world ends about 150 m from where Mario starts. Very large rooms get
   cut off by the wall.
 - **Offline and solo.** No online play, no other players, no accounts, no scores sent anywhere. A mid-quest start or a run

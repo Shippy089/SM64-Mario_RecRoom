@@ -8,7 +8,7 @@ will know exactly what is missing.
 | | From a release zip | Building from source |
 |---|---|---|
 | The **.NET 10 SDK** ([download](https://dotnet.microsoft.com/download/dotnet/10.0)) | no, the launcher carries its own .NET | yes |
-| The **September 9, 2019 Rec Room client** (below) | yes | yes |
+| An **old Rec Room client, 2018-2019** (below) | yes | yes |
 | Your **Super Mario 64 ROM** (USA, .z64) | yes | yes |
 | **BepInEx 6**, the mod loader (below) | yes | yes |
 | **zig**, to compile the native Mario library once | no, the zip has it already built | yes |
@@ -17,9 +17,18 @@ will know exactly what is missing.
 Unzip the release into a folder you can write to: your Desktop or Documents, not Program Files, and not inside the Rec Room
 client folder. Everything below (settings, logs) is kept in that folder. `VERSION.txt` in it says which build you have.
 
-## 1. The September 9, 2019 Rec Room client
+## 1. An old Rec Room client (2018-2019)
 
-The mod is built and tested on one exact build of Rec Room (it checks the files):
+The mod works with old IL2CPP builds of Rec Room, mainly from 2018 and 2019. Setup checks the folder and accepts a build when:
+
+- it is an IL2CPP build (it has `GameAssembly.dll` and `global-metadata.dat`) with metadata version 24 or newer, which is what
+  BepInEx 6 reads (Unity 2017 onward; 2018-2019 Rec Room builds are);
+- it has **no anti-cheat** (EasyAntiCheat, BattlEye): the mod never works around anti-cheat;
+- it isn't your normal Steam install (`steamapps\common`): the mod is never installed into the live game.
+
+Older Mono builds (no `GameAssembly.dll`) can't be loaded by BepInEx's IL2CPP loader and are refused.
+
+**The tested build** is September 9, 2019. It is the build the mod was developed and tested on, and setup shows it as *tested*:
 
 | | |
 |---|---|
@@ -27,18 +36,71 @@ The mod is built and tested on one exact build of Rec Room (it checks the files)
 | Depot | 471711 |
 | Manifest | 3817258843939969587 (built 2019-09-09 22:55 UTC) |
 
-Download that manifest with a Steam depot tool such as DepotDownloader, signed in with your own Steam account, into its
-own folder, for example `C:\Games\RecRoom-2019`. Don't point the mod at your normal, current Rec Room install.
+Steam keeps every old build of a game as a *manifest*: a snapshot of one depot (one set of game files) on one date. Rec Room's
+Windows files are depot **471711** of app **471710**. You pick a manifest from that depot's history on SteamDB and download it
+with DepotDownloader, signed in with your own Steam account, into a folder of its own. Don't point the mod at your normal,
+current Rec Room install.
 
-The mod runs this client **offline**: it never connects to Rec Room's servers.
+### Step 1: find a manifest on SteamDB
 
-**Other builds.** Setup also accepts another IL2CPP Rec Room build in its own folder, marked *untested*: BepInEx loads into it
-the same way, and each part of the mod checks for the game code it hooks and stops cleanly (the game runs unmodded) when that
-build lacks it. The game log says which part didn't fit. It never accepts:
+1. Open <https://steamdb.info/depot/471711/manifests/> (or <https://steamdb.info/app/471710/depots/> and click depot 471711, then
+   the *Manifests* tab).
+2. Each row is one build: the date it went out and its **manifest ID**, a long number such as `3817258843939969587`. SteamDB may
+   ask you to sign in with Steam before it shows the full history.
+3. Pick a date between 2018 and 2019 and copy its manifest ID. The September 9, 2019 one above is the tested build; any other
+   date is a *compatible build* if it passes setup's check.
 
-- a build with **anti-cheat** (EasyAntiCheat, BattlEye): the mod never works around anti-cheat;
-- your normal Steam install (`steamapps\common`): the mod is never installed into the live game;
-- an older **Mono** build (no `GameAssembly.dll`): BepInEx's IL2CPP loader can't load it.
+Rooms and quests depend on the date: a build from early 2018 doesn't have the quests that came out later, and the Map tab only
+lists what your build contains.
+
+### Step 2: get DepotDownloader
+
+DepotDownloader is an open-source command-line tool from SteamRE (<https://github.com/SteamRE/DepotDownloader>). Install it with
+winget:
+
+```
+winget install --exact --id SteamRE.DepotDownloader
+```
+
+or download the Windows build from its GitHub *Releases* page and unzip it.
+
+### Step 3: download the build
+
+Rec Room is free, but Steam only serves its files to an account that has it in its library, so click *Play* on its Steam
+store page once (or install it normally) before downloading. Then, in a terminal, with your own Steam user name:
+
+```
+DepotDownloader -app 471710 -depot 471711 -manifest 3817258843939969587 -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2019-09-09
+```
+
+That is the tested September 9, 2019 build. For another date, change `-manifest` and the folder name:
+
+```
+DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID_FROM_STEAMDB -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2018-11
+```
+
+- DepotDownloader asks for your password, and a Steam Guard code if your account uses one, in the terminal. Type them there
+  yourself; they go only to Steam. `-remember-password` saves a login key so the next download doesn't ask again.
+- The September 9, 2019 build is about 4 GB. If the download stops, run the same command again with `-validate` added: it checks what's there and fetches
+  only what's missing or broken.
+- When it finishes, the folder holds `Recroom_Release.exe`. That folder is the one to give the launcher (the setup wizard also
+  finds folders it can see; see Setting up below).
+
+**Without DepotDownloader**, the Steam client can do the same from its hidden console: open `steam://open/console` in a
+browser or the Run box (Win+R), then type
+
+```
+download_depot 471710 471711 3817258843939969587
+```
+
+Steam prints where it saved the files when it's done (usually `...\Steam\steamapps\content\app_471710\depot_471711`). The launcher
+finds it there, but copy it to a folder of its own if you keep it: Steam reuses that folder for the next `download_depot`.
+
+The mod runs the client **offline**: it never connects to Rec Room's servers.
+
+**Other builds** show as *compatible build* with their Unity version. BepInEx loads into them the same way, and each part of
+the mod checks for the game code it hooks and stops cleanly (the game runs unmodded) when a build lacks it. The game log says
+which part didn't fit. Rooms and quests are read from your own build, so the Map tab only lists what it has.
 
 ## 2. Your Super Mario 64 ROM
 
@@ -50,7 +112,7 @@ A dump of your own Super Mario 64 cartridge, **USA** version, in `.z64` (big-end
 
 The mod loader. **A release zip includes it** (`BepInEx-pack\BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788.zip`, unmodified, with its licences), and setup
 uses it by default, so there is nothing to download. Building from the repository instead? Use the bleeding-edge
-`BepInEx-Unity.IL2CPP-win-x64` build listed in `docs/VERSIONS.md` (other builds may not load this 2019 client) and point
+`BepInEx-Unity.IL2CPP-win-x64` build listed in `docs/VERSIONS.md` (other BepInEx builds may not load old Rec Room builds) and point
 `[paths] bepinex` in `mario.ini` (or the wizard) at the downloaded `.zip`; there is no need to unpack it.
 
 **Already have BepInEx 6 in the client?** Setup uses it as it is and only adds the mod; uninstall leaves it there. An old
@@ -74,13 +136,13 @@ Double-click `Start-Mario.cmd`. (Windows may say it protected your PC because th
 info*, then *Run anyway*.) The first time, the **setup wizard** opens. It first looks on this PC (a few seconds, read-only: your
 Steam libraries, Downloads, Desktop, Documents, the folder the launcher is in and its parent, and the games folders of your
 drives) for Rec Room client folders, Super Mario 64 ROMs and BepInEx packs, and lists each one with a plain label, for example
-"Sept 9, 2019 build ✓", "different version" or "byte-swapped .v64, needs conversion". Nothing is downloaded and none of your files
+"Sept 9, 2019 build (tested) ✓", "compatible build, Unity 2018.2.9f1 ✓", "has anti-cheat" or "byte-swapped .v64, needs conversion". Nothing is downloaded and none of your files
 are copied. If it found everything exactly right, press **A** on the first screen ("use everything found") to fill in all three
 and jump to the install. Otherwise it walks you through the steps (Enter = pick the highlighted line, ↑↓ or 1-9 = choose,
 T = type a path, S = search again, N = next, B = back, Esc = leave the wizard); with exactly one fitting candidate it is
 already highlighted, so Enter just continues:
 
-1. **Rec Room client:** pick the folder. It checks that it's the exact 2019 build.
+1. **Rec Room client:** pick the folder. It checks that it's a compatible old build (see 1. above).
 2. **ROM:** pick the file. It checks that it's Super Mario 64 (USA), .z64. A byte-swapped .v64 or little-endian .n64 is listed
    but must be converted to .z64 first (a ROM converter such as Tool64).
 3. **BepInEx:** the pack in `BepInEx-pack\` (or another .zip / unpacked folder of the same build).
@@ -93,7 +155,7 @@ already highlighted, so Enter just continues:
 Then press **P** (or select **▶ PLAY** and press Enter). You can rerun the wizard any time from the **Setup** tab.
 
 **The first start takes a few minutes** and needs the internet: BepInEx downloads Unity's base files and generates its
-interface files for this 2019 client, once. A *Hello Mario* loading bar follows the game while it starts and fills up as the game
+interface files for your client, once. A *Hello Mario* loading bar follows the game while it starts and fills up as the game
 loads; the first-start steps are named on it. If the bar stops with a red message, the message says what went wrong (see
 Troubleshooting). When it reads 100 % Mario is in the room.
 
@@ -182,8 +244,8 @@ To go through a quest door, point the camera at the door, walk up close (about 2
 ## What the mod changes
 
 - **The client's own files:** nothing. Setup only adds BepInEx and the mod next to them (recorded in `.mario-install.json`), and
-  the game files stay byte-for-byte the 2019 build.
-- **Settings your normal Rec Room shares:** the 2019 game saves Unity settings (window size and a few flags) in
+  the game files stay byte-for-byte as they were.
+- **Settings your normal Rec Room shares:** the old game saves Unity settings (window size and a few flags) in
   `HKEY_CURRENT_USER\Software\Against Gravity\Rec Room` and some cache files in `%USERPROFILE%\AppData\LocalLow\Against Gravity\Rec Room`.
   The launcher saves both right before it starts the game and puts them back exactly when the game closes. If another copy of
   Rec Room ran at the same time, it leaves them alone, so that copy's settings aren't lost. Each session's
@@ -222,12 +284,13 @@ The loading bar shows the first problem the mod logs. The usual ones:
 - **"Rec Room changed the room, player or camera under Mario, so Mario stopped"**: the original game moved things Mario was
   attached to. Close it and start again.
 - **"BepInEx could not load the Mario mod"**: run Setup again (Setup tab).
-- **"Rec Room is already running"**: another copy of the 2019 client is open. Close it, then press Play.
+- **"Rec Room is already running"**: another copy of the old client is open. Close it, then press Play.
 - **"The Rec Room client isn't set up" / "Mario isn't installed in the Rec Room client folder yet"**: run Setup (the wizard), or
   fix the paths on the Setup tab.
-- **"This Rec Room build has anti-cheat"**: use the September 9, 2019 build, or another older build without anti-cheat.
-- **"Untested build"**: it installs and starts; if Mario doesn't appear, `BepInEx\LogOutput.log` says which part didn't fit
-  that build. The September 9, 2019 build above is the one that is known to work.
+- **"This Rec Room build has anti-cheat"**: use an older build without anti-cheat (2018-2019).
+- **"too old for BepInEx 6"**: the build's IL2CPP metadata is older than version 24. Use a 2018-2019 build.
+- **"Compatible build"**: it installs and starts; if Mario doesn't appear, `BepInEx\LogOutput.log` says which part didn't fit
+  that build. The September 9, 2019 build above is the tested one.
 - **"BepInEx's interop cache was incomplete"**: fixed for you. BepInEx rebuilds it on that start (a few minutes).
 - **A `BepInEx-before-mario-<date>` folder appeared**: setup moved files that were in the way there (an old loader, a
   hand-copied mod). Nothing was deleted; remove the folder once everything works.

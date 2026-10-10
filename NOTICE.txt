@@ -1,4 +1,4 @@
-Mario for Rec Room (2019) - by Shippy089
+Mario for Rec Room - by Shippy089
 
 A fan project. It is not affiliated with or endorsed by Rec Room Inc. or Nintendo.
 The launcher, the mod, the route files and the build scripts are MIT-licensed (LICENSE.txt).
@@ -14,7 +14,7 @@ What is in this package
     (https://github.com/BepInEx/BepInEx). Its licences and the sources of its parts are listed in BepInEx-pack\README.txt.
 
 What is NOT in this package, and what you supply
-  - Rec Room: the September 9, 2019 client is yours to download with your own Steam account.
+  - Rec Room: an old client build (2018-2019) is yours to download with your own Steam account.
   - Super Mario 64: your own cartridge dump (USA, .z64). It is read on your computer and never copied or sent anywhere.
 
 Rec Room and Super Mario 64 belong to their owners. Check the terms of the games before you share recordings or builds.

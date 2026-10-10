@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-#  Mario for Rec Room (2019) - settings
+#  Mario for Rec Room - settings
 #
 #  Easiest: run MarioLauncher and use its tabs - it edits this file for you.
 #  You can also edit it by hand.
@@ -8,7 +8,7 @@
 # ---------------------------------------------------------------------------
 
 [paths]
-# Folder that contains Recroom_Release.exe from the September 9, 2019 build
+# Folder that contains Recroom_Release.exe from an old Rec Room build (2018-2019; tested: September 9, 2019)
 # (Steam depot 471711, manifest 3817258843939969587). See docs/INSTALL.md.
 client = C:\Games\RecRoom-2019
 
