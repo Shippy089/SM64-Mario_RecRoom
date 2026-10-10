@@ -24,6 +24,28 @@ by Shippy089
 > This repo holds the docs, routes and native build scripts. The playable package (launcher, mod, native library and the
 > BepInEx loader in one zip) is on the [Releases](https://github.com/Shippy089/SM64-Mario_RecRoom/releases) page.
 
+## Videos
+
+<table>
+<tr>
+<td align="center" width="50%"><a href="https://youtu.be/UF2uwklFTF0"><img src="https://img.youtube.com/vi/UF2uwklFTF0/maxresdefault.jpg" alt="Mario in Rec Room (Beta testing mod)" width="100%"></a><br><b>Mario in Rec Room</b> (beta testing)</td>
+<td align="center" width="50%"><a href="https://youtu.be/82K-5s4_zy8"><img src="https://img.youtube.com/vi/82K-5s4_zy8/hqdefault.jpg" alt="Wing Cap showcase (Mario x Rec Room PoC/Beta)" width="100%"></a><br><b>Wing Cap showcase</b></td>
+</tr>
+</table>
+
+## Screenshots
+
+<table>
+<tr>
+<td align="center" width="50%"><img src="docs/images/lava-burn.jpg" alt="Mario doing SM64's burn hop on quest lava, with fire puffs and the power meter" width="100%"><br>SM64 lava: the burn hop, fire puffs and the power meter</td>
+<td align="center" width="50%"><img src="docs/images/lava-room-fight.jpg" alt="Mario fighting goblins in a quest room" width="100%"><br>Fighting goblins in a quest</td>
+</tr>
+<tr>
+<td align="center" width="50%"><img src="docs/images/wing-cap-world-edge.jpg" alt="Mario flying with the Wing Cap into the orange tape at the world edge" width="100%"><br>Wing Cap flight at the world edge (orange tape). Metal cap from the testing-only Immortal switch</td>
+<td align="center" width="50%"><img src="docs/images/park-fountain.jpg" alt="Mario at the fountain in the Park" width="100%"><br>The Park. Metal cap from the testing-only Immortal switch</td>
+</tr>
+</table>
+
 ## What it is
 
 The real Super Mario 64 Mario, running on [libsm64], dropped into an old Rec Room build: the Rec Center, the Park, the other
