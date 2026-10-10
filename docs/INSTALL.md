@@ -1,7 +1,9 @@
 # Installing Mario for Rec Room
 
-This is for Windows 10/11, 64-bit. Plan on about 15 minutes the first time. If something's missing, the launcher will tell you
-(`Start-Mario check`), so you don't have to guess.
+This is for Windows 10/11, 64-bit. Plan on about 15 minutes the first time. The launcher reports anything that is missing
+(`Start-Mario check`).
+
+Tested on the September 9, 2019 build. Other builds in the supported range can install, but not all of them are tested.
 
 **What you need**
 
@@ -14,9 +16,8 @@ This is for Windows 10/11, 64-bit. Plan on about 15 minutes the first time. If s
 | **zig**, a compiler, to build the native Mario library once | no, the zip already has it built | yes |
 | An internet connection for the **first start** (BepInEx downloads Unity's base files once) | yes | yes |
 
-Unzip the release into a folder you can write to, like your Desktop or Documents. Program Files won't work, and neither will the
-Rec Room client folder. Your settings and logs end up in that same folder, and `VERSION.txt` in it tells you which build you
-have.
+Unzip the release into a folder you can write to, like your Desktop or Documents. Don't use Program Files or the Rec Room
+client folder. Your settings and logs are kept in that same folder, and `VERSION.txt` in it tells you which build you have.
 
 ## 1. An old IL2CPP Rec Room client
 
@@ -29,19 +30,19 @@ game). Setup looks at the folder you give it and accepts the build when all of t
 - It has **no anti-cheat** (EasyAntiCheat, BattlEye, or Rec Room's own Referee). The mod never works around anti-cheat.
 - It isn't your normal Steam install (`steamapps\common`). The mod is never installed into the live game.
 
-Mono builds are out. BepInEx's IL2CPP loader can't load them, so setup refuses them. You can spot one because it has no
+Mono builds don't work. BepInEx's IL2CPP loader can't load them, so setup refuses them. A Mono build has no
 `GameAssembly.dll` and has a `Managed` folder instead. **Rec Room switched from Mono to IL2CPP on December 14, 2018** (manifest
 `1421943146240504109`). That update adds `GameAssembly.dll` and removes the Mono runtime, so every build before it is Mono and
-won't work. The first IL2CPP builds were made with **Unity 2018.1**, and BepInEx 6 can't load those either. I tried the December 14
-build and its code generator fails before any mod loads. The September 9, 2019 build uses Unity 2018.3 and works. I haven't
-pinned down the exact update where Rec Room moved to Unity 2018.3, so setup reads each build's Unity version and refuses 2018.1
-and older.
+won't work. The first IL2CPP builds were made with **Unity 2018.1**, and BepInEx 6 can't load those either. On the December 14
+build, its code generator fails before any mod loads. The September 9, 2019 build uses Unity 2018.3 and works. The exact update
+where Rec Room moved to Unity 2018.3 isn't pinned down yet, so setup reads each build's Unity version and refuses 2018.1 and
+older.
 
 **Rec Room started launching through Easy Anti-Cheat with the April 20, 2020 update** (manifest `9119006898280485087`, per Rec
 Room's own patch notes; Rec Room's Referee replaced it in 2025). So April 8, 2020 is the last usable build (manifest
 `3706709507199582170`). Step 1b below shows how to check a build before you spend time downloading it.
 
-**The tested build** is September 9, 2019. That's the one I built and tested the mod on, and setup labels it *tested*:
+**The tested build** is September 9, 2019. The mod was developed and tested on it, and setup labels it *tested*:
 
 | | |
 |---|---|
@@ -51,7 +52,7 @@ Room's own patch notes; Rec Room's Referee replaced it in 2025). So April 8, 202
 
 Steam keeps every old build of a game as a *manifest*. That's a snapshot of one depot (one set of game files) on one date. Rec
 Room's Windows files are depot **471711** of app **471710**. You look up a manifest in that depot's history on SteamDB, then
-download it with DepotDownloader, signed in with your own Steam account, into a folder of its own. Keep the mod away from your
+download it with DepotDownloader, signed in with your own Steam account, into a folder of its own. Don't point the mod at your
 normal, current Rec Room install.
 
 ### Step 1: find a manifest on SteamDB
@@ -74,9 +75,9 @@ DepotDownloader (step 2) can fetch just a build's file list, a few MB, with `-ma
 DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID -username YOUR_STEAM_NAME -remember-password -manifest-only -dir C:\Games\check
 ```
 
-It writes a text file in that folder listing every file in the build. Open it and search for `GameAssembly.dll`. Found it? The
-build is IL2CPP and worth downloading. Not there, but `Recroom_Release_Data\Managed\Assembly-CSharp.dll` is? That's a Mono build
-and it won't work. Also search for `EasyAntiCheat`, `BattlEye` and `Referee`. If any of those show up, the build has anti-cheat
+It writes a text file in that folder listing every file in the build. Open it and search for `GameAssembly.dll`. If it's
+there, the build is IL2CPP and worth downloading. If it isn't there but `Recroom_Release_Data\Managed\Assembly-CSharp.dll` is,
+the build is Mono and won't work. Also search for `EasyAntiCheat`, `BattlEye` and `Referee`. If any of those show up, the build has anti-cheat
 and won't work either.
 
 ### Step 2: get DepotDownloader
@@ -223,7 +224,7 @@ comes from SM64 itself, because its coordinates are 16-bit. The mod puts a solid
 it, orange construction tape fades in on the wall, and it gets stronger the closer you are (the log says
 `mario-world-edge shown` the first time). If the tape ever misbehaves, only the tape is switched off. The wall stays.
 
-Fights too hard? Turn on **Casual mode** on the **Mario** tab. You get more reach, a wider punch angle and softer knockback. It's
+If fights are too hard, turn on **Casual mode** on the **Mario** tab. You get more reach, a wider punch angle and softer knockback. It's
 off by default, and it isn't the real SM64 rules.
 
 The **Health meter** (Mario tab) shows SM64's power meter at the top of the screen while Mario is hurt. It's drawn from your own
@@ -273,7 +274,7 @@ controller (PlayStation, N64 adapters, generic) uses the Windows joystick API (w
 present themselves as an Xbox pad, work too. The mod picks up a pad while the game is running, within two seconds of plugging it
 in. The log says `mario-controller found=xinput|winmm family=xbox|playstation|n64|generic vid=.. pid=.. name=..` and
 `mario-controller lost=..`. The button numbers for PlayStation, N64 and generic pads follow the usual Windows DirectInput order.
-I haven't been able to try them on every make of pad. If a button is wrong, send me the `found` line and what each button did.
+They haven't been tried on every make. If a button is wrong, send the `found` line and what each button did.
 
 To go through a quest door, point the camera at the door, walk up close (about 2 m) and press the left mouse button.
 

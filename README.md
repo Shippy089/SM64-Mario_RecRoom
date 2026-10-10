@@ -22,9 +22,12 @@ by Shippy089
 
 > [!IMPORTANT]
 > You have to bring your own **Super Mario 64 (USA) ROM** (the game's data, dumped from a cartridge you own) and your own copy
-> of an **old IL2CPP Rec Room client (2019 to April 8, 2020)**. IL2CPP is just how those builds were compiled, and the mod
-> loader only works with it. I don't include either one, nothing downloads them for you, and the mod never talks to Rec Room's
+> of an **old IL2CPP Rec Room client (2019 to April 8, 2020)**. IL2CPP is the way those builds were compiled, and the mod
+> loader only works with it. Neither one is included, nothing downloads them for you, and the mod never talks to Rec Room's
 > servers.
+
+Tested on the September 9, 2019 build. Other builds in the supported range can install, but not all of them are tested, and parts
+of the mod may not fit them.
 
 This repo has the docs, the routes and the native build scripts. The playable package is one zip on the
 [Releases](https://github.com/Shippy089/SM64-Mario_RecRoom/releases) page, with the launcher, the mod, the native library and the
@@ -81,13 +84,13 @@ build has. Start from the beginning or from any room. Mario walks through the do
   up, carries them and throws them with his own grab.
 - **Wing cap.** A triple jump turns into flight. He wears the cap whenever the original game lets you fly (the room allows it, or
   you hold the Maker Pen). You can also set it to always or never (`wing_cap`).
-- **Constant flying** (off by default). One steady flight speed, instead of SM64's habit of speeding up when you dive and
-  stalling when you climb.
+- **Constant flying** (toggleable, off by default). Mario flies at one steady speed. SM64's own flight speeds up in a dive and
+  stalls in a climb.
 - **World edge.** SM64's world is small, about **150 m** from where Mario starts, in every direction and up. A solid wall stands
   there. Orange construction tape fades in on it when you get within about 12 m.
 - **Controllers.** Xbox, PlayStation and N64 USB adapters work, and so do other gamepads. They all use SM64's N64 layout
   ([button tables](docs/INSTALL.md)). Keyboard and mouse still work too.
-- **Casual mode** (off by default). More reach and softer knockback, in case SM64 fights are too hard for you.
+- **Casual mode** (off by default). More reach and softer knockback, for when SM64 fights are too hard.
 - **Routes.** JSON files (plain text files that list steps) that make Mario play by himself with controller input only. Nothing
   teleports him ([docs/ROUTES.md](docs/ROUTES.md)).
 
@@ -98,7 +101,7 @@ There's also a follow camera that you steer, SM64 sound, and SM64's power meter 
 You need Windows 10 or 11 (64-bit), an **old IL2CPP Rec Room client (2019 to April 8, 2020)** and a **Super Mario 64 (USA) ROM**.
 **BepInEx 6** is the mod loader, the tool that lets mods run inside a game. It's in the zip. The launcher has .NET built in, so
 you don't install anything else. [docs/INSTALL.md](docs/INSTALL.md) says where to get each part, including how to download an
-old build with SteamDB and DepotDownloader, and what the launcher checks. Give it about 15 minutes the first time.
+old build with SteamDB and DepotDownloader, and what the launcher checks. Allow about 15 minutes the first time.
 
 1. **Unzip** the release into a folder you can write to, like Desktop or Documents. Not Program Files, and don't run it from
    inside the zip window.
@@ -134,7 +137,7 @@ A few commands also work from a command line: `Start-Mario find` (shows what set
 
 ## What's been tested
 
-I'm one person and this is still a work in progress, so here's where things stand.
+This is a work in progress by one person. Current status:
 
 | Seen working in the game | Built and unit-tested, not proven in the game yet |
 |---|---|
@@ -152,12 +155,12 @@ I'm one person and this is still a work in progress, so here's where things stan
 ## Known limits
 
 Any IL2CPP Rec Room build without anti-cheat can be installed. Anti-cheat is software that blocks changes to a game. Older builds
-are either Mono (a different way of building Unity games) or IL2CPP on Unity 2018.1, and the mod can't load into those. I've only
-tested the September 9, 2019 build, so parts of the mod may not fit other builds. Builds with anti-cheat, and your live Steam
+are either Mono (a different way of building Unity games) or IL2CPP on Unity 2018.1, and the mod can't load into those. Only the
+September 9, 2019 build has been tested, so parts of the mod may not fit other builds. Builds with anti-cheat, and your live Steam
 install, are always refused. The mod never works around anti-cheat.
 
-The world ends about 150 m from where Mario starts. SM64 uses 16-bit coordinates, and that's the limit. Very large rooms get cut
-off by the wall.
+SM64 uses 16-bit coordinates, so the world ends about 150 m from where Mario starts. Very large rooms get cut off by the
+wall.
 
 There's no online play, no other players, no accounts, and no scores sent anywhere. A run that starts mid-quest, or one with
 Immortal on, isn't a full run.

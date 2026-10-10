@@ -174,7 +174,7 @@ Logs the nearest enemy within `radius` (15). Handy while you write a route.
 
 ## Mayhem style and the route card
 
-`"style": "mayhem"` (the default) is for routes that should look like Mario running wild while still staying safe. It changes
+`"style": "mayhem"` (the default) is for routes that should look wild while staying safe. It changes
 three things. They all use the same controller input as everything else, and none of them touches the game, its enemies or its
 scoring.
 
@@ -186,9 +186,9 @@ scoring.
   log says `mayhem-finisher`. Shielded enemies (knights) still get hit from behind with punches.
 - The route card (below) is filled in, with a "mayhem" tag.
 
-`"style": "classic"` keeps the old moves exactly. The route card still shows, just without the mayhem tag. A step can opt out of
+`"style": "classic"` keeps the old moves exactly. The route card still shows, without the mayhem tag. A step can opt out of
 a mayhem route with `"mayhem": false`. The movement steps (`slide-kick`, `wall-kick`, `triple-jump`, `long-jump`, `dive`,
-`ground-pound`, ...) and `throw-at` are ordinary steps in either style. Write them wherever you want some style.
+`ground-pound`, ...) and `throw-at` are ordinary steps in either style. Put them wherever you want them in the route.
 
 ### The route card
 
@@ -204,7 +204,7 @@ use door
 ```
 
 If the same action repeats, the card shows a count (`punch (6)`). A step that didn't end well says so (`goto (3.0, 4.0) timed
-out`). The card is only for show. It isn't part of the route's input, it never takes clicks, and it goes away when the route
+out`). The card is display only. It isn't part of the route's input, it never takes clicks, and it goes away when the route
 ends.
 
 ## Tips
@@ -215,4 +215,4 @@ ends.
   `fight-adaptive decision=…` lines that explain each choice.
 - `Start-Mario flags route my-route.json` prints the game flags the route would start with, without starting the game. The game
   checks the route itself when it starts it, and it reports a bad key with its step number.
-- Routes only ever press buttons. If a route can't do something with buttons, a human couldn't either. That's the whole idea.
+- Routes only ever press buttons. If a route can't do something with buttons, a human couldn't either.
