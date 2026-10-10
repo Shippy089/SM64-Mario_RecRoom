@@ -14,7 +14,7 @@ What is in this package
     (https://github.com/BepInEx/BepInEx). Its licences and the sources of its parts are listed in BepInEx-pack\README.txt.
 
 What is NOT in this package, and what you supply
-  - Rec Room: an old client build (2018-2019) is yours to download with your own Steam account.
+  - Rec Room: an old IL2CPP client build (2019 or later) is yours to download with your own Steam account.
   - Super Mario 64: your own cartridge dump (USA, .z64). It is read on your computer and never copied or sent anywhere.
 
 Rec Room and Super Mario 64 belong to their owners. Check the terms of the games before you share recordings or builds.

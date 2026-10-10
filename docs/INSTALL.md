@@ -8,7 +8,7 @@ will know exactly what is missing.
 | | From a release zip | Building from source |
 |---|---|---|
 | The **.NET 10 SDK** ([download](https://dotnet.microsoft.com/download/dotnet/10.0)) | no, the launcher carries its own .NET | yes |
-| An **old Rec Room client, 2018-2019** (below) | yes | yes |
+| An **old IL2CPP Rec Room client, 2019 or later** (below) | yes | yes |
 | Your **Super Mario 64 ROM** (USA, .z64) | yes | yes |
 | **BepInEx 6**, the mod loader (below) | yes | yes |
 | **zig**, to compile the native Mario library once | no, the zip has it already built | yes |
@@ -17,16 +17,20 @@ will know exactly what is missing.
 Unzip the release into a folder you can write to: your Desktop or Documents, not Program Files, and not inside the Rec Room
 client folder. Everything below (settings, logs) is kept in that folder. `VERSION.txt` in it says which build you have.
 
-## 1. An old Rec Room client (2018-2019)
+## 1. An old IL2CPP Rec Room client
 
-The mod works with old IL2CPP builds of Rec Room, mainly from 2018 and 2019. Setup checks the folder and accepts a build when:
+The mod works with old IL2CPP builds of Rec Room: 2019 or later, from before Rec Room added anti-cheat. Setup checks the folder
+and accepts a build when:
 
 - it is an IL2CPP build (it has `GameAssembly.dll` and `global-metadata.dat`) with metadata version 24 or newer, which is what
-  BepInEx 6 reads (Unity 2017 onward; 2018-2019 Rec Room builds are);
-- it has **no anti-cheat** (EasyAntiCheat, BattlEye): the mod never works around anti-cheat;
+  BepInEx 6 reads (Unity 2017 onward);
+- it has **no anti-cheat** (EasyAntiCheat, BattlEye, or Rec Room's own Referee): the mod never works around anti-cheat;
 - it isn't your normal Steam install (`steamapps\common`): the mod is never installed into the live game.
 
-Older Mono builds (no `GameAssembly.dll`) can't be loaded by BepInEx's IL2CPP loader and are refused.
+Mono builds (no `GameAssembly.dll`, a `Managed` folder instead) can't be loaded by BepInEx's IL2CPP loader and are refused.
+**Rec Room was a Mono game through at least November 2018** (the October 12 and November 15, 2018 builds are Mono, Unity
+2018.1.5), and is IL2CPP by September 2019 (Unity 2018.3.5). The switch is somewhere in between; step 1b below checks a
+build before you download it.
 
 **The tested build** is September 9, 2019. It is the build the mod was developed and tested on, and setup shows it as *tested*:
 
@@ -47,11 +51,24 @@ current Rec Room install.
    the *Manifests* tab).
 2. Each row is one build: the date it went out and its **manifest ID**, a long number such as `3817258843939969587`. SteamDB may
    ask you to sign in with Steam before it shows the full history.
-3. Pick a date between 2018 and 2019 and copy its manifest ID. The one above is the tested build; any other
+3. Pick a date from 2019 on, before anti-cheat, and copy its manifest ID. The one above is the tested build; any other
    date is a *compatible build* if it passes setup's check.
 
-Rooms and quests depend on the date: a build from early 2018 doesn't have the quests that came out later, and the Map tab only
+Rooms and quests depend on the date: an earlier build doesn't have the quests that came out later, and the Map tab only
 lists what your build contains.
+
+### Step 1b: check that a build is IL2CPP before downloading it
+
+DepotDownloader (step 2) can fetch just a build's file list, a few MB, with `-manifest-only`:
+
+```
+DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID -username YOUR_STEAM_NAME -remember-password -manifest-only -dir C:\Games\check
+```
+
+Open the text file it writes in that folder (the list of every file in the build) and search it for
+`GameAssembly.dll`. Found: an IL2CPP build, worth downloading.
+Not found, but `Recroom_Release_Data\Managed\Assembly-CSharp.dll` is there: a Mono build, which won't work. Also look for
+`EasyAntiCheat`, `BattlEye` or `Referee`: any of those means anti-cheat, which won't work either.
 
 ### Step 2: get DepotDownloader
 
@@ -76,7 +93,7 @@ DepotDownloader -app 471710 -depot 471711 -manifest 3817258843939969587 -usernam
 That is the tested build. For another date, change `-manifest` and the folder name:
 
 ```
-DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID_FROM_STEAMDB -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2018-11
+DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID_FROM_STEAMDB -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2019-06
 ```
 
 - DepotDownloader asks for your password, and a Steam Guard code if your account uses one, in the terminal. Type them there
@@ -287,8 +304,8 @@ The loading bar shows the first problem the mod logs. The usual ones:
 - **"Rec Room is already running"**: another copy of the old client is open. Close it, then press Play.
 - **"The Rec Room client isn't set up" / "Mario isn't installed in the Rec Room client folder yet"**: run Setup (the wizard), or
   fix the paths on the Setup tab.
-- **"This Rec Room build has anti-cheat"**: use an older build without anti-cheat (2018-2019).
-- **"too old for BepInEx 6"**: the build's IL2CPP metadata is older than version 24. Use a 2018-2019 build.
+- **"This Rec Room build has anti-cheat"**: use an older IL2CPP build from before anti-cheat.
+- **"too old for BepInEx 6"**: the build's IL2CPP metadata is older than version 24. Use a newer IL2CPP build.
 - **"Compatible build"**: it installs and starts; if Mario doesn't appear, `BepInEx\LogOutput.log` says which part didn't fit
   that build. The tested build above is the one known to work.
 - **"BepInEx's interop cache was incomplete"**: fixed for you. BepInEx rebuilds it on that start (a few minutes).
