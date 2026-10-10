@@ -1,0 +1,58 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "golden-trophy-r0",
+ "description": "Golden Trophy room 0 only (launch at questRoom 0); same steps as in golden-trophy-full.",
+ "notes": [
+  "Golden Trophy full route rooms 0..9 for an S-rank attempt (rank = combat score only; solo deathless).",
+  "Native SM64 input only. Every encounter is started by walking the follow participant into its original OverlapVolume; fights use auto (punch-punch-kick, jump kicks on raised flyers, knights from behind); rooms exit through use-door (B at the unlocked exit door, original portal path).",
+  "Boss: rotating boss variant 3 cape-only NORMAL armor at MELEE x0.01 -> jump kick 100 -> 1 per hit (punch 50 -> 0); boss steps flank to its back. Expect about 800 landed kicks; the four boss steps are bounded at 20 min each.",
+  "MarioQaImmortal is for unattended QA only: run the S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal (QA refill suppresses the death mapping).",
+  "Skipped by plan: breakable pots (17400), DeadIsland tunnel flanks (1800, over lava). Authored max without them 169050 vs S 150000."
+ ],
+ "launch": {
+  "quest": "golden-trophy",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 0,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "gt r0 start"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "gt r0 to door"
+  },
+  {
+   "kind": "use-door",
+   "x": 21.62,
+   "z": 0.21,
+   "yaw": -88.9,
+   "approach": 5.0,
+   "ticks": 90,
+   "attempts": 6
+  }
+ ]
+}

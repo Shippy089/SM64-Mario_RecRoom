@@ -1,0 +1,8185 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "crescendo-full",
+ "description": "crescendo rooms 0..12, native SM64 input only.",
+ "notes": [
+  "crescendo route for an S-rank attempt (rank = combat score only; solo deathless). UNVERIFIED live.",
+  "Native SM64 input only. Encounters start by walking the follow participant into their original trigger volume; far spawn clusters are walked and fought; the required trigger is re-walked before each door; rooms exit through use-door (B at the unlocked exit door, original portal path).",
+  "Fight plan is automatic (required encounter = wave, other = fight, last room = boss). Quest-specific mechanics (switches, carry objects, special doors) are NOT planned yet.",
+  "MarioQaImmortal is for unattended QA only: run an S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "crescendo",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 0,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 start"
+  },
+  {
+   "kind": "log",
+   "text": "PROVISIONAL r0: planned with Township KillZ level73:30485 ignored (top 2 cm above the street); live-check the street first"
+  },
+  {
+   "kind": "goto",
+   "x": 124.04,
+   "y": 9.14,
+   "z": -85.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 to e5townsqua"
+  },
+  {
+   "kind": "goto",
+   "x": 127.01,
+   "y": 9.14,
+   "z": -84.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 127.67,
+   "y": 9.14,
+   "z": -84.97,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 128.0,
+   "y": 1.35,
+   "z": -84.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 135.92,
+   "y": 1.35,
+   "z": -84.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 138.89,
+   "y": 1.35,
+   "z": -84.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 138.89,
+   "y": 1.35,
+   "z": -84.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 sweep e5townsqua 1"
+  },
+  {
+   "kind": "goto",
+   "x": 138.56,
+   "y": 1.35,
+   "z": -77.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 138.89,
+   "y": 1.35,
+   "z": -69.46,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 140.54,
+   "y": 1.35,
+   "z": -61.87,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 141.53,
+   "y": 1.35,
+   "z": -53.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 146.81,
+   "y": 1.35,
+   "z": -48.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 151.76,
+   "y": 1.35,
+   "z": -41.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 155.06,
+   "y": 1.35,
+   "z": -41.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 162.98,
+   "y": 1.35,
+   "z": -41.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 164.3,
+   "y": 1.35,
+   "z": -42.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 165.29,
+   "y": 1.35,
+   "z": -46.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 162.98,
+   "y": 1.35,
+   "z": -53.29,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 161.0,
+   "y": 1.35,
+   "z": -55.27,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 159.02,
+   "y": 1.35,
+   "z": -62.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 155.39,
+   "y": 1.35,
+   "z": -69.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 152.75,
+   "y": 1.35,
+   "z": -77.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 153.74,
+   "y": 1.35,
+   "z": -83.32,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 1.35,
+   "z": -85.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 165.29,
+   "y": 1.35,
+   "z": -84.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 168.59,
+   "y": 1.35,
+   "z": -82.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 168.59,
+   "y": 1.35,
+   "z": -82.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 sweep e5townsqua 2"
+  },
+  {
+   "kind": "goto",
+   "x": 166.94,
+   "y": 1.35,
+   "z": -77.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 166.94,
+   "y": 1.35,
+   "z": -76.72,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 166.28,
+   "y": 1.35,
+   "z": -76.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 166.61,
+   "y": 1.35,
+   "z": -75.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 166.61,
+   "y": 1.35,
+   "z": -75.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 to e4weaponsh"
+  },
+  {
+   "kind": "goto",
+   "x": 165.29,
+   "y": 1.35,
+   "z": -76.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 164.3,
+   "y": 1.35,
+   "z": -77.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 163.31,
+   "y": 1.35,
+   "z": -77.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 159.02,
+   "y": 1.35,
+   "z": -77.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 159.02,
+   "y": 1.35,
+   "z": -77.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 sweep e4weaponsh 1"
+  },
+  {
+   "kind": "goto",
+   "x": 159.35,
+   "y": 1.35,
+   "z": -78.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 159.35,
+   "y": 1.35,
+   "z": -78.04,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 63.4,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 2.58 gap 2.95"
+  },
+  {
+   "kind": "goto",
+   "x": 156.71,
+   "y": 3.93,
+   "z": -79.36,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 157.04,
+   "y": 3.93,
+   "z": -78.7,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -78.37,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -78.04,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -78.04,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 45.0,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 3.99 gap 2.80"
+  },
+  {
+   "kind": "goto",
+   "x": 155.39,
+   "y": 7.92,
+   "z": -80.02,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 154.73,
+   "y": 7.92,
+   "z": -80.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 155.85,
+   "y": 7.92,
+   "z": -79.18,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "long-jump",
+   "x": 149.45,
+   "z": -83.98,
+   "note": "long-jump rise -1.16 gap 6.60"
+  },
+  {
+   "kind": "goto",
+   "x": 149.45,
+   "y": 6.75,
+   "z": -83.98,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 149.45,
+   "y": 6.75,
+   "z": -83.98,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 to e3midtownm"
+  },
+  {
+   "kind": "goto",
+   "x": 149.45,
+   "y": 6.75,
+   "z": -83.65,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 149.45,
+   "y": 6.75,
+   "z": -83.65,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 149.78,
+   "y": 1.35,
+   "z": -82.33,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 151.43,
+   "y": 1.35,
+   "z": -74.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 155.72,
+   "y": 1.35,
+   "z": -68.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 159.02,
+   "y": 1.35,
+   "z": -61.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 161.66,
+   "y": 1.35,
+   "z": -54.28,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 164.63,
+   "y": 1.35,
+   "z": -47.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 165.95,
+   "y": 1.35,
+   "z": -44.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 165.95,
+   "y": 1.35,
+   "z": -44.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 sweep e3midtownm 1"
+  },
+  {
+   "kind": "goto",
+   "x": 168.59,
+   "y": 1.35,
+   "z": -51.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 170.9,
+   "y": 1.35,
+   "z": -52.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 178.49,
+   "y": 1.35,
+   "z": -53.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 178.49,
+   "y": 1.35,
+   "z": -53.62,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 90.0,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 1.91 gap 0.66"
+  },
+  {
+   "kind": "goto",
+   "x": 177.83,
+   "y": 3.26,
+   "z": -53.62,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 177.5,
+   "y": 3.42,
+   "z": -53.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 177.5,
+   "y": 3.42,
+   "z": -53.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 sweep e3midtownm 2"
+  },
+  {
+   "kind": "goto",
+   "x": 171.23,
+   "y": 5.99,
+   "z": -53.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 171.23,
+   "y": 5.99,
+   "z": -53.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 sweep e3midtownm 3"
+  },
+  {
+   "kind": "goto",
+   "x": 171.23,
+   "y": 5.99,
+   "z": -53.62,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 170.57,
+   "y": 1.35,
+   "z": -54.94,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 169.58,
+   "y": 1.35,
+   "z": -56.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 164.63,
+   "y": 1.35,
+   "z": -59.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 163.64,
+   "y": 1.35,
+   "z": -60.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 163.64,
+   "y": 1.35,
+   "z": -60.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 to e2cstandee"
+  },
+  {
+   "kind": "goto",
+   "x": 161.0,
+   "y": 1.35,
+   "z": -54.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 164.63,
+   "y": 1.35,
+   "z": -48.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 165.29,
+   "y": 1.35,
+   "z": -43.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 165.29,
+   "y": 1.35,
+   "z": -43.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 to e4afalling"
+  },
+  {
+   "kind": "goto",
+   "x": 164.63,
+   "y": 1.35,
+   "z": -51.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 161.0,
+   "y": 1.35,
+   "z": -55.27,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 159.02,
+   "y": 1.35,
+   "z": -62.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 156.38,
+   "y": 1.35,
+   "z": -70.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 152.75,
+   "y": 1.35,
+   "z": -77.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 153.41,
+   "y": 1.35,
+   "z": -81.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 155.06,
+   "y": 1.35,
+   "z": -82.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 156.05,
+   "y": 1.35,
+   "z": -82.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 157.04,
+   "y": 1.35,
+   "z": -82.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 1.35,
+   "z": -82.0,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 1.35,
+   "z": -82.0,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 173.7,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 2.58 gap 2.99"
+  },
+  {
+   "kind": "goto",
+   "x": 157.04,
+   "y": 3.93,
+   "z": -79.03,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 157.04,
+   "y": 3.93,
+   "z": -78.7,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -78.37,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -78.04,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -78.04,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 45.0,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 3.99 gap 2.80"
+  },
+  {
+   "kind": "goto",
+   "x": 155.39,
+   "y": 7.92,
+   "z": -80.02,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 155.06,
+   "y": 7.92,
+   "z": -79.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 155.06,
+   "y": 7.92,
+   "z": -79.36,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 153.74,
+   "y": 7.42,
+   "z": -78.04,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 153.41,
+   "y": 7.65,
+   "z": -77.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 153.41,
+   "y": 7.65,
+   "z": -77.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 to outro"
+  },
+  {
+   "kind": "goto",
+   "x": 153.41,
+   "y": 7.65,
+   "z": -77.71,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 154.73,
+   "y": 5.75,
+   "z": -78.37,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 154.73,
+   "y": 5.75,
+   "z": -78.37,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 156.05,
+   "y": 4.23,
+   "z": -78.7,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 156.05,
+   "y": 4.23,
+   "z": -78.7,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -79.36,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 157.37,
+   "y": 3.93,
+   "z": -79.36,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 158.69,
+   "y": 2.12,
+   "z": -80.35,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 158.69,
+   "y": 2.12,
+   "z": -80.35,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 160.01,
+   "y": 1.35,
+   "z": -80.68,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 161.0,
+   "y": 1.35,
+   "z": -81.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 162.98,
+   "y": 1.35,
+   "z": -82.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 170.9,
+   "y": 1.35,
+   "z": -83.65,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 178.16,
+   "y": 1.35,
+   "z": -83.65,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 178.82,
+   "y": 1.35,
+   "z": -82.99,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 180.47,
+   "y": 1.35,
+   "z": -82.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 181.13,
+   "y": 1.35,
+   "z": -82.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 181.13,
+   "y": 1.35,
+   "z": -82.0,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": 181.79,
+   "z": -81.67,
+   "note": "hop rise 0.37 gap 0.74"
+  },
+  {
+   "kind": "goto",
+   "x": 181.79,
+   "y": 1.72,
+   "z": -81.67,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": 183.44,
+   "y": 2.67,
+   "z": -81.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 183.44,
+   "y": 2.67,
+   "z": -81.34,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": 184.1,
+   "z": -81.34,
+   "note": "hop rise 0.38 gap 0.66"
+  },
+  {
+   "kind": "goto",
+   "x": 184.1,
+   "y": 3.05,
+   "z": -81.34,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": 186.41,
+   "y": 3.29,
+   "z": -81.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 186.41,
+   "y": 3.29,
+   "z": -81.34,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": -90.0,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 4.10 gap 2.64"
+  },
+  {
+   "kind": "goto",
+   "x": 189.05,
+   "y": 7.38,
+   "z": -81.34,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 189.38,
+   "y": 7.38,
+   "z": -81.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "repeat",
+   "count": 10,
+   "body": 1,
+   "note": "wave sweeps until the room advances"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "log",
+   "text": "cr r0 wait advance"
+  },
+  {
+   "kind": "wait-until",
+   "room": 1,
+   "timeoutTicks": 18000
+  },
+  {
+   "kind": "wait-until",
+   "room": 1,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r1 start"
+  },
+  {
+   "kind": "repeat",
+   "count": 10,
+   "body": 1,
+   "note": "wave sweeps until the room advances"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "log",
+   "text": "cr r1 wait advance"
+  },
+  {
+   "kind": "wait-until",
+   "room": 2,
+   "timeoutTicks": 18000
+  },
+  {
+   "kind": "wait-until",
+   "room": 2,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r2 start"
+  },
+  {
+   "kind": "goto",
+   "x": 354.97,
+   "y": -240.27,
+   "z": -1028.2,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r2 to encounter1"
+  },
+  {
+   "kind": "goto",
+   "x": 354.97,
+   "y": -240.33,
+   "z": -1027.87,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 354.97,
+   "y": -240.32,
+   "z": -1027.54,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 355.3,
+   "y": -240.37,
+   "z": -1027.21,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 355.3,
+   "y": -240.37,
+   "z": -1027.21,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": -101.3,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 0.71 gap 3.37"
+  },
+  {
+   "kind": "goto",
+   "x": 358.6,
+   "y": -239.66,
+   "z": -1026.55,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 358.6,
+   "y": -239.67,
+   "z": -1026.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "wait-until",
+   "room": 3,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r3 start"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -93.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r3 smash 29"
+  },
+  {
+   "kind": "goto",
+   "x": -191.37,
+   "y": -182.75,
+   "z": -97.18,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.64,
+   "z": -96.94,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -191.37,
+   "y": -182.75,
+   "z": -97.18,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -194.67,
+   "y": -182.75,
+   "z": -95.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -196.38,
+   "z": -95.51,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -196.29,
+   "z": -96.28,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "face",
+   "x": -196.29,
+   "z": -96.28,
+   "toleranceDegrees": 10
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -194.67,
+   "y": -182.75,
+   "z": -95.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.72,
+   "y": -182.75,
+   "z": -95.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.72,
+   "y": -182.75,
+   "z": -95.86,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -189.06,
+   "z": -96.19,
+   "note": "hop rise 0.86 gap 0.74"
+  },
+  {
+   "kind": "goto",
+   "x": -189.06,
+   "y": -181.89,
+   "z": -96.19,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": -188.19,
+   "z": -95.62,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -189.06,
+   "y": -181.89,
+   "z": -96.19,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.39,
+   "y": -181.89,
+   "z": -96.19,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -189.72,
+   "y": -182.75,
+   "z": -96.19,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -190.05,
+   "y": -182.75,
+   "z": -95.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -191.37,
+   "y": -182.75,
+   "z": -97.18,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.72,
+   "y": -182.75,
+   "z": -102.13,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -187.08,
+   "y": -182.75,
+   "z": -107.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -188.73,
+   "y": -182.75,
+   "z": -109.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.32,
+   "z": -111.37,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -188.73,
+   "y": -182.75,
+   "z": -109.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -186.42,
+   "y": -182.75,
+   "z": -110.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -186.75,
+   "y": -182.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -187.74,
+   "y": -182.75,
+   "z": -114.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.22,
+   "z": -113.97,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -187.74,
+   "y": -182.75,
+   "z": -114.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -188.07,
+   "y": -182.75,
+   "z": -115.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -189.72,
+   "z": -115.86,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -188.07,
+   "y": -182.75,
+   "z": -115.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -187.41,
+   "y": -182.75,
+   "z": -116.32,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -188.07,
+   "y": -182.75,
+   "z": -118.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.05,
+   "y": -182.75,
+   "z": -120.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.97,
+   "z": -121.94,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -190.05,
+   "y": -182.75,
+   "z": -120.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -182.13,
+   "y": -182.75,
+   "z": -120.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -180.48,
+   "y": -182.75,
+   "z": -120.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -178.85,
+   "z": -121.61,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -180.48,
+   "y": -182.75,
+   "z": -120.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -188.4,
+   "y": -182.75,
+   "z": -120.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.99,
+   "y": -182.75,
+   "z": -119.29,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -197.97,
+   "y": -182.75,
+   "z": -117.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -197.64,
+   "y": -182.75,
+   "z": -114.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.91,
+   "z": -113.89,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -197.64,
+   "y": -182.75,
+   "z": -114.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -197.31,
+   "y": -182.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.85,
+   "z": -112.94,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -197.31,
+   "y": -182.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.96,
+   "y": -182.75,
+   "z": -113.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.63,
+   "y": -182.75,
+   "z": -110.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -196.98,
+   "y": -182.75,
+   "z": -110.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.93,
+   "z": -111.5,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -196.98,
+   "y": -182.75,
+   "z": -110.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -204.57,
+   "y": -182.75,
+   "z": -110.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -206.2,
+   "z": -110.89,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -204.57,
+   "y": -182.75,
+   "z": -110.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.96,
+   "y": -182.75,
+   "z": -106.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -196.65,
+   "y": -182.75,
+   "z": -104.77,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -194.34,
+   "y": -182.75,
+   "z": -105.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.02,
+   "y": -180.85,
+   "z": -110.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -179.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.0,
+   "y": -179.24,
+   "z": -113.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -194.6,
+   "z": -111.74,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -195.0,
+   "y": -179.24,
+   "z": -113.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.38,
+   "y": -179.33,
+   "z": -113.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.6,
+   "z": -111.74,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -190.38,
+   "y": -179.33,
+   "z": -113.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -182.46,
+   "y": -177.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -180.48,
+   "y": -177.75,
+   "z": -114.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -178.8,
+   "z": -114.42,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -180.48,
+   "y": -177.75,
+   "z": -114.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -180.48,
+   "y": -177.75,
+   "z": -119.29,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -179.82,
+   "y": -177.75,
+   "z": -119.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -179.05,
+   "z": -121.41,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -179.82,
+   "y": -177.75,
+   "z": -119.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -187.74,
+   "y": -177.75,
+   "z": -119.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.05,
+   "y": -177.75,
+   "z": -118.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.6,
+   "z": -116.73,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -190.05,
+   "y": -177.75,
+   "z": -118.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -188.73,
+   "y": -177.75,
+   "z": -123.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -188.1,
+   "z": -125.11,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -188.73,
+   "y": -177.75,
+   "z": -123.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.66,
+   "y": -177.75,
+   "z": -124.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -197.13,
+   "z": -125.15,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -195.66,
+   "y": -177.75,
+   "z": -124.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.68,
+   "y": -177.77,
+   "z": -124.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.68,
+   "y": -177.77,
+   "z": -124.9,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -193.68,
+   "z": -125.56,
+   "note": "hop rise 0.50 gap 0.66"
+  },
+  {
+   "kind": "goto",
+   "x": -193.68,
+   "y": -177.27,
+   "z": -125.56,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": -194.34,
+   "y": -177.07,
+   "z": -128.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.18,
+   "z": -130.43,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -194.34,
+   "y": -177.07,
+   "z": -128.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.66,
+   "y": -177.07,
+   "z": -128.2,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -197.14,
+   "z": -128.01,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -195.66,
+   "y": -177.07,
+   "z": -128.2,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -191.37,
+   "y": -177.07,
+   "z": -129.19,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.07,
+   "z": -130.43,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -191.37,
+   "y": -177.07,
+   "z": -129.19,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.38,
+   "y": -177.07,
+   "z": -128.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -188.64,
+   "z": -128.97,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -190.38,
+   "y": -177.07,
+   "z": -128.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -177.52,
+   "z": -125.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -197.31,
+   "y": -177.75,
+   "z": -120.28,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -204.9,
+   "y": -177.75,
+   "z": -120.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -206.27,
+   "z": -121.75,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -204.9,
+   "y": -177.75,
+   "z": -120.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -204.57,
+   "y": -177.75,
+   "z": -115.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -204.9,
+   "y": -177.75,
+   "z": -115.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -206.39,
+   "z": -114.42,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -204.9,
+   "y": -177.75,
+   "z": -115.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -204.24,
+   "y": -177.75,
+   "z": -109.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -205.56,
+   "y": -177.66,
+   "z": -108.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -206.44,
+   "z": -107.05,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -205.56,
+   "y": -177.66,
+   "z": -108.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -201.6,
+   "y": -177.75,
+   "z": -107.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -200.6,
+   "z": -106.32,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -201.6,
+   "y": -177.75,
+   "z": -107.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -203.25,
+   "y": -177.75,
+   "z": -112.69,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -197.97,
+   "y": -177.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -190.05,
+   "y": -179.12,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -182.46,
+   "y": -177.75,
+   "z": -113.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -182.46,
+   "y": -177.75,
+   "z": -109.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -183.78,
+   "y": -177.75,
+   "z": -107.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -184.66,
+   "z": -106.32,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -183.78,
+   "y": -177.75,
+   "z": -107.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r3 to door"
+  },
+  {
+   "kind": "goto",
+   "x": -182.13,
+   "y": -177.75,
+   "z": -112.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -183.45,
+   "y": -177.75,
+   "z": -113.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -191.37,
+   "y": -179.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -199.29,
+   "y": -177.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -203.25,
+   "y": -177.75,
+   "z": -112.69,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -203.25,
+   "y": -177.75,
+   "z": -112.69,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": -205.56,
+   "z": -109.06,
+   "yaw": -91.2,
+   "approach": 4.5,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 4,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 start"
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": 4.49,
+   "z": 169.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 to disableche"
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": 4.49,
+   "z": 161.8,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": 4.49,
+   "z": 161.8,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 to encounter3"
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": 4.49,
+   "z": 157.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": 4.49,
+   "z": 157.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 sweep encounter3 1"
+  },
+  {
+   "kind": "goto",
+   "x": 73.79,
+   "y": 4.49,
+   "z": 153.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 66.2,
+   "y": 3.49,
+   "z": 151.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 3.49,
+   "z": 149.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 2.91,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 64.88,
+   "y": 2.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.29,
+   "y": 0.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 57.29,
+   "y": 0.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 sweep encounter3 2"
+  },
+  {
+   "kind": "goto",
+   "x": 57.62,
+   "y": -1.51,
+   "z": 141.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 64.88,
+   "y": -1.51,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 64.88,
+   "y": -1.51,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 to questdracu"
+  },
+  {
+   "kind": "goto",
+   "x": 69.5,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.12,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 134.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": -1.51,
+   "z": 126.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": -1.51,
+   "z": 119.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 81.05,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.32,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.3,
+   "y": -1.2,
+   "z": 126.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": -1.51,
+   "z": 130.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 137.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 137.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 to encounter5"
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 141.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 141.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 sweep encounter5 1"
+  },
+  {
+   "kind": "goto",
+   "x": 85.01,
+   "y": -1.51,
+   "z": 144.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 84.68,
+   "y": 0.99,
+   "z": 152.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.0,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.31,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 88.31,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 sweep encounter5 2"
+  },
+  {
+   "kind": "goto",
+   "x": 96.23,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 99.86,
+   "y": 0.99,
+   "z": 153.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 100.85,
+   "y": -1.43,
+   "z": 146.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 100.85,
+   "y": -1.43,
+   "z": 146.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 sweep encounter1 1"
+  },
+  {
+   "kind": "goto",
+   "x": 94.91,
+   "y": -1.51,
+   "z": 145.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.6,
+   "y": -1.51,
+   "z": 140.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 132.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.31,
+   "y": -0.51,
+   "z": 123.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.99,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 79.07,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 72.8,
+   "y": -1.51,
+   "z": 120.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": -1.51,
+   "z": 128.14,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 134.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.12,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 66.2,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 58.28,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.29,
+   "y": -1.51,
+   "z": 139.69,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.62,
+   "y": 0.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 64.88,
+   "y": 2.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 2.99,
+   "z": 143.32,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": 3.49,
+   "z": 151.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.78,
+   "y": 4.49,
+   "z": 151.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 74.78,
+   "y": 4.49,
+   "z": 151.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 sweep encounter1 2"
+  },
+  {
+   "kind": "goto",
+   "x": 67.52,
+   "y": 3.49,
+   "z": 154.54,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 67.52,
+   "y": 3.49,
+   "z": 154.54,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 rewalk encounter5"
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 3.49,
+   "z": 149.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 2.99,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 64.88,
+   "y": 2.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.62,
+   "y": 0.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.62,
+   "y": -1.51,
+   "z": 141.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.46,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 140.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 132.76,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": -1.51,
+   "z": 126.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": -1.51,
+   "z": 119.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 81.05,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.32,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.3,
+   "y": -1.2,
+   "z": 126.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": -1.51,
+   "z": 130.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 137.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 141.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 141.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 smash 46"
+  },
+  {
+   "kind": "goto",
+   "x": 84.68,
+   "y": 0.99,
+   "z": 152.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 84.68,
+   "y": 0.99,
+   "z": 152.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 83.62,
+   "z": 154.28,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 84.68,
+   "y": 0.99,
+   "z": 152.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.98,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.87,
+   "z": 155.29,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 87.98,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.95,
+   "y": 0.99,
+   "z": 152.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.95,
+   "y": 0.99,
+   "z": 151.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.27,
+   "z": 149.66,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 90.95,
+   "y": 0.99,
+   "z": 151.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": 0.99,
+   "z": 151.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.15,
+   "z": 149.7,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": 0.99,
+   "z": 151.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.27,
+   "y": 0.99,
+   "z": 151.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 93.03,
+   "z": 149.7,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 92.27,
+   "y": 0.99,
+   "z": 151.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.25,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.09,
+   "z": 155.31,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 94.25,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 99.2,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 100.84,
+   "z": 154.55,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 99.2,
+   "y": 0.99,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 99.86,
+   "y": 0.77,
+   "z": 150.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 99.53,
+   "y": -1.51,
+   "z": 146.29,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.21,
+   "y": -1.51,
+   "z": 145.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 97.08,
+   "z": 144.26,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 98.21,
+   "y": -1.51,
+   "z": 145.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 97.22,
+   "y": -1.51,
+   "z": 148.6,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.84,
+   "z": 150.27,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 97.22,
+   "y": -1.51,
+   "z": 148.6,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.54,
+   "y": -1.51,
+   "z": 145.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 104.15,
+   "y": -1.51,
+   "z": 145.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 104.48,
+   "y": -1.51,
+   "z": 145.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 106.12,
+   "z": 146.29,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 104.48,
+   "y": -1.51,
+   "z": 145.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 100.19,
+   "y": -1.51,
+   "z": 144.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.87,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.93,
+   "y": -1.51,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.93,
+   "y": -1.51,
+   "z": 138.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 93.59,
+   "y": -1.51,
+   "z": 138.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.95,
+   "z": 139.09,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 93.59,
+   "y": -1.51,
+   "z": 138.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.29,
+   "y": -1.51,
+   "z": 138.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.95,
+   "z": 139.09,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 90.29,
+   "y": -1.51,
+   "z": 138.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": -1.51,
+   "z": 139.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.96,
+   "y": -1.51,
+   "z": 145.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.97,
+   "y": -1.51,
+   "z": 149.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.41,
+   "z": 151.55,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 88.97,
+   "y": -1.51,
+   "z": 149.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.95,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 134.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.95,
+   "y": -1.51,
+   "z": 128.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.64,
+   "y": -0.6,
+   "z": 124.84,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.73,
+   "z": 123.49,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 88.64,
+   "y": -0.6,
+   "z": 124.84,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.99,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 79.07,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": -0.93,
+   "z": 118.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.98,
+   "z": 117.16,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": -0.93,
+   "z": 118.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": -0.93,
+   "z": 118.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.73,
+   "z": 116.68,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 75.44,
+   "y": -0.93,
+   "z": 118.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 72.47,
+   "y": -1.51,
+   "z": 121.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 70.82,
+   "y": -1.51,
+   "z": 123.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 70.49,
+   "y": -1.51,
+   "z": 123.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 68.88,
+   "z": 123.96,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 70.49,
+   "y": -1.51,
+   "z": 123.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 69.83,
+   "y": -1.51,
+   "z": 124.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 69.83,
+   "y": -1.51,
+   "z": 125.5,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 68.88,
+   "z": 126.92,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 69.83,
+   "y": -1.51,
+   "z": 125.5,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 69.83,
+   "y": -1.51,
+   "z": 126.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 132.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.46,
+   "y": -1.51,
+   "z": 138.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 72.39,
+   "z": 139.37,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 73.46,
+   "y": -1.51,
+   "z": 138.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 139.69,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.11,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 77.72,
+   "z": 142.7,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": -1.51,
+   "z": 142.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 77.7,
+   "z": 143.42,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": -1.51,
+   "z": 142.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 76.43,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 77.85,
+   "z": 144.0,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 76.43,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 76.43,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 76.76,
+   "y": -1.51,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 78.07,
+   "z": 140.67,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 76.76,
+   "y": -1.51,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.46,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 72.0,
+   "z": 144.01,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 73.46,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 72.47,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": -1.51,
+   "z": 142.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 66.49,
+   "z": 144.49,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": -1.51,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 66.49,
+   "z": 140.19,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": -1.51,
+   "z": 141.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": -1.51,
+   "z": 144.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 66.12,
+   "z": 145.67,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": -1.51,
+   "z": 144.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 58.61,
+   "y": -1.51,
+   "z": 144.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.86,
+   "z": 145.79,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 58.61,
+   "y": -1.51,
+   "z": 144.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 56.96,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 55.39,
+   "z": 141.45,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 56.96,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 55.31,
+   "y": -1.51,
+   "z": 144.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 53.79,
+   "z": 145.44,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 55.31,
+   "y": -1.51,
+   "z": 144.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 54.65,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 53.83,
+   "z": 141.5,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 54.65,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 56.63,
+   "y": -1.51,
+   "z": 142.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 56.96,
+   "y": 0.49,
+   "z": 135.07,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 56.63,
+   "y": 0.49,
+   "z": 133.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 55.0,
+   "z": 133.1,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 56.63,
+   "y": 0.49,
+   "z": 133.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 58.28,
+   "y": 0.49,
+   "z": 134.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 59.93,
+   "y": 0.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 60.74,
+   "z": 136.95,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 59.93,
+   "y": 0.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 2.49,
+   "z": 134.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 66.54,
+   "z": 133.05,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 2.49,
+   "z": 134.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 2.99,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 3.49,
+   "z": 149.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 64.55,
+   "y": 3.49,
+   "z": 151.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 61.25,
+   "y": 3.49,
+   "z": 152.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 61.25,
+   "y": 3.49,
+   "z": 152.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 60.83,
+   "z": 150.48,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 61.25,
+   "y": 3.49,
+   "z": 152.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 55.31,
+   "y": 3.49,
+   "z": 152.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 54.66,
+   "z": 154.46,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 55.31,
+   "y": 3.49,
+   "z": 152.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 56.96,
+   "y": 3.49,
+   "z": 149.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 56.96,
+   "y": 3.49,
+   "z": 146.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 56.32,
+   "z": 145.45,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 56.96,
+   "y": 3.49,
+   "z": 146.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 55.97,
+   "y": 3.49,
+   "z": 147.28,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 54.45,
+   "z": 147.97,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 55.97,
+   "y": 3.49,
+   "z": 147.28,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 59.27,
+   "y": 3.49,
+   "z": 148.27,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 60.51,
+   "z": 149.26,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 59.27,
+   "y": 3.49,
+   "z": 148.27,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 58.28,
+   "y": 3.49,
+   "z": 148.6,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 58.61,
+   "y": 3.49,
+   "z": 151.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 61.25,
+   "y": 3.49,
+   "z": 152.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 69.17,
+   "y": 3.49,
+   "z": 152.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": 4.49,
+   "z": 151.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.89,
+   "z": 150.39,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": 4.49,
+   "z": 151.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": 4.49,
+   "z": 151.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 77.39,
+   "z": 150.39,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": 4.49,
+   "z": 151.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": 4.49,
+   "z": 158.5,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 77.66,
+   "z": 159.09,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 76.1,
+   "y": 4.49,
+   "z": 158.5,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.11,
+   "y": 4.49,
+   "z": 159.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.35,
+   "z": 159.29,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 75.11,
+   "y": 4.49,
+   "z": 159.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.11,
+   "y": 4.49,
+   "z": 159.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.58,
+   "z": 160.63,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 75.11,
+   "y": 4.49,
+   "z": 159.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.77,
+   "y": 4.49,
+   "z": 161.8,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 77.38,
+   "z": 162.51,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 75.77,
+   "y": 4.49,
+   "z": 161.8,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.78,
+   "y": 4.49,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 71.48,
+   "y": 4.23,
+   "z": 153.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 67.52,
+   "y": 3.49,
+   "z": 154.54,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 67.52,
+   "y": 3.49,
+   "z": 159.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 66.57,
+   "z": 160.68,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 67.52,
+   "y": 3.49,
+   "z": 159.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r4 to door"
+  },
+  {
+   "kind": "goto",
+   "x": 67.19,
+   "y": 3.49,
+   "z": 153.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 3.49,
+   "z": 149.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.21,
+   "y": 2.99,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 64.88,
+   "y": 2.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.62,
+   "y": 0.49,
+   "z": 135.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 57.62,
+   "y": -1.51,
+   "z": 141.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 65.54,
+   "y": -1.51,
+   "z": 142.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.46,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 140.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.45,
+   "y": -1.51,
+   "z": 132.76,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": -1.51,
+   "z": 126.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 73.13,
+   "y": -1.51,
+   "z": 119.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 81.05,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.32,
+   "y": -0.51,
+   "z": 119.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.3,
+   "y": -1.2,
+   "z": 126.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": -1.51,
+   "z": 130.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.94,
+   "y": -1.51,
+   "z": 137.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.62,
+   "y": -1.51,
+   "z": 142.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 84.68,
+   "y": -1.51,
+   "z": 144.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 84.68,
+   "y": 0.99,
+   "z": 152.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": 0.99,
+   "z": 154.54,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 91.28,
+   "y": 0.99,
+   "z": 154.54,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": 91.94,
+   "z": 161.47,
+   "yaw": 2.0,
+   "approach": 3.5,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 5,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r5 start"
+  },
+  {
+   "kind": "goto",
+   "x": -203.15,
+   "y": -0.0,
+   "z": 207.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r5 to 1reception"
+  },
+  {
+   "kind": "goto",
+   "x": -195.89,
+   "y": -1.0,
+   "z": 208.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.23,
+   "y": -1.0,
+   "z": 208.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -195.23,
+   "y": -1.0,
+   "z": 208.68,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": -116.6,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 2.14 gap 2.95"
+  },
+  {
+   "kind": "goto",
+   "x": -192.59,
+   "y": 1.14,
+   "z": 210.0,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "wait-until",
+   "room": 6,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r6 start"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -93.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r6 to door"
+  },
+  {
+   "kind": "goto",
+   "x": -194.34,
+   "y": -182.75,
+   "z": -99.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -200.94,
+   "y": -182.75,
+   "z": -103.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -204.24,
+   "y": -182.75,
+   "z": -106.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -204.24,
+   "y": -182.75,
+   "z": -106.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": -205.56,
+   "z": -109.06,
+   "yaw": -91.2,
+   "approach": 5.0,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 7,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r7 start"
+  },
+  {
+   "kind": "wait-until",
+   "room": 8,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 start"
+  },
+  {
+   "kind": "goto",
+   "x": 22.3,
+   "y": -0.51,
+   "z": 187.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 to encounter1"
+  },
+  {
+   "kind": "goto",
+   "x": 19.99,
+   "y": -0.51,
+   "z": 181.69,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 21.97,
+   "y": -0.42,
+   "z": 180.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 22.3,
+   "y": 0.84,
+   "z": 172.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 23.29,
+   "y": 0.49,
+   "z": 169.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 27.58,
+   "y": 0.49,
+   "z": 169.15,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 27.58,
+   "y": 0.49,
+   "z": 169.15,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter1 1"
+  },
+  {
+   "kind": "goto",
+   "x": 35.5,
+   "y": -0.51,
+   "z": 168.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 36.49,
+   "y": -0.51,
+   "z": 166.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 36.49,
+   "y": -1.51,
+   "z": 159.91,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 36.49,
+   "y": -1.51,
+   "z": 159.91,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter1 2"
+  },
+  {
+   "kind": "goto",
+   "x": 31.54,
+   "y": -1.51,
+   "z": 156.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 31.54,
+   "y": -1.51,
+   "z": 156.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 to encounter2"
+  },
+  {
+   "kind": "goto",
+   "x": 28.57,
+   "y": -1.51,
+   "z": 158.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 28.24,
+   "y": -1.51,
+   "z": 162.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.59,
+   "y": -1.67,
+   "z": 161.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.26,
+   "y": -3.51,
+   "z": 153.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.26,
+   "y": -3.51,
+   "z": 150.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 26.26,
+   "y": -3.51,
+   "z": 150.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter2 1"
+  },
+  {
+   "kind": "goto",
+   "x": 27.25,
+   "y": -3.51,
+   "z": 142.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 139.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 139.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter2 2"
+  },
+  {
+   "kind": "goto",
+   "x": 18.67,
+   "y": -2.51,
+   "z": 142.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 18.34,
+   "y": -2.51,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 18.34,
+   "y": -2.51,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter2 3"
+  },
+  {
+   "kind": "goto",
+   "x": 24.61,
+   "y": -3.51,
+   "z": 148.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.26,
+   "y": -3.51,
+   "z": 150.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -2.59,
+   "z": 159.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -2.59,
+   "z": 159.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 to questdracu"
+  },
+  {
+   "kind": "goto",
+   "x": 26.26,
+   "y": -3.51,
+   "z": 151.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 149.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 19.66,
+   "y": -2.51,
+   "z": 146.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 19.66,
+   "y": -2.51,
+   "z": 146.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 to encounter2"
+  },
+  {
+   "kind": "goto",
+   "x": 11.74,
+   "y": -1.5,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 7.45,
+   "y": -1.28,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 7.45,
+   "y": -1.28,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter2 1"
+  },
+  {
+   "kind": "goto",
+   "x": 3.49,
+   "y": -1.28,
+   "z": 145.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -0.47,
+   "y": -1.28,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -1.79,
+   "y": -1.28,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -3.77,
+   "y": -1.28,
+   "z": 145.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -11.36,
+   "y": -1.5,
+   "z": 144.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -13.34,
+   "y": -1.5,
+   "z": 146.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": -13.34,
+   "y": -1.5,
+   "z": 146.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter2 2"
+  },
+  {
+   "kind": "goto",
+   "x": -12.35,
+   "y": -1.5,
+   "z": 141.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -12.35,
+   "y": -1.5,
+   "z": 141.43,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 7.1,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 3.68 gap 2.66"
+  },
+  {
+   "kind": "goto",
+   "x": -12.68,
+   "y": 2.17,
+   "z": 138.79,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -12.35,
+   "y": 2.16,
+   "z": 138.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": -12.35,
+   "y": 2.16,
+   "z": 138.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 sweep encounter2 3"
+  },
+  {
+   "kind": "goto",
+   "x": -12.68,
+   "y": 2.15,
+   "z": 139.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -12.68,
+   "y": 2.12,
+   "z": 139.45,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -12.68,
+   "y": -1.5,
+   "z": 139.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -11.36,
+   "y": -1.5,
+   "z": 143.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -9.71,
+   "y": -1.28,
+   "z": 144.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -9.71,
+   "y": -1.28,
+   "z": 144.73,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": -140.2,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 4.41 gap 2.58"
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "y": 3.13,
+   "z": 146.71,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "y": 3.12,
+   "z": 147.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "y": 3.12,
+   "z": 147.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 smash 15"
+  },
+  {
+   "kind": "goto",
+   "x": 5.14,
+   "y": -1.28,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 5.49,
+   "z": 143.72,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 5.14,
+   "y": -1.28,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 7.45,
+   "y": -1.28,
+   "z": 144.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 8.44,
+   "y": -1.28,
+   "z": 143.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 8.73,
+   "z": 142.01,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 8.44,
+   "y": -1.28,
+   "z": 143.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 16.36,
+   "y": -1.98,
+   "z": 143.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 23.95,
+   "y": -3.51,
+   "z": 141.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 139.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 135.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.35,
+   "z": 133.87,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 25.52,
+   "z": 133.87,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "face",
+   "x": 25.52,
+   "z": 133.87,
+   "toleranceDegrees": 10
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 135.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.59,
+   "y": -3.51,
+   "z": 142.42,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 27.25,
+   "y": -3.51,
+   "z": 147.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 150.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.26,
+   "y": -3.51,
+   "z": 151.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -2.73,
+   "z": 158.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 27.25,
+   "y": -1.51,
+   "z": 162.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 28.57,
+   "y": -1.51,
+   "z": 161.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 28.24,
+   "y": -1.51,
+   "z": 156.28,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 27.25,
+   "z": 154.81,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 28.24,
+   "y": -1.51,
+   "z": 156.28,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 35.83,
+   "y": -1.51,
+   "z": 158.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 37.81,
+   "y": -1.09,
+   "z": 158.26,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 38.48,
+   "z": 156.71,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 37.81,
+   "y": -1.09,
+   "z": 158.26,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 37.81,
+   "y": -1.09,
+   "z": 159.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 38.47,
+   "z": 160.72,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 37.81,
+   "y": -1.09,
+   "z": 159.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 36.49,
+   "y": -1.51,
+   "z": 159.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 36.49,
+   "y": -0.51,
+   "z": 167.17,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 34.84,
+   "y": -0.51,
+   "z": 168.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.92,
+   "y": 0.49,
+   "z": 168.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 22.63,
+   "y": 0.56,
+   "z": 170.14,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 22.96,
+   "y": 0.99,
+   "z": 171.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 24.46,
+   "z": 171.53,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 22.96,
+   "y": 0.99,
+   "z": 171.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 21.97,
+   "y": 0.99,
+   "z": 171.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 20.45,
+   "z": 171.53,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 21.97,
+   "y": 0.99,
+   "z": 171.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 21.97,
+   "y": -0.01,
+   "z": 178.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 20.45,
+   "z": 178.78,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 21.97,
+   "y": -0.01,
+   "z": 178.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 22.96,
+   "y": -0.01,
+   "z": 178.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 24.46,
+   "z": 178.77,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 22.96,
+   "y": -0.01,
+   "z": 178.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 21.64,
+   "y": -0.51,
+   "z": 180.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 19.66,
+   "y": -0.51,
+   "z": 181.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 18.33,
+   "z": 182.56,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 19.66,
+   "y": -0.51,
+   "z": 181.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 19.66,
+   "y": -0.51,
+   "z": 182.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 18.37,
+   "z": 183.46,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 19.66,
+   "y": -0.51,
+   "z": 182.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 22.3,
+   "y": -0.25,
+   "z": 179.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 22.3,
+   "y": 0.99,
+   "z": 171.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 23.29,
+   "y": 0.49,
+   "z": 169.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 31.21,
+   "y": 0.49,
+   "z": 168.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 35.83,
+   "y": -0.51,
+   "z": 168.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 36.49,
+   "y": -0.51,
+   "z": 164.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 35.83,
+   "y": -1.27,
+   "z": 161.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 33.52,
+   "y": -1.51,
+   "z": 160.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.92,
+   "y": -1.51,
+   "z": 162.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 25.93,
+   "y": -3.51,
+   "z": 155.29,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 26.26,
+   "y": -3.51,
+   "z": 150.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 23.95,
+   "y": -3.51,
+   "z": 148.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 16.36,
+   "y": -1.98,
+   "z": 147.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 13.39,
+   "y": -1.51,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 5.47,
+   "y": -1.28,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -0.47,
+   "y": -1.28,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -1.79,
+   "y": -1.28,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -3.77,
+   "y": -1.28,
+   "z": 145.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -9.71,
+   "y": -1.28,
+   "z": 144.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -9.71,
+   "y": -1.28,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -10.33,
+   "z": 146.88,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": -9.71,
+   "y": -1.28,
+   "z": 145.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -9.71,
+   "y": -1.28,
+   "z": 144.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -9.71,
+   "y": -1.28,
+   "z": 144.73,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": -140.2,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 4.41 gap 2.58"
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "y": 3.13,
+   "z": 146.71,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "y": 0.72,
+   "z": 146.38,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "y": 0.72,
+   "z": 146.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "z": 146.33,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -8.06,
+   "y": 0.72,
+   "z": 146.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r8 to door"
+  },
+  {
+   "kind": "goto",
+   "x": 3.49,
+   "y": -1.28,
+   "z": 145.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -0.47,
+   "y": -1.28,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -1.79,
+   "y": -1.28,
+   "z": 143.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -3.77,
+   "y": -1.28,
+   "z": 145.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -11.69,
+   "y": -1.5,
+   "z": 144.07,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -11.69,
+   "y": -1.5,
+   "z": 144.07,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": -14.66,
+   "z": 144.07,
+   "yaw": -70.8,
+   "approach": 1.0,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 9,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r9 start"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -93.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r9 to door"
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -101.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -181.49,
+   "z": -109.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -179.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.96,
+   "y": -177.75,
+   "z": -115.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.3,
+   "y": -177.75,
+   "z": -118.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -177.75,
+   "z": -124.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -177.75,
+   "z": -124.24,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -184.8,
+   "z": -125.56,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -184.8,
+   "z": -125.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": -192.69,
+   "z": -131.5,
+   "yaw": 175.8,
+   "approach": 5.0,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 10,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r10 start"
+  },
+  {
+   "kind": "goto",
+   "x": -50.52,
+   "y": 16.49,
+   "z": 205.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r10 to enabletrap"
+  },
+  {
+   "kind": "goto",
+   "x": -50.52,
+   "y": 14.24,
+   "z": 199.44,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -50.52,
+   "y": 14.24,
+   "z": 199.44,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -51.18,
+   "y": 13.49,
+   "z": 198.12,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -51.51,
+   "y": 13.49,
+   "z": 192.84,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -53.49,
+   "y": 13.49,
+   "z": 190.53,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -53.49,
+   "y": 13.49,
+   "z": 182.28,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -53.49,
+   "y": 13.49,
+   "z": 182.28,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -54.15,
+   "y": 12.4,
+   "z": 180.96,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -54.15,
+   "y": 12.4,
+   "z": 180.96,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -54.15,
+   "y": 6.2,
+   "z": 179.64,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -54.15,
+   "y": 6.2,
+   "z": 179.64,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -54.48,
+   "y": 1.15,
+   "z": 178.32,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -54.48,
+   "y": 1.15,
+   "z": 177.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": -54.48,
+   "y": 1.15,
+   "z": 177.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r10 to disabledar"
+  },
+  {
+   "kind": "goto",
+   "x": -61.74,
+   "y": 0.99,
+   "z": 175.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -62.73,
+   "y": 0.99,
+   "z": 174.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -63.39,
+   "y": 0.99,
+   "z": 171.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -64.05,
+   "y": 0.99,
+   "z": 170.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "wait-until",
+   "room": 11,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r11 start"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -93.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r11 to door"
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -101.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -181.49,
+   "z": -109.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -179.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.96,
+   "y": -177.75,
+   "z": -115.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.3,
+   "y": -177.75,
+   "z": -118.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -177.77,
+   "z": -124.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -177.77,
+   "z": -124.9,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -193.02,
+   "z": -125.56,
+   "note": "hop rise 0.50 gap 0.74"
+  },
+  {
+   "kind": "goto",
+   "x": -193.02,
+   "y": -177.27,
+   "z": -125.56,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -193.02,
+   "y": -177.27,
+   "z": -125.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": -192.69,
+   "z": -129.52,
+   "yaw": 177.3,
+   "approach": 4.0,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 12,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r12 start"
+  },
+  {
+   "kind": "goto",
+   "x": -146.1,
+   "y": -3.99,
+   "z": 250.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r12 to bossintro"
+  },
+  {
+   "kind": "goto",
+   "x": -138.18,
+   "y": -5.55,
+   "z": 250.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r12 boss"
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 30,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": -138.18,
+   "y": -5.55,
+   "z": 250.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r12 sweep decoybatad 1"
+  },
+  {
+   "kind": "goto",
+   "x": -130.26,
+   "y": -6.38,
+   "z": 250.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -121.35,
+   "y": -7.77,
+   "z": 250.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -122.85,
+   "y": -7.77,
+   "z": 250.99,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -121.35,
+   "y": -7.77,
+   "z": 250.99,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": -118.38,
+   "z": 250.99,
+   "note": "jump rise 1.39 gap 2.97"
+  },
+  {
+   "kind": "goto",
+   "x": -118.38,
+   "y": -6.38,
+   "z": 250.99,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -118.05,
+   "y": -6.38,
+   "z": 250.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "log",
+   "text": "cr full route end"
+  }
+ ]
+}

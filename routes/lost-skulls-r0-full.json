@@ -1,0 +1,968 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "lost-skulls-r0-full",
+ "description": "Act 1 Hallway1: verified padlock/jail/cannon steps, then Encounters 2-6 (spawn sweeps) and the exit door.",
+ "notes": [
+  "Walk model: Golden Trophy v2 walk model = live-admitted collision, SM64 decomp ground step, floor y on every goto; gates the quest opens and moving platforms left out; lethal killzones +1 m, naval mines 3.5 m forbidden; jumps/backflips only where walking cannot reach, each air-step simulated). Not verified live.",
+  "Copied verified segments: room 0 padlock/jail/pirate fight/cannon (lost-skulls-r0-lock-and-lighter steps 2-55), room 4 Gibbet catch-throw (lost-skulls-gibbets-bomb). Cannon sections: aim-cannon, release, wait-until Idle, lighter, light-wick requireAim.",
+  "Needs component 19fd89f7 or later (light-wick requireAim). QA launch uses MarioQaImmortal; a real S attempt runs with -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "lost-skulls",
+  "questRoom": 0,
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioCarry",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 0,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "skulls r0: jail spawn, walking to the padlock"
+  },
+  {
+   "kind": "goto",
+   "x": 147.3,
+   "z": 48.0,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 148.75,
+   "z": 47.95,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 30,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "x": 149.48,
+   "z": 47.98
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "wait",
+   "ticks": 15
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "wait",
+   "ticks": 30
+  },
+  {
+   "kind": "log",
+   "text": "padlock punched; B press at the door, then pushing through it"
+  },
+  {
+   "kind": "press-b",
+   "ticks": 20
+  },
+  {
+   "kind": "goto",
+   "x": 151.2,
+   "z": 47.4,
+   "run": false,
+   "stuckTicks": 60,
+   "unstickJumps": 0,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 152.4,
+   "z": 44.8
+  },
+  {
+   "kind": "goto",
+   "x": 156.5,
+   "z": 44.8
+  },
+  {
+   "kind": "goto",
+   "x": 160.5,
+   "z": 44.8
+  },
+  {
+   "kind": "goto",
+   "x": 167.0,
+   "z": 44.8
+  },
+  {
+   "kind": "goto",
+   "x": 169.8,
+   "z": 43.4
+  },
+  {
+   "kind": "goto",
+   "x": 172.0,
+   "z": 42.9
+  },
+  {
+   "kind": "goto",
+   "x": 177.5,
+   "z": 42.9
+  },
+  {
+   "kind": "goto",
+   "x": 178.5,
+   "z": 42.0
+  },
+  {
+   "kind": "goto",
+   "x": 178.5,
+   "z": 40.2,
+   "run": false
+  },
+  {
+   "kind": "log",
+   "text": "cannon room: approaching the lighter"
+  },
+  {
+   "kind": "log",
+   "text": "cannon room: clear the pirate encounter before touching the lighter (an enemy hit makes SM64 drop held objects)"
+  },
+  {
+   "kind": "wait",
+   "ticks": 150
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 20
+  },
+  {
+   "kind": "fight",
+   "radius": 20,
+   "attack": "punch",
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 2700
+  },
+  {
+   "kind": "fight",
+   "radius": 25,
+   "attack": "kick",
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "log",
+   "text": "cannon aim: handle first (screen wield point, turn to swing the handle; the lighter waits in its holster)"
+  },
+  {
+   "kind": "goto",
+   "x": 177.3,
+   "z": 39.0,
+   "run": false,
+   "tolerance": 0.2
+  },
+  {
+   "kind": "goto",
+   "x": 177.55,
+   "z": 38.08,
+   "run": false,
+   "tolerance": 0.12,
+   "stop": true,
+   "stuckTicks": 45,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 90,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "grab",
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "log",
+   "text": "handle held: turning in place at the wield point (hand stays within 0.9 m of the pivot; leash 1.5 m)"
+  },
+  {
+   "kind": "face",
+   "yaw": 65,
+   "toleranceDegrees": 4
+  },
+  {
+   "kind": "wait",
+   "ticks": 30
+  },
+  {
+   "kind": "face",
+   "yaw": 115,
+   "toleranceDegrees": 4
+  },
+  {
+   "kind": "wait",
+   "ticks": 45
+  },
+  {
+   "kind": "log",
+   "text": "aim set (hand toward -Z of the handle rest side -> muzzle toward the +Z doorway); releasing the handle (B)"
+  },
+  {
+   "kind": "release",
+   "mode": "b"
+  },
+  {
+   "kind": "wait",
+   "ticks": 45
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Idle",
+   "timeoutTicks": 60
+  },
+  {
+   "kind": "log",
+   "text": "lighter: from its holster (the original FireCannonScreenController.OnStop resets it there) to the wick"
+  },
+  {
+   "kind": "goto",
+   "x": 176.9,
+   "z": 37.6,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true
+  },
+  {
+   "kind": "grab",
+   "x": 177.67,
+   "z": 37.29
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "goto",
+   "x": 176.95,
+   "z": 37.96,
+   "run": false,
+   "tolerance": 0.15,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "lighter held forward ([P2]); light-wick from the -X side (yaw 90) on the LIVE wick; a blocked stand point is re-planned (other facing / ring detour), not failed"
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 90,
+   "attempts": 4
+  },
+  {
+   "kind": "goto",
+   "x": 176.9,
+   "z": 38.9,
+   "run": false,
+   "tolerance": 0.2
+  },
+  {
+   "kind": "goto",
+   "x": 177.9,
+   "z": 39.6,
+   "run": false,
+   "tolerance": 0.15,
+   "stop": true
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 180,
+   "attempts": 3
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "log",
+   "text": "lighter done; dropping it (Z)"
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "log",
+   "text": "r0 v2 planned part after the verified cannon"
+  },
+  {
+   "kind": "log",
+   "text": "r0 to enc2"
+  },
+  {
+   "kind": "goto",
+   "x": 177.79,
+   "y": -2.0,
+   "z": 39.4,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 178.12,
+   "y": -2.0,
+   "z": 39.4,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 178.78,
+   "y": -2.0,
+   "z": 40.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 179.44,
+   "y": -2.0,
+   "z": 46.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 181.75,
+   "y": -2.0,
+   "z": 46.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 184.39,
+   "y": -2.0,
+   "z": 43.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 186.7,
+   "y": -1.69,
+   "z": 43.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": 186.7,
+   "z": 43.36,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r0 load1"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 2700,
+   "x": 186.7,
+   "z": 43.36,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r0 to enc3"
+  },
+  {
+   "kind": "goto",
+   "x": 190.33,
+   "y": -1.5,
+   "z": 41.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 190.33,
+   "y": -1.5,
+   "z": 41.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 190.33,
+   "y": -1.5,
+   "z": 39.73,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 190.66,
+   "y": -1.5,
+   "z": 38.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 199.57,
+   "y": -1.5,
+   "z": 38.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 202.54,
+   "y": -1.5,
+   "z": 38.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": 202.54,
+   "z": 38.41,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r0 sweep enc3 1"
+  },
+  {
+   "kind": "goto",
+   "x": 207.49,
+   "y": -1.5,
+   "z": 39.07,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 207.49,
+   "y": -1.5,
+   "z": 41.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 209.8,
+   "y": -1.5,
+   "z": 44.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 209.14,
+   "y": -1.5,
+   "z": 46.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 204.52,
+   "y": -1.5,
+   "z": 47.65,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": 204.52,
+   "z": 47.65,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r0 to gate"
+  },
+  {
+   "kind": "goto",
+   "x": 204.19,
+   "y": -1.5,
+   "z": 51.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 120
+  },
+  {
+   "kind": "log",
+   "text": "r0 to enc4"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": 204.19,
+   "z": 51.61,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r0 sweep enc4 1"
+  },
+  {
+   "kind": "goto",
+   "x": 204.19,
+   "y": -1.5,
+   "z": 54.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 209.47,
+   "y": 0.24,
+   "z": 60.19,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 211.78,
+   "y": 0.5,
+   "z": 62.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 211.12,
+   "y": 0.5,
+   "z": 64.15,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 211.12,
+   "y": 0.5,
+   "z": 65.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 210.13,
+   "y": 0.5,
+   "z": 67.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 210.13,
+   "y": 0.5,
+   "z": 67.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": 210.13,
+   "z": 67.78,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r0 to enc5"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": 210.13,
+   "z": 67.78,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r0 to enc6"
+  },
+  {
+   "kind": "goto",
+   "x": 209.14,
+   "y": 0.5,
+   "z": 67.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 209.14,
+   "y": 0.5,
+   "z": 70.09,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 209.14,
+   "y": 0.5,
+   "z": 70.42,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800,
+   "x": 209.14,
+   "z": 70.42,
+   "leash": 10
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": 209.14,
+   "z": 70.42,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r0 sweep enc6 1"
+  },
+  {
+   "kind": "goto",
+   "x": 210.13,
+   "y": 0.5,
+   "z": 71.08,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 212.77,
+   "y": 0.5,
+   "z": 71.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 214.42,
+   "y": 0.5,
+   "z": 73.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 222.34,
+   "y": -0.5,
+   "z": 73.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 225.31,
+   "y": -0.5,
+   "z": 72.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 227.29,
+   "y": -0.5,
+   "z": 72.07,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 229.6,
+   "y": -0.5,
+   "z": 67.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 230.26,
+   "y": -0.5,
+   "z": 64.81,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 234.88,
+   "y": -0.5,
+   "z": 64.81,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 235.21,
+   "y": -0.5,
+   "z": 66.13,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": 235.21,
+   "z": 66.13,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r0 sweep enc6 2"
+  },
+  {
+   "kind": "goto",
+   "x": 233.89,
+   "y": -0.5,
+   "z": 64.15,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 229.6,
+   "y": -0.5,
+   "z": 62.17,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 229.27,
+   "y": 0.44,
+   "z": 59.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": 229.27,
+   "z": 59.86,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r0 sweep enc6 3"
+  },
+  {
+   "kind": "goto",
+   "x": 229.6,
+   "y": -0.5,
+   "z": 62.5,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 234.88,
+   "y": -0.5,
+   "z": 65.14,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 236.53,
+   "y": -0.5,
+   "z": 67.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 238.51,
+   "y": -0.5,
+   "z": 68.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": 238.51,
+   "z": 68.11,
+   "leash": 10
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": 238.51,
+   "z": 68.11,
+   "leash": 12
+  },
+  {
+   "kind": "log",
+   "text": "r0 to door"
+  },
+  {
+   "kind": "goto",
+   "x": 239.5,
+   "y": -0.42,
+   "z": 70.09,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 247.42,
+   "y": 0.66,
+   "z": 70.09,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": 247.42,
+   "z": 70.09,
+   "leash": 8
+  },
+  {
+   "kind": "goto",
+   "x": 247.42,
+   "y": 0.66,
+   "z": 70.09,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "exit r0 use-door to room 1"
+  },
+  {
+   "kind": "use-door",
+   "x": 248.41,
+   "z": 70.42,
+   "yaw": 84.9,
+   "approach": 5.0,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 1,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "skulls r0-full route end"
+  }
+ ]
+}

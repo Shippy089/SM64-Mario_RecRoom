@@ -1,0 +1,1997 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "crimson-cauldron-r6",
+ "description": "crimson-cauldron room 6 only (launch at questRoom 6); same steps as in crimson-cauldron-full.",
+ "notes": [
+  "crimson-cauldron route for an S-rank attempt (rank = combat score only; solo deathless). UNVERIFIED live.",
+  "Native SM64 input only. Encounters start by walking the follow participant into their original trigger volume; far spawn clusters are walked and fought; the required trigger is re-walked before each door; rooms exit through use-door (B at the unlocked exit door, original portal path).",
+  "Fight plan is automatic (required encounter = wave, other = fight, last room = boss). Quest-specific mechanics (switches, carry objects, special doors) are NOT planned yet.",
+  "MarioQaImmortal is for unattended QA only: run an S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "crimson-cauldron",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ],
+  "questRoom": 6
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 6,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 start"
+  },
+  {
+   "kind": "goto",
+   "x": 123.44,
+   "y": 5.26,
+   "z": -109.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 to throwdowna"
+  },
+  {
+   "kind": "goto",
+   "x": 119.15,
+   "y": 5.26,
+   "z": -109.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 118.82,
+   "y": 5.26,
+   "z": -109.35,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 117.83,
+   "y": 5.26,
+   "z": -110.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 114.86,
+   "y": 4.81,
+   "z": -109.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 106.28,
+   "y": 3.26,
+   "z": -110.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 106.28,
+   "y": 3.26,
+   "z": -110.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep throwdowna 1"
+  },
+  {
+   "kind": "goto",
+   "x": 98.69,
+   "y": 3.26,
+   "z": -109.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.73,
+   "y": 2.26,
+   "z": -102.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.73,
+   "y": 2.26,
+   "z": -101.76,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.73,
+   "y": 2.26,
+   "z": -101.43,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": 2.26,
+   "z": -100.44,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 2.26,
+   "z": -96.81,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.71,
+   "y": 3.26,
+   "z": -89.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 99.68,
+   "y": 3.26,
+   "z": -86.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 99.68,
+   "y": 3.26,
+   "z": -86.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep throwdowna 2"
+  },
+  {
+   "kind": "goto",
+   "x": 98.03,
+   "y": 3.26,
+   "z": -78.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.03,
+   "y": 3.47,
+   "z": -78.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.73,
+   "y": 4.32,
+   "z": -74.7,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 3.48,
+   "z": -73.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 3.26,
+   "z": -72.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 3.26,
+   "z": -72.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep throwdowna 3"
+  },
+  {
+   "kind": "goto",
+   "x": 94.73,
+   "y": 4.32,
+   "z": -75.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.71,
+   "y": 4.32,
+   "z": -76.35,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.05,
+   "y": 3.26,
+   "z": -79.32,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": 2.65,
+   "z": -80.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.13,
+   "y": -0.0,
+   "z": -81.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 88.13,
+   "y": -0.0,
+   "z": -81.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 to groundrush"
+  },
+  {
+   "kind": "goto",
+   "x": 87.14,
+   "y": -0.0,
+   "z": -82.29,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.8,
+   "y": -0.0,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.44,
+   "y": -1.22,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 90.44,
+   "y": -1.22,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 to enemiesinp"
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": -2.4,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": -2.4,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep enemiesinp 1"
+  },
+  {
+   "kind": "goto",
+   "x": 95.06,
+   "y": -3.24,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.72,
+   "y": -3.24,
+   "z": -77.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.38,
+   "y": -4.24,
+   "z": -69.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.06,
+   "y": -4.24,
+   "z": -62.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.07,
+   "y": -4.24,
+   "z": -58.2,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": -4.02,
+   "z": -58.2,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 92.09,
+   "y": -4.02,
+   "z": -58.2,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 92.09,
+   "y": -4.02,
+   "z": -58.2,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep enemiesinp 2"
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": -4.02,
+   "z": -58.2,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 93.74,
+   "y": -4.24,
+   "z": -58.2,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": -4.24,
+   "z": -59.19,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": -4.24,
+   "z": -67.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.36,
+   "y": -3.24,
+   "z": -73.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 101.33,
+   "y": -3.24,
+   "z": -75.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 103.31,
+   "y": -3.24,
+   "z": -74.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 103.64,
+   "y": -3.24,
+   "z": -71.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 103.64,
+   "y": -3.24,
+   "z": -71.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep enemiesinp 3"
+  },
+  {
+   "kind": "goto",
+   "x": 103.64,
+   "y": -3.24,
+   "z": -63.81,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 103.64,
+   "y": -4.24,
+   "z": -57.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 101.0,
+   "y": -4.24,
+   "z": -56.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 101.0,
+   "y": -5.24,
+   "z": -52.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 101.0,
+   "y": -5.24,
+   "z": -52.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep enemiesinp 4"
+  },
+  {
+   "kind": "goto",
+   "x": 101.0,
+   "y": -4.24,
+   "z": -55.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 101.66,
+   "y": -4.24,
+   "z": -56.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 101.66,
+   "y": -4.24,
+   "z": -56.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep enemiesinp 5"
+  },
+  {
+   "kind": "goto",
+   "x": 101.0,
+   "y": -4.24,
+   "z": -55.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 100.67,
+   "y": -5.24,
+   "z": -50.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.36,
+   "y": -5.24,
+   "z": -49.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.44,
+   "y": -5.24,
+   "z": -50.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -5.24,
+   "z": -51.6,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.58,
+   "z": -59.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.48,
+   "y": -4.24,
+   "z": -66.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 86.48,
+   "y": -4.24,
+   "z": -66.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep enemiesinp 6"
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.24,
+   "z": -66.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -4.24,
+   "z": -68.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 91.43,
+   "y": -4.24,
+   "z": -68.76,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 91.43,
+   "y": -4.24,
+   "z": -68.76,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 to elitesfina"
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.24,
+   "z": -68.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.25,
+   "z": -60.18,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -5.24,
+   "z": -50.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -5.24,
+   "z": -50.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep elitesfina 1"
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -5.03,
+   "z": -58.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.24,
+   "z": -65.46,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.24,
+   "z": -65.46,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep elitesfina 2"
+  },
+  {
+   "kind": "goto",
+   "x": 87.14,
+   "y": -4.24,
+   "z": -68.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.05,
+   "y": -4.24,
+   "z": -68.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 96.05,
+   "y": -4.24,
+   "z": -68.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 sweep enemiesaro 1"
+  },
+  {
+   "kind": "goto",
+   "x": 96.38,
+   "y": -3.24,
+   "z": -76.02,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.05,
+   "y": -3.24,
+   "z": -83.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.07,
+   "y": -3.24,
+   "z": -85.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -0.0,
+   "z": -85.26,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -0.0,
+   "z": -81.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": 2.65,
+   "z": -80.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": 3.26,
+   "z": -81.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": 3.26,
+   "z": -86.91,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.05,
+   "y": 2.26,
+   "z": -95.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "goto",
+   "x": 96.05,
+   "y": 2.26,
+   "z": -95.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 rewalk elitesfina"
+  },
+  {
+   "kind": "goto",
+   "x": 95.72,
+   "y": 3.26,
+   "z": -87.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.06,
+   "y": 3.26,
+   "z": -81.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": 2.65,
+   "z": -80.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.14,
+   "y": -0.0,
+   "z": -81.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.8,
+   "y": -0.0,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.06,
+   "y": -3.24,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.72,
+   "y": -3.24,
+   "z": -77.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.38,
+   "y": -4.24,
+   "z": -69.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.06,
+   "y": -4.24,
+   "z": -62.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": -4.24,
+   "z": -54.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": -4.83,
+   "z": -52.92,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 93.74,
+   "y": -5.24,
+   "z": -51.93,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 93.74,
+   "y": -5.24,
+   "z": -50.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 93.74,
+   "y": -5.24,
+   "z": -50.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 smash 13"
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -5.24,
+   "z": -54.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -4.24,
+   "z": -61.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.2,
+   "z": -62.31,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -4.24,
+   "z": -61.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.8,
+   "y": -4.24,
+   "z": -64.14,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.79,
+   "y": -4.24,
+   "z": -63.81,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.77,
+   "z": -62.31,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 88.79,
+   "y": -4.24,
+   "z": -63.81,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.24,
+   "z": -67.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.8,
+   "y": -4.24,
+   "z": -68.76,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.09,
+   "y": -4.24,
+   "z": -69.42,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.75,
+   "y": -4.24,
+   "z": -69.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.54,
+   "z": -69.78,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 92.75,
+   "y": -4.24,
+   "z": -69.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.75,
+   "y": -4.24,
+   "z": -70.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.54,
+   "z": -70.35,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 92.75,
+   "y": -4.24,
+   "z": -70.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.75,
+   "y": -4.24,
+   "z": -68.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.05,
+   "y": -4.24,
+   "z": -68.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.03,
+   "y": -3.24,
+   "z": -72.72,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 99.35,
+   "y": -3.24,
+   "z": -72.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 100.01,
+   "y": -3.24,
+   "z": -70.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 101.53,
+   "z": -69.69,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 100.01,
+   "y": -3.24,
+   "z": -70.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 97.37,
+   "y": -3.24,
+   "z": -77.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": -3.24,
+   "z": -85.26,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.09,
+   "y": -2.2,
+   "z": -85.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.14,
+   "y": -0.0,
+   "z": -84.93,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -0.0,
+   "z": -81.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.09,
+   "y": 2.45,
+   "z": -81.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.09,
+   "y": 2.45,
+   "z": -81.3,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": 92.75,
+   "z": -80.97,
+   "note": "hop rise 0.40 gap 0.74"
+  },
+  {
+   "kind": "goto",
+   "x": 92.75,
+   "y": 2.85,
+   "z": -80.97,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": 100.34,
+   "y": 3.7,
+   "z": -82.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 103.97,
+   "y": 4.32,
+   "z": -82.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 105.29,
+   "y": 4.32,
+   "z": -83.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 106.84,
+   "z": -84.73,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 105.29,
+   "y": 4.32,
+   "z": -83.94,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 105.29,
+   "y": 4.32,
+   "z": -83.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 106.91,
+   "z": -83.0,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 105.29,
+   "y": 4.32,
+   "z": -83.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 102.32,
+   "y": 4.32,
+   "z": -82.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 99.35,
+   "y": 3.26,
+   "z": -82.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 97.7,
+   "y": 3.66,
+   "z": -77.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.73,
+   "y": 4.32,
+   "z": -74.7,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 3.48,
+   "z": -73.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 3.26,
+   "z": -71.4,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 97.04,
+   "y": 3.26,
+   "z": -70.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.62,
+   "z": -71.07,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 97.04,
+   "y": 3.26,
+   "z": -70.74,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 97.04,
+   "y": 3.26,
+   "z": -70.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 98.69,
+   "z": -69.94,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 97.04,
+   "y": 3.26,
+   "z": -70.41,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 3.26,
+   "z": -71.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.4,
+   "y": 4.24,
+   "z": -74.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.71,
+   "y": 4.24,
+   "z": -76.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": 3.26,
+   "z": -86.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": 2.26,
+   "z": -93.18,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.07,
+   "y": 2.26,
+   "z": -96.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": 2.26,
+   "z": -98.13,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": 2.26,
+   "z": -99.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.34,
+   "z": -100.95,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": 2.26,
+   "z": -99.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.48,
+   "y": 2.26,
+   "z": -99.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 85.87,
+   "z": -101.07,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 86.48,
+   "y": 2.26,
+   "z": -99.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": 2.26,
+   "z": -99.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.03,
+   "z": -101.51,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": 2.26,
+   "z": -99.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": 2.26,
+   "z": -100.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.56,
+   "z": -101.63,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": 2.26,
+   "z": -100.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r6 to door"
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": 2.26,
+   "z": -97.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.73,
+   "y": 2.26,
+   "z": -96.15,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.72,
+   "y": 3.26,
+   "z": -88.23,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.06,
+   "y": 3.26,
+   "z": -81.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 92.42,
+   "y": 2.65,
+   "z": -80.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.14,
+   "y": -0.0,
+   "z": -81.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.8,
+   "y": -0.0,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.06,
+   "y": -3.24,
+   "z": -85.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.72,
+   "y": -3.24,
+   "z": -77.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.38,
+   "y": -4.24,
+   "z": -69.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.39,
+   "y": -4.24,
+   "z": -68.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 87.47,
+   "y": -4.24,
+   "z": -68.76,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -4.24,
+   "z": -65.13,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -5.24,
+   "z": -57.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 86.81,
+   "y": -5.24,
+   "z": -53.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 79.88,
+   "y": -5.03,
+   "z": -49.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 79.88,
+   "y": -5.03,
+   "z": -49.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": 77.57,
+   "z": -47.97,
+   "yaw": -88.4,
+   "approach": 5.0,
+   "ticks": 90,
+   "attempts": 6
+  }
+ ]
+}

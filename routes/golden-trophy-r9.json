@@ -1,0 +1,110 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "golden-trophy-r9",
+ "description": "Golden Trophy room 9 only (launch at questRoom 9); same steps as in golden-trophy-full.",
+ "notes": [
+  "Golden Trophy full route rooms 0..9 for an S-rank attempt (rank = combat score only; solo deathless). Room 0 steps are the live-verified golden-trophy-r0 steps.",
+  "Native SM64 input only. Every encounter is started by walking the follow participant into its original OverlapVolume; far spawn clusters are walked and fought; before each door the required trigger is re-walked; fights use auto (punch-punch-kick, jump kicks on raised flyers, knights from behind); rooms exit through use-door (B at the unlocked exit door, original portal path). goto y is the planned floor height (informational).",
+  "Boss: rotating boss variant 3 cape-only NORMAL armor at MELEE x0.01 -> jump kick 100 -> 1 per hit (punch 50 -> 0); boss steps flank to its back. Expect about 800 landed kicks; the four boss steps are bounded at 20 min each.",
+  "MarioQaImmortal is for unattended QA only: run the S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal (QA refill suppresses the death mapping).",
+  "Skipped by plan: breakable pots (17400), DeadIsland tunnel flanks (1800, over lava). Authored max without them 169050 vs S 150000."
+ ],
+ "launch": {
+  "quest": "golden-trophy",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ],
+  "questRoom": 9
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 9,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "gt r9 start"
+  },
+  {
+   "kind": "goto",
+   "x": 170.18,
+   "y": -5.3,
+   "z": -51.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "gt r9 to boss"
+  },
+  {
+   "kind": "goto",
+   "x": 162.59,
+   "y": -5.3,
+   "z": -51.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "gt r9 boss"
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 30,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "wait",
+   "ticks": 300
+  },
+  {
+   "kind": "log",
+   "text": "gt r9 boss done"
+  }
+ ]
+}

@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "style": "mayhem",
+  "name": "crimson-cauldron-r5-pallets",
+  "description": "PROBE ROUTE (draft, not for S-rank runs): Crimson Cauldron room 5 (Bog) pallet bridge with the carry-place step. Places 5 MovablePlatform pallets from the spawn stack toward the arena entry and logs where each settles.",
+  "notes": [
+    "PROBE. Purpose: measure live where a dropped [FloatingPalletPlatform] settles over the lava (mario-route carry-place result=... settle=(x,y,z) top=Y) and whether native SM64 hops between them work. Nothing here is verified live; expect to edit the points after the first run.",
+    "Rules: vanilla quest content; native SM64 input only. Pallets are RecRoom.Tools.MovablePlatform tools, carried through the original pickup/release path (accepted default 'carrying movable boxes or driftwood to build steps', mario-base-form.md). The original refuses a pickup while anyone stands on the pallet (CustomToolPickupCondition); carry-place then ends 'refused' and never bypasses it.",
+    "Geometry (remaining-quests-plan.md 'Crimson Cauldron r5 (Bog)'): spawn stack x -137..-132 z -81..-78 (8 pallets incl. (10) lying in the lava); lava crossing from (-124.7,-30.25,-81.0) to the arena entry (-121.4,-30.34,-93.2); lava killzone level49:15658 box top y -31.1.",
+    "Plan: pallet 1 at (-125.50,-82.50) from the shore; pallets 2-5 on the straight line to the arena entry at a 2.3 m pitch: (-125.50,-82.50) (-124.68,-84.65) (-123.85,-86.80) (-123.03,-88.94) (-122.21,-91.09); the arena entry is 2.26 m beyond the last pallet. Hops use the native jump (hold jump while carrying); jump kinds are exempt from MarioGuard, every walk/carry is guarded (the guard's killzone test now uses the original foot sphere, so a pallet top 0.16 m above the lava killzone counts as ground).",
+    "Known risks to measure: (1) an SM64 drop puts the pallet only ~0.45 m in front of Mario (HOLP), so from the far edge of pallet k the next one lands about half a pallet + 0.45 m ahead, not 2.3 m: read placeErr= and adjust the plan (more pallets / shorter pitch); (2) hold-jump distance while carrying; (3) pallets drifting or tipping when landed on; (4) the line may pass the low [SpikedFence] / blocker Cube (3) (west of them per the plan).",
+    "Launch: -Quest crimson-cauldron -QuestStart -QuestRoom 5 -MarioFollow -MarioCombat -MarioCarry -MarioQaImmortal."
+  ],
+  "launch": {
+    "quest": "crimson-cauldron",
+    "switches": [
+      "MarioFollow",
+      "MarioCombat",
+      "MarioCarry",
+      "MarioQaImmortal"
+    ],
+    "questRoom": 5
+  },
+  "steps": [
+    {
+      "kind": "wait-until",
+      "questRunning": true,
+      "timeoutTicks": 1800
+    },
+    {
+      "kind": "wait-until",
+      "room": 5,
+      "timeoutTicks": 3600
+    },
+    {
+      "kind": "log",
+      "text": "PROBE cc r5 pallets start (carry-place probe; not an S-rank route)"
+    },
+    {
+      "kind": "goto",
+      "x": -131.6,
+      "z": -79.5,
+      "tolerance": 0.5,
+      "timeoutTicks": 900
+    },
+    {
+      "kind": "carry-place",
+      "name": "FloatingPalletPlatform",
+      "x": -134.5,
+      "z": -79.5,
+      "radius": 3.5,
+      "toX": -125.5,
+      "toZ": -82.5,
+      "mode": "drop",
+      "settleTicks": 150,
+      "timeoutTicks": 2400,
+      "note": "PROBE pallet 1: from the spawn stack to the lava edge; read settle= and top= (safe if top - 0.25 + 0.26 > lava killzone top -31.1)"
+    },
+    {
+      "kind": "log",
+      "text": "PROBE pallet 1 placed"
+    },
+    {
+      "kind": "wait",
+      "ticks": 30
+    },
+    {
+      "kind": "goto",
+      "x": -131.6,
+      "z": -79.5,
+      "tolerance": 0.3,
+      "stop": true,
+      "timeoutTicks": 1200
+    },
+    {
+      "kind": "grab",
+      "x": -134.5,
+      "z": -79.5,
+      "attempts": 4,
+      "note": "SM64 grab (B) of the nearest stack pallet in front; the original refuses a pallet someone stands on"
+    },
+    {
+      "kind": "wait-until",
+      "carry": "Holding",
+      "timeoutTicks": 90
+    },
+    {
+      "kind": "goto",
+      "x": -124.9,
+      "z": -81.25,
+      "tolerance": 0.35,
+      "stop": true,
+      "timeoutTicks": 1200,
+      "note": "carry to the shore (guard on)"
+    },
+    {
+      "kind": "face",
+      "x": -125.5,
+      "z": -82.5,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 1 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -125.5,
+      "z": -82.5,
+      "note": "hop to pallet 1 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "carry-place",
+      "name": "FloatingPalletPlatform",
+      "toX": -124.68,
+      "toZ": -84.65,
+      "mode": "drop",
+      "settleTicks": 150,
+      "timeoutTicks": 2400,
+      "note": "PROBE pallet 2: place the held pallet from pallet 1 toward (-124.68,-84.65); the guard pulls the stand back onto pallet 1"
+    },
+    {
+      "kind": "log",
+      "text": "PROBE pallet 2 placed"
+    },
+    {
+      "kind": "wait",
+      "ticks": 30
+    },
+    {
+      "kind": "face",
+      "x": -125.5,
+      "z": -82.5,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 1"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -125.5,
+      "z": -82.5,
+      "note": "hop to pallet 1 (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -124.9,
+      "z": -81.25,
+      "toleranceDegrees": 8,
+      "note": "hop: face the shore"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -124.9,
+      "z": -81.25,
+      "note": "hop to the shore (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "goto",
+      "x": -131.6,
+      "z": -79.5,
+      "tolerance": 0.3,
+      "stop": true,
+      "timeoutTicks": 1200
+    },
+    {
+      "kind": "grab",
+      "x": -134.5,
+      "z": -79.5,
+      "attempts": 4,
+      "note": "SM64 grab (B) of the nearest stack pallet in front; the original refuses a pallet someone stands on"
+    },
+    {
+      "kind": "wait-until",
+      "carry": "Holding",
+      "timeoutTicks": 90
+    },
+    {
+      "kind": "goto",
+      "x": -124.9,
+      "z": -81.25,
+      "tolerance": 0.35,
+      "stop": true,
+      "timeoutTicks": 1200,
+      "note": "carry to the shore (guard on)"
+    },
+    {
+      "kind": "face",
+      "x": -125.5,
+      "z": -82.5,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 1 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -125.5,
+      "z": -82.5,
+      "note": "hop to pallet 1 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -124.68,
+      "z": -84.65,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 2 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -124.68,
+      "z": -84.65,
+      "note": "hop to pallet 2 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "carry-place",
+      "name": "FloatingPalletPlatform",
+      "toX": -123.85,
+      "toZ": -86.8,
+      "mode": "drop",
+      "settleTicks": 150,
+      "timeoutTicks": 2400,
+      "note": "PROBE pallet 3: place the held pallet from pallet 2 toward (-123.85,-86.80); the guard pulls the stand back onto pallet 2"
+    },
+    {
+      "kind": "log",
+      "text": "PROBE pallet 3 placed"
+    },
+    {
+      "kind": "wait",
+      "ticks": 30
+    },
+    {
+      "kind": "face",
+      "x": -124.68,
+      "z": -84.65,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 2"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -124.68,
+      "z": -84.65,
+      "note": "hop to pallet 2 (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -125.5,
+      "z": -82.5,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 1"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -125.5,
+      "z": -82.5,
+      "note": "hop to pallet 1 (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -124.9,
+      "z": -81.25,
+      "toleranceDegrees": 8,
+      "note": "hop: face the shore"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -124.9,
+      "z": -81.25,
+      "note": "hop to the shore (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "goto",
+      "x": -131.6,
+      "z": -79.5,
+      "tolerance": 0.3,
+      "stop": true,
+      "timeoutTicks": 1200
+    },
+    {
+      "kind": "grab",
+      "x": -134.5,
+      "z": -79.5,
+      "attempts": 4,
+      "note": "SM64 grab (B) of the nearest stack pallet in front; the original refuses a pallet someone stands on"
+    },
+    {
+      "kind": "wait-until",
+      "carry": "Holding",
+      "timeoutTicks": 90
+    },
+    {
+      "kind": "goto",
+      "x": -124.9,
+      "z": -81.25,
+      "tolerance": 0.35,
+      "stop": true,
+      "timeoutTicks": 1200,
+      "note": "carry to the shore (guard on)"
+    },
+    {
+      "kind": "face",
+      "x": -125.5,
+      "z": -82.5,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 1 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -125.5,
+      "z": -82.5,
+      "note": "hop to pallet 1 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -124.68,
+      "z": -84.65,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 2 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -124.68,
+      "z": -84.65,
+      "note": "hop to pallet 2 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -123.85,
+      "z": -86.8,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 3 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -123.85,
+      "z": -86.8,
+      "note": "hop to pallet 3 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "carry-place",
+      "name": "FloatingPalletPlatform",
+      "toX": -123.03,
+      "toZ": -88.94,
+      "mode": "drop",
+      "settleTicks": 150,
+      "timeoutTicks": 2400,
+      "note": "PROBE pallet 4: place the held pallet from pallet 3 toward (-123.03,-88.94); the guard pulls the stand back onto pallet 3"
+    },
+    {
+      "kind": "log",
+      "text": "PROBE pallet 4 placed"
+    },
+    {
+      "kind": "wait",
+      "ticks": 30
+    },
+    {
+      "kind": "face",
+      "x": -123.85,
+      "z": -86.8,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 3"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -123.85,
+      "z": -86.8,
+      "note": "hop to pallet 3 (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -124.68,
+      "z": -84.65,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 2"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -124.68,
+      "z": -84.65,
+      "note": "hop to pallet 2 (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -125.5,
+      "z": -82.5,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 1"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -125.5,
+      "z": -82.5,
+      "note": "hop to pallet 1 (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -124.9,
+      "z": -81.25,
+      "toleranceDegrees": 8,
+      "note": "hop: face the shore"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -124.9,
+      "z": -81.25,
+      "note": "hop to the shore (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "goto",
+      "x": -131.6,
+      "z": -79.5,
+      "tolerance": 0.3,
+      "stop": true,
+      "timeoutTicks": 1200
+    },
+    {
+      "kind": "grab",
+      "x": -134.5,
+      "z": -79.5,
+      "attempts": 4,
+      "note": "SM64 grab (B) of the nearest stack pallet in front; the original refuses a pallet someone stands on"
+    },
+    {
+      "kind": "wait-until",
+      "carry": "Holding",
+      "timeoutTicks": 90
+    },
+    {
+      "kind": "goto",
+      "x": -124.9,
+      "z": -81.25,
+      "tolerance": 0.35,
+      "stop": true,
+      "timeoutTicks": 1200,
+      "note": "carry to the shore (guard on)"
+    },
+    {
+      "kind": "face",
+      "x": -125.5,
+      "z": -82.5,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 1 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -125.5,
+      "z": -82.5,
+      "note": "hop to pallet 1 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -124.68,
+      "z": -84.65,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 2 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -124.68,
+      "z": -84.65,
+      "note": "hop to pallet 2 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -123.85,
+      "z": -86.8,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 3 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -123.85,
+      "z": -86.8,
+      "note": "hop to pallet 3 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -123.03,
+      "z": -88.94,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 4 (holding)"
+    },
+    {
+      "kind": "jump",
+      "holdA": 12,
+      "stick": 1.0,
+      "x": -123.03,
+      "z": -88.94,
+      "note": "hop to pallet 4 (holding) (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "carry-place",
+      "name": "FloatingPalletPlatform",
+      "toX": -122.21,
+      "toZ": -91.09,
+      "mode": "drop",
+      "settleTicks": 150,
+      "timeoutTicks": 2400,
+      "note": "PROBE pallet 5: place the held pallet from pallet 4 toward (-122.21,-91.09); the guard pulls the stand back onto pallet 4"
+    },
+    {
+      "kind": "log",
+      "text": "PROBE pallet 5 placed"
+    },
+    {
+      "kind": "wait",
+      "ticks": 30
+    },
+    {
+      "kind": "face",
+      "x": -122.21,
+      "z": -91.09,
+      "toleranceDegrees": 8,
+      "note": "hop: face pallet 5"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -122.21,
+      "z": -91.09,
+      "note": "hop to pallet 5 (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "face",
+      "x": -121.4,
+      "z": -93.2,
+      "toleranceDegrees": 8,
+      "note": "hop: face the arena entry"
+    },
+    {
+      "kind": "jump",
+      "holdA": 10,
+      "stick": 1.0,
+      "x": -121.4,
+      "z": -93.2,
+      "note": "hop to the arena entry (native SM64 jump; jump kinds are guard-exempt)"
+    },
+    {
+      "kind": "wait",
+      "ticks": 12
+    },
+    {
+      "kind": "log",
+      "text": "PROBE cc r5 pallets end: check Mario y near -30.34 at the arena entry"
+    }
+  ]
+}

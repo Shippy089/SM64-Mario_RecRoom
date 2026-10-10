@@ -1,0 +1,544 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "lost-skulls-r2-shipdeck",
+ "description": "High Seas ShipDeck: Encounter1, cannon (1) aimed at the scaffold to drop the bridge, enemy ship, curtain gate, exit.",
+ "notes": [
+  "Walk model: Golden Trophy v2 walk model = live-admitted collision, SM64 decomp ground step, floor y on every goto; gates the quest opens and moving platforms left out; lethal killzones +1 m, naval mines 3.5 m forbidden; jumps/backflips only where walking cannot reach, each air-step simulated). Not verified live.",
+  "Copied verified segments: room 0 padlock/jail/pirate fight/cannon (lost-skulls-r0-lock-and-lighter steps 2-55), room 4 Gibbet catch-throw (lost-skulls-gibbets-bomb). Cannon sections: aim-cannon, release, wait-until Idle, lighter, light-wick requireAim.",
+  "Needs component 19fd89f7 or later (light-wick requireAim). QA launch uses MarioQaImmortal; a real S attempt runs with -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "lost-skulls",
+  "questRoom": 2,
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioCarry",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 2,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "r2 load1"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 2700,
+   "x": -161.85,
+   "z": -23.66,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r2 sweep load1 1"
+  },
+  {
+   "kind": "goto",
+   "x": -157.89,
+   "y": 5.57,
+   "z": -24.98,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -157.23,
+   "y": 5.57,
+   "z": -25.64,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -155.58,
+   "y": 5.27,
+   "z": -26.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -147.66,
+   "y": 5.02,
+   "z": -26.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -147.33,
+   "y": 5.27,
+   "z": -26.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -147.33,
+   "z": -26.63,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "cannon r2 handle at the wield point"
+  },
+  {
+   "kind": "goto",
+   "x": -143.37,
+   "y": 6.13,
+   "z": -25.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -144.03,
+   "y": 6.12,
+   "z": -22.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -145.35,
+   "y": 6.09,
+   "z": -22.34,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -145.35,
+   "y": 6.09,
+   "z": -23.0,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -145.15,
+   "y": 6.11,
+   "z": -23.04,
+   "tolerance": 0.15,
+   "run": false,
+   "stuckTicks": 45,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 175,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "grab",
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "aim-cannon",
+   "x": -143.04,
+   "y": 6.65,
+   "z": -38.19,
+   "toleranceDegrees": 2,
+   "attempts": 4,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "release",
+   "mode": "b",
+   "note": "no-op when aim-cannon already released the handle"
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Idle",
+   "timeoutTicks": 90
+  },
+  {
+   "kind": "log",
+   "text": "cannon r2 lighter stand drop edge 0.86 m"
+  },
+  {
+   "kind": "goto",
+   "x": -145.49,
+   "y": 6.09,
+   "z": -23.13,
+   "tolerance": 0.1,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -130.0,
+   "toleranceDegrees": 8
+  },
+  {
+   "kind": "grab",
+   "x": -145.91,
+   "z": -23.48,
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 180,
+   "attempts": 4,
+   "again": true,
+   "requireAim": true
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 270,
+   "attempts": 3,
+   "requireAim": true,
+   "note": "fallback; skips when the first one lit"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "log",
+   "text": "r2 wait for the bridge"
+  },
+  {
+   "kind": "wait",
+   "ticks": 150
+  },
+  {
+   "kind": "log",
+   "text": "r2 to bridgeA"
+  },
+  {
+   "kind": "goto",
+   "x": -145.68,
+   "y": 6.09,
+   "z": -22.67,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -144.69,
+   "y": 6.12,
+   "z": -22.01,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -143.7,
+   "y": 6.12,
+   "z": -23.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -143.37,
+   "y": 6.13,
+   "z": -25.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "r2 cross the boarding bridge"
+  },
+  {
+   "kind": "goto",
+   "x": -141.72,
+   "y": 4.72,
+   "z": -41.48,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 120,
+   "timeoutTicks": 900,
+   "unstickJumps": 0,
+   "note": "virtual leg: exists only live"
+  },
+  {
+   "kind": "log",
+   "text": "r2 load2 enemy ship"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 14,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 6300,
+   "x": -141.72,
+   "z": -41.48,
+   "leash": 6
+  },
+  {
+   "kind": "log",
+   "text": "r2 sweep load2 1"
+  },
+  {
+   "kind": "goto",
+   "x": -141.39,
+   "y": 4.72,
+   "z": -42.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -140.08,
+   "y": 4.72,
+   "z": -41.97,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "long-jump",
+   "x": -145.68,
+   "z": -44.12,
+   "note": "long-jump rise 0.43 gap 4.60 (air-step checked)"
+  },
+  {
+   "kind": "goto",
+   "x": -145.68,
+   "y": 5.15,
+   "z": -44.12,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -146.01,
+   "y": 5.29,
+   "z": -44.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -147.33,
+   "y": 5.29,
+   "z": -42.14,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -149.31,
+   "y": 5.29,
+   "z": -41.15,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -149.31,
+   "y": 5.29,
+   "z": -41.15,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 135.0,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 3.66 gap 2.80 (air-step checked)"
+  },
+  {
+   "kind": "goto",
+   "x": -151.29,
+   "y": 8.95,
+   "z": -39.17,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -151.29,
+   "z": -39.17,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r2 load3 enemy ship"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 14,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 6300,
+   "x": -151.29,
+   "z": -39.17,
+   "leash": 6
+  },
+  {
+   "kind": "log",
+   "text": "r2 v1 steps follow: no SM64 path in the v2 model"
+  },
+  {
+   "kind": "log",
+   "text": "r2: back down; curtain gate volume (-134,-42.1)"
+  },
+  {
+   "kind": "goto",
+   "x": -148.7,
+   "z": -40.4
+  },
+  {
+   "kind": "goto",
+   "x": -146.9,
+   "z": -40.4
+  },
+  {
+   "kind": "goto",
+   "x": -144.8,
+   "z": -39.2
+  },
+  {
+   "kind": "goto",
+   "x": -140.3,
+   "z": -42.5
+  },
+  {
+   "kind": "goto",
+   "x": -137.9,
+   "z": -44.3
+  },
+  {
+   "kind": "goto",
+   "x": -136.7,
+   "z": -44.3
+  },
+  {
+   "kind": "goto",
+   "x": -133.97,
+   "z": -42.2,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 150
+  },
+  {
+   "kind": "log",
+   "text": "r2: jump forward off the deck onto the dock floor (x>-130.9, sea KillZ is lethal)"
+  },
+  {
+   "kind": "goto",
+   "x": -133.5,
+   "z": -41.9,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -131.4,
+   "z": -41.6
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": -127.0,
+   "z": -39.5
+  },
+  {
+   "kind": "goto",
+   "x": -126.2,
+   "z": -37.7,
+   "run": false,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": -121.1,
+   "z": -37.7
+  },
+  {
+   "kind": "goto",
+   "x": -112.0,
+   "z": -35.05
+  },
+  {
+   "kind": "log",
+   "text": "exit r2: use-door to room 3"
+  },
+  {
+   "kind": "use-door",
+   "x": -107.4,
+   "z": -35.05,
+   "yaw": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 3,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "skulls r2-shipdeck route end"
+  }
+ ]
+}

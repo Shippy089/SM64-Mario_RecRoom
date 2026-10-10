@@ -1,0 +1,108 @@
+# ---------------------------------------------------------------------------
+#  Mario for Rec Room (2019) - settings
+#
+#  Easiest: run MarioLauncher and use its tabs - it edits this file for you.
+#  You can also edit it by hand.
+#  Lines starting with # are comments. Values are  key = value.
+#  on/off, yes/no and true/false all work for switches.
+# ---------------------------------------------------------------------------
+
+[paths]
+# Folder that contains Recroom_Release.exe from the September 9, 2019 build
+# (Steam depot 471711, manifest 3817258843939969587). See docs/INSTALL.md.
+client = C:\Games\RecRoom-2019
+
+# Your own Super Mario 64 (USA) ROM, .z64 format. It is never copied or shared.
+rom = C:\Games\sm64\baserom.us.z64
+
+# BepInEx 6 (IL2CPP, x64) folder or .zip. Only needed for setup. The release includes it in BepInEx-pack\.
+bepinex = BepInEx-pack\BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788.zip
+
+# zig 0.17.0 (builds the native Mario library during setup).
+# Leave empty if zig is on your PATH.
+zig =
+
+# Your libsm64 checkout (docs/INSTALL.md has the three commands). Empty = native/libsm64.
+libsm64 =
+
+[start]
+# What "Start" does when you don't pick anything else:
+#   play    - Mario in the Rec Center (or in the room set by hangout below), free play
+#   quest   - start a quest (set quest below)
+#   route   - Mario follows a route file by himself (set route below)
+mode = play
+
+# Start in another room instead of the Rec Center (mode = play only): the room's scene name, for example Park.
+# The Map tab lists every room it finds in your client and sets this for you. Empty = the Rec Center.
+# A scene that is only part of another room can't start by itself; the loading bar and the log say so.
+hangout =
+
+# golden-trophy, jumbotron, crimson-cauldron, lost-skulls or crescendo
+quest = golden-trophy
+
+# Start the quest straight away instead of waiting at the quest door.
+quest_autostart = yes
+
+# Room to start the quest in (0 = the beginning). The Map tab sets this.
+quest_room = 0
+
+# Route file for mode = route (a file in the routes folder, or a full path).
+route = golden-trophy-r1.json
+
+[mario]
+# Mario hits enemies, takes damage from them and uses buttons, pots and traps.
+combat = on
+
+# Easier fights: Mario's hits reach 15 cm further, punches and kicks cover a wider angle,
+# and hits push him back half as far. Not the real SM64 rules (off = the real rules). Needs combat.
+casual = off
+
+# SM64's power meter at the top of the screen (drawn from your own ROM).
+health_meter = on
+
+# Lava in the quests works like SM64 lava: Mario burns, hops up and loses health (his burnt-butt hop and "hot" voice)
+# instead of the quest ending the moment he touches it. Off = the original rule, lava is a deadly killzone.
+sm64_lava = on
+
+# Mario can pick up and throw bombs, torches, lighters, jigsaw pieces,
+# pallets and cannon handles.
+carry = on
+
+# SM64's Wing cap: a triple jump turns into flight, and the cap grows wings.
+#   auto - worn while the original game lets you fly (the room allows it, or you hold the Maker Pen)
+#   on   - always worn
+#   off  - never worn
+# The wings need the native library of this version (delete dist\native\sm64-mario.dll and run Setup to rebuild it);
+# an older one logs mario-wing-cap-unavailable and Mario goes without. With immortal = on (below) Mario also wears
+# the Metal cap; the two share one timer, so the Wing cap can linger while immortal is on.
+wing_cap = auto
+
+# Constant flying: with the Wing cap, Mario flies at one steady speed instead of SM64's own speed build-up and loss
+# (no diving to gain speed, no stalling when climbing).
+constant_flying = off
+
+# Let the camera pick its own angles (made for routes). Off = it stays behind Mario and you steer it.
+auto_camera = off
+
+# Turn off Mario's voice and sounds.
+mute = off
+
+# Game controllers: N64 adapters, PlayStation, Xbox and other USB/Bluetooth gamepads play Mario with SM64's own N64
+# layout (tables in docs/INSTALL.md). The keyboard keeps working; whichever one you touch drives Mario.
+#   auto - use the first controller found (plug it in any time)
+#   off  - keyboard and mouse only
+controller = auto
+
+# How far the stick must move before Mario reacts, from 0 to 0.8 (use a dot). Xbox pads never go below Microsoft's
+# recommended 0.24 (left) and 0.27 (right).
+controller_deadzone = 0.2
+
+[advanced]
+# You normally don't need to change anything below.
+
+# Folder for logs and run reports. Empty = "logs" next to this file.
+logs =
+
+# TESTING ONLY: Mario can't die (and wears SM64's Metal cap). Scores from such runs don't count.
+immortal = off
+

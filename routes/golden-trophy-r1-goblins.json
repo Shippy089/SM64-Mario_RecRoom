@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "style": "mayhem",
+  "name": "golden-trophy-r1-goblins",
+  "description": "Quest for the Golden Trophy room 1: walk from the room-1 spawn to the goblins around (43,-0.8,30) and fight them with SM64 punches, then punch-punch-kick, aiming inside the SM64 +-60 deg attack cone from live enemy positions.",
+  "notes": [
+    "Room-1 spawn (53.38,-0.74,29.29) from gt-r1-v3-death.log. Enemy positions come from the read-only nearest-enemy query on the combat runtime's original Enemy list (IsAlive, transform position), never from authored data.",
+    "Native SM64 input only. Launch: -Quest golden-trophy -QuestStart -QuestRoom 1 -MarioFollow -MarioCombat (-MarioQaImmortal for unattended QA)."
+  ],
+  "launch": { "quest": "golden-trophy", "questRoom": 1, "switches": ["MarioFollow", "MarioCombat", "MarioQaImmortal"] },
+  "steps": [
+    { "kind": "wait-until", "questRunning": true, "timeoutTicks": 1800 },
+    { "kind": "wait-until", "room": 1, "timeoutTicks": 600 },
+    { "kind": "log", "text": "gt r1: goblins" },
+    { "kind": "nearest-enemy", "radius": 30 },
+    { "kind": "goto", "x": 46.5, "z": 30.0 },
+    { "kind": "nearest-enemy", "radius": 15 },
+    { "kind": "fight", "radius": 15, "attack": "punch", "reach": 1.0, "clearTicks": 90, "timeoutTicks": 2700 },
+    { "kind": "nearest-enemy", "radius": 30 },
+    { "kind": "fight", "radius": 30, "attack": "kick", "reach": 1.0, "clearTicks": 120, "timeoutTicks": 2700 },
+    { "kind": "wait", "ticks": 30 },
+    { "kind": "log", "text": "gt r1 route end" }
+  ]
+}

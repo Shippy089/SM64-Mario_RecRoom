@@ -1,0 +1,1195 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "lost-skulls-r4-jungle",
+ "description": "Gibbet Jungle Beach2: verified Gibbet catch-throw, then Encounters 2-8, MidLevelGate and DoorCollapse.",
+ "notes": [
+  "Walk model: Golden Trophy v2 walk model = live-admitted collision, SM64 decomp ground step, floor y on every goto; gates the quest opens and moving platforms left out; lethal killzones +1 m, naval mines 3.5 m forbidden; jumps/backflips only where walking cannot reach, each air-step simulated). Not verified live.",
+  "Copied verified segments: room 0 padlock/jail/pirate fight/cannon (lost-skulls-r0-lock-and-lighter steps 2-55), room 4 Gibbet catch-throw (lost-skulls-gibbets-bomb). Cannon sections: aim-cannon, release, wait-until Idle, lighter, light-wick requireAim.",
+  "Needs component 19fd89f7 or later (light-wick requireAim). QA launch uses MarioQaImmortal; a real S attempt runs with -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "lost-skulls",
+  "questRoom": 4,
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioCarry",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 4,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "skulls r4 Gibbet Jungle: spawn, walking east to the Encounter1 (Gibbet in place) overlap volume"
+  },
+  {
+   "kind": "goto",
+   "x": -174.0,
+   "z": 108.0
+  },
+  {
+   "kind": "goto",
+   "x": -170.1,
+   "z": 106.1
+  },
+  {
+   "kind": "goto",
+   "x": -167.1,
+   "z": 108.1
+  },
+  {
+   "kind": "goto",
+   "x": -163.8,
+   "z": 110.0
+  },
+  {
+   "kind": "goto",
+   "x": -161.0,
+   "z": 111.1,
+   "run": false
+  },
+  {
+   "kind": "log",
+   "text": "entering the Encounter1 overlap volume (x > -158.25 at z 111.4)"
+  },
+  {
+   "kind": "goto",
+   "x": -157.0,
+   "z": 111.4,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 45
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 20
+  },
+  {
+   "kind": "log",
+   "text": "Encounter1 started; to the catch spot (-159.8,113.0), 6.5 m from the Gibbets live stand (~-153.5,111"
+  },
+  {
+   "kind": "goto",
+   "x": -159.8,
+   "z": 113.0,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "x": -152.99,
+   "z": 110.87,
+   "toleranceDegrees": 8
+  },
+  {
+   "kind": "log",
+   "text": "catch-throw: catch each Gibbet bomb, throw it back at the Gibbet (fuse-timed), flee short fuses; until no enemy within 20 m"
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 20,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 9000
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 25
+  },
+  {
+   "kind": "log",
+   "text": "second catch-throw pass (a Gibbet that walked in later, or after attempts ran out)"
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 20,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 6000
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 25
+  },
+  {
+   "kind": "log",
+   "text": "r4 v1 steps follow: no SM64 path in the v2 model"
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter2 (x -171..-148, z 84-101): drop south, river hop"
+  },
+  {
+   "kind": "goto",
+   "x": -159.7,
+   "z": 113.1
+  },
+  {
+   "kind": "goto",
+   "x": -157.6,
+   "z": 105.9,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 stream running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -156.77,
+   "z": 106.82,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -157.6,
+   "z": 105.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": -159.1,
+   "z": 101.7
+  },
+  {
+   "kind": "goto",
+   "x": -159.1,
+   "z": 101.7,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": -162.1,
+   "z": 97.2
+  },
+  {
+   "kind": "goto",
+   "x": -162.4,
+   "z": 96.3
+  },
+  {
+   "kind": "goto",
+   "x": -160.0,
+   "z": 92.4,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 16
+  },
+  {
+   "kind": "fight",
+   "radius": 16,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 210,
+   "timeoutTicks": 4800,
+   "excludeType": 27
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter2 tower throwers (3 m up)"
+  },
+  {
+   "kind": "goto",
+   "x": -168.1,
+   "z": 92.4,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 tower1 rise 3.1 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -168.1,
+   "z": 92.4,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 99.5,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -169.9,
+   "z": 92.7,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 6
+  },
+  {
+   "kind": "fight",
+   "radius": 6,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 1800,
+   "excludeType": 27
+  },
+  {
+   "kind": "goto",
+   "x": -168.1,
+   "z": 92.4
+  },
+  {
+   "kind": "goto",
+   "x": -160.0,
+   "z": 92.4
+  },
+  {
+   "kind": "goto",
+   "x": -156.4,
+   "z": 90.9,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 tower2 rise 3.3 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -156.4,
+   "z": 90.9,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -80.5,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -154.6,
+   "z": 90.6,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 6
+  },
+  {
+   "kind": "fight",
+   "radius": 6,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 1800,
+   "excludeType": 27
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter3 (river x -183..-152 z 65-88): 2 Gibbets + throwers"
+  },
+  {
+   "kind": "goto",
+   "x": -156.4,
+   "z": 90.9
+  },
+  {
+   "kind": "goto",
+   "x": -161.2,
+   "z": 87.6
+  },
+  {
+   "kind": "goto",
+   "x": -161.2,
+   "z": 85.2
+  },
+  {
+   "kind": "goto",
+   "x": -161.8,
+   "z": 84.3
+  },
+  {
+   "kind": "goto",
+   "x": -167.5,
+   "z": 78.0,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 14
+  },
+  {
+   "kind": "fight",
+   "radius": 14,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 180,
+   "timeoutTicks": 4200,
+   "excludeType": 27
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 20,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 9000,
+   "enemyType": 27,
+   "note": "REQ-6: throw only at Gibbets (type 27); Encounter3 mixes them with throwers"
+  },
+  {
+   "kind": "log",
+   "text": "r4: bridge throwers (y 19.7): climb near (-172.9,77.7)"
+  },
+  {
+   "kind": "goto",
+   "x": -169.6,
+   "z": 78.9
+  },
+  {
+   "kind": "goto",
+   "x": -170.8,
+   "z": 79.2
+  },
+  {
+   "kind": "goto",
+   "x": -172.6,
+   "z": 77.7,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 bridge rise 4.6 m side flip"
+  },
+  {
+   "kind": "goto",
+   "x": -172.9,
+   "z": 77.7,
+   "run": false,
+   "tolerance": 0.25,
+   "stop": true
+  },
+  {
+   "kind": "side-flip",
+   "x": -171.56,
+   "z": 75.02
+  },
+  {
+   "kind": "goto",
+   "x": -173.2,
+   "z": 78.3,
+   "run": false,
+   "tolerance": 0.3,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -176.8,
+   "z": 79.8,
+   "stop": true
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 6
+  },
+  {
+   "kind": "fight",
+   "radius": 6,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 2100,
+   "excludeType": 27
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter4 volume is on the bridge (y>18.4): 2 Gibbets spawn near (-152,74.6)"
+  },
+  {
+   "kind": "goto",
+   "x": -173.2,
+   "z": 78.3,
+   "run": false
+  },
+  {
+   "kind": "goto",
+   "x": -166.0,
+   "z": 79.5,
+   "run": false
+  },
+  {
+   "kind": "goto",
+   "x": -157.6,
+   "z": 81.6,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 25,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 9000
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 25,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 6000
+  },
+  {
+   "kind": "log",
+   "text": "r4: MidLevelGate (-143.6,74.5) after Enc1-4"
+  },
+  {
+   "kind": "goto",
+   "x": -159.7,
+   "z": 78.6
+  },
+  {
+   "kind": "goto",
+   "x": -154.3,
+   "z": 76.2
+  },
+  {
+   "kind": "goto",
+   "x": -151.0,
+   "z": 75.9
+  },
+  {
+   "kind": "goto",
+   "x": -146.8,
+   "z": 74.45,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 120
+  },
+  {
+   "kind": "goto",
+   "x": -138.4,
+   "z": 74.75,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter5 (x -133.6..-113, z 62-97)"
+  },
+  {
+   "kind": "goto",
+   "x": -130.0,
+   "z": 79.2
+  },
+  {
+   "kind": "goto",
+   "x": -123.4,
+   "z": 79.5,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 14
+  },
+  {
+   "kind": "fight",
+   "radius": 14,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 210,
+   "timeoutTicks": 4200,
+   "excludeType": 27
+  },
+  {
+   "kind": "goto",
+   "x": -123.4,
+   "z": 76.8,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 platform low rise 3.6 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -123.4,
+   "z": 76.8,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 23.2,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -124.3,
+   "z": 74.7,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 platform high rise 4.4 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -124.3,
+   "z": 74.7,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 18.4,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -124.9,
+   "z": 72.9,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -127.9,
+   "z": 72.3,
+   "stop": true
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 8
+  },
+  {
+   "kind": "fight",
+   "radius": 8,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 180,
+   "timeoutTicks": 2400,
+   "excludeType": 27
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter6 (-137.4,95.5)"
+  },
+  {
+   "kind": "goto",
+   "x": -124.9,
+   "z": 72.9
+  },
+  {
+   "kind": "goto",
+   "x": -124.3,
+   "z": 74.7
+  },
+  {
+   "kind": "goto",
+   "x": -123.4,
+   "z": 79.5
+  },
+  {
+   "kind": "goto",
+   "x": -130.3,
+   "z": 89.7,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 enc6 a running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -130.19,
+   "z": 89.84,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -131.3,
+   "z": 91.5,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": -133.3,
+   "z": 94.5
+  },
+  {
+   "kind": "goto",
+   "x": -133.3,
+   "z": 94.5,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 enc6 b running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -132.41,
+   "z": 94.25,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -134.3,
+   "z": 94.9,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": -137.5,
+   "z": 96.0
+  },
+  {
+   "kind": "goto",
+   "x": -137.5,
+   "z": 96.0,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 14
+  },
+  {
+   "kind": "fight",
+   "radius": 14,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 210,
+   "timeoutTicks": 4200,
+   "excludeType": 27
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter7 (-126,106.5): Gibbet patrol + 2 high throwers"
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 enc7 a running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -136.07,
+   "z": 97.04,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -134.6,
+   "z": 98.4,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": -133.3,
+   "z": 99.6
+  },
+  {
+   "kind": "goto",
+   "x": -133.3,
+   "z": 99.6,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": -132.7,
+   "z": 99.6
+  },
+  {
+   "kind": "goto",
+   "x": -129.4,
+   "z": 100.8
+  },
+  {
+   "kind": "goto",
+   "x": -128.5,
+   "z": 101.7,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 enc7 ledge rise 3.1 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -128.5,
+   "z": 101.7,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -156.8,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -127.6,
+   "z": 103.8,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -126.1,
+   "z": 106.5,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 20,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 9000,
+   "enemyType": 27,
+   "note": "REQ-6: throw only at the Gibbet patrol (type 27), not the high throwers"
+  },
+  {
+   "kind": "goto",
+   "x": -125.8,
+   "z": 107.4,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 enc7 b running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -125.8,
+   "z": 107.5,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -125.8,
+   "z": 109.5,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": -125.8,
+   "z": 111.9
+  },
+  {
+   "kind": "goto",
+   "x": -125.8,
+   "z": 111.9,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 thrower1 rise 3.0 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -125.8,
+   "z": 111.9,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 156.8,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -126.7,
+   "z": 114.0,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -127.3,
+   "z": 115.2,
+   "stop": true
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 10
+  },
+  {
+   "kind": "fight",
+   "radius": 10,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 180,
+   "timeoutTicks": 2400,
+   "excludeType": 27
+  },
+  {
+   "kind": "log",
+   "text": "r4: Encounter8 (-114,96) and DoorCollapse (-108.5,85.6)"
+  },
+  {
+   "kind": "goto",
+   "x": -126.7,
+   "z": 114.0
+  },
+  {
+   "kind": "goto",
+   "x": -125.8,
+   "z": 111.9
+  },
+  {
+   "kind": "goto",
+   "x": -125.8,
+   "z": 107.4
+  },
+  {
+   "kind": "goto",
+   "x": -124.0,
+   "z": 106.2,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 enc8 a running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -124.24,
+   "z": 106.57,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -123.0,
+   "z": 105.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": -120.4,
+   "z": 101.7
+  },
+  {
+   "kind": "goto",
+   "x": -120.4,
+   "z": 101.7,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "climb r4 enc8 rise rise 4.0 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -120.1,
+   "z": 101.4,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -66.8,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": -118.0,
+   "z": 100.5,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 enc8 b running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -118.22,
+   "z": 100.89,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -117.0,
+   "z": 99.3,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": -114.7,
+   "z": 96.3
+  },
+  {
+   "kind": "goto",
+   "x": -114.7,
+   "z": 96.3,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 16
+  },
+  {
+   "kind": "fight",
+   "radius": 16,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 4800,
+   "excludeType": 27
+  },
+  {
+   "kind": "goto",
+   "x": -113.8,
+   "z": 96.9
+  },
+  {
+   "kind": "goto",
+   "x": -112.9,
+   "z": 95.4
+  },
+  {
+   "kind": "goto",
+   "x": -112.9,
+   "z": 91.8,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 collapse a running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -113.09,
+   "z": 92.34,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -112.3,
+   "z": 90.5,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": -111.7,
+   "z": 89.1
+  },
+  {
+   "kind": "goto",
+   "x": -111.7,
+   "z": 89.1,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r4 collapse b running jump"
+  },
+  {
+   "kind": "goto",
+   "x": -112.05,
+   "z": 89.48,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -110.7,
+   "z": 88.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": -108.7,
+   "z": 85.8
+  },
+  {
+   "kind": "goto",
+   "x": -108.7,
+   "z": 85.8,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": -108.4,
+   "z": 85.55,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "r4: DoorCollapse needs Enc5-8 finished; room ends by itself"
+  },
+  {
+   "kind": "wait-until",
+   "room": 5,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "log",
+   "text": "skulls r4-jungle route end"
+  }
+ ]
+}

@@ -1,0 +1,408 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "crimson-cauldron-r8",
+ "description": "crimson-cauldron room 8 only (launch at questRoom 8); same steps as in crimson-cauldron-full.",
+ "notes": [
+  "crimson-cauldron route for an S-rank attempt (rank = combat score only; solo deathless). UNVERIFIED live.",
+  "Native SM64 input only. Encounters start by walking the follow participant into their original trigger volume; far spawn clusters are walked and fought; the required trigger is re-walked before each door; rooms exit through use-door (B at the unlocked exit door, original portal path).",
+  "Fight plan is automatic (required encounter = wave, other = fight, last room = boss). Quest-specific mechanics (switches, carry objects, special doors) are NOT planned yet.",
+  "MarioQaImmortal is for unattended QA only: run an S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "crimson-cauldron",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ],
+  "questRoom": 8
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 8,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cc r8 start"
+  },
+  {
+   "kind": "goto",
+   "x": -39.74,
+   "y": -20.1,
+   "z": 81.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r8 to pincer"
+  },
+  {
+   "kind": "goto",
+   "x": -39.74,
+   "y": -20.1,
+   "z": 73.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -39.74,
+   "y": -19.29,
+   "z": 70.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -39.74,
+   "y": -19.29,
+   "z": 70.16,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -39.74,
+   "z": 69.5,
+   "note": "hop rise 0.41 gap 0.66"
+  },
+  {
+   "kind": "goto",
+   "x": -39.74,
+   "y": -18.88,
+   "z": 69.5,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": -39.74,
+   "y": -18.42,
+   "z": 61.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -38.09,
+   "y": -18.42,
+   "z": 53.99,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -39.08,
+   "y": -18.42,
+   "z": 53.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -40.07,
+   "y": -18.17,
+   "z": 53.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -40.07,
+   "y": -18.17,
+   "z": 53.0,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -40.73,
+   "z": 53.0,
+   "note": "hop rise 0.40 gap 0.66"
+  },
+  {
+   "kind": "goto",
+   "x": -40.73,
+   "y": -17.76,
+   "z": 53.0,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": -48.65,
+   "y": -15.29,
+   "z": 53.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -49.31,
+   "y": -15.29,
+   "z": 53.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -49.31,
+   "y": -14.49,
+   "z": 55.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -49.31,
+   "y": -14.49,
+   "z": 55.97,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 180.0,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 1.68 gap 2.97"
+  },
+  {
+   "kind": "goto",
+   "x": -49.31,
+   "y": -12.8,
+   "z": 58.94,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -48.98,
+   "y": -12.04,
+   "z": 62.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -47.0,
+   "y": -12.04,
+   "z": 64.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -45.68,
+   "y": -11.78,
+   "z": 64.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -45.68,
+   "y": -11.78,
+   "z": 64.22,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -45.02,
+   "z": 64.22,
+   "note": "hop rise 0.40 gap 0.66"
+  },
+  {
+   "kind": "goto",
+   "x": -45.02,
+   "y": -11.37,
+   "z": 64.22,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": -44.03,
+   "y": -10.76,
+   "z": 64.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "goto",
+   "x": -44.03,
+   "y": -10.76,
+   "z": 64.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cc r8 sweep pincer 1"
+  },
+  {
+   "kind": "goto",
+   "x": -45.35,
+   "y": -11.59,
+   "z": 64.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -47.33,
+   "y": -12.04,
+   "z": 64.22,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -47.33,
+   "y": -12.04,
+   "z": 61.91,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -45.68,
+   "y": -12.04,
+   "z": 62.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -45.35,
+   "y": -18.42,
+   "z": 62.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -43.37,
+   "y": -18.42,
+   "z": 61.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -38.42,
+   "y": -18.42,
+   "z": 55.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -38.42,
+   "y": -18.42,
+   "z": 53.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -40.07,
+   "y": -18.17,
+   "z": 53.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -40.07,
+   "y": -18.17,
+   "z": 53.0,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -40.73,
+   "z": 53.0,
+   "note": "hop rise 0.40 gap 0.66"
+  },
+  {
+   "kind": "goto",
+   "x": -40.73,
+   "y": -17.76,
+   "z": 53.0,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "goto",
+   "x": -43.7,
+   "y": -16.07,
+   "z": 53.0,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "lost-skulls-gibbets-bomb",
+ "description": "Isle of Lost Skulls room 4 (Pirate1 Beach2, Gibbet Jungle): walk into the Encounter1 'Gibbet in place' volume, stand ~6 m from the Gibbet and run catch-throw: catch each coconut bomb the Gibbet throws (its own 3 s fuse is already cooking), SM64-grab it, face the Gibbet and SM64-throw it back (B -> original TryThrowMainHandTool) at the moment whose predicted explosion is closest to the Gibbet, or flee out of the blast when the fuse is too short. The bomb's own Grenade logic explodes; damage is read back read-only.",
+ "notes": [
+  "Atlas (game/reports/quest-atlas/lost-skulls.md room 4, level60): Encounter1 level60:25633 = SpawnEnemyEncounterStep 'Gibbet in place' (QUEST_PIRATE_GIBBET_ENEMY 27 x1, CEILING spawner, ExplicitSpawnPoint level60:8108 = Encounters/Encounter1/Spawn Points/Gibbet1 at (-152.99,16.43,110.87), timeBeforeFirstSpawn 0.5 s), started by OverlapVolumeEncounterStartTrigger level60:25632 with EncounterOverlapVolume level60:25679 centred (-149.88,16.30,110.03), local box 16.3 x 37.6 x 33.7 m rotated (axes (0.906,0,-0.423) / (0.423,0,0.906)): along z 111.4 it starts at x ~-158.25. Encounters 1/2/3/4 gate the MidLevelGate (level60:29090). Other Gibbets: Encounter7 (-119.61,16.55,108.89, patrol), Encounters 3/4 ceiling spawns in the River Gibbets / Spawn Region nav regions.",
+  "Gibbets take damage only from EXPLOSIVE (srank-plan README 4.4); the Gibbet throws PIRATE_COCONUT_BOMB equipment (resources.assets [Quest_Pirate1_CoconutBomb], Grenade; EnemyProjectileMotionRangedWeapon speed 8 m/s, maxRange 18, aimed 0.5-0.68 m beside the target). No coconut bomb is placed in the level60 scene. catch-throw reads the nearest free CoconutBomb within 9 m (position, Rigidbody.velocity, Grenade fuse) and the nearest enemy within 20 m (original Enemy list, health).",
+  "Spawn and path from the level60 collision (route_geometry walk graph, 0.33 m cells, scratch copy restricted to x -186..-140 z 92..128): player spawns (-178.3..-179.3, 13.9, 108.4..112.5); walk-only path (-179,110.4) -> (-174,108) -> (-170.1,106.1) -> (-167.1,108.1) -> (-163.8,110) -> (-161,111.1) rising 13.9 -> 16.1; flat deck at y 16.3 over x -161..-151 z 109..118 (a lower floor ~13.2 lies at x ~-160 z ~110 south of the path). NOT verified live.",
+  "Throw: the SM64 throw hands the original release the Bob-omb thrown velocity (25 forward / 20 up SM64 units per 30 Hz frame = 7.5 + 6 m/s; recalled upstream bobomb_thrown_loop, NOT verifiable in the local tree: no behavior source on disk). Unity gravity -9.81 (globalgamemanagers PhysicsManager, read offline): ~10 m on flat ground, apex 2.6 m above the feet after 0.6 s. Explosion 2.0 m (OverlapSphere + ClosestPoint), so a throw from ~6 m explodes over the Gibbet ~0.75-0.8 s after release; from beyond ~9 m it falls short.",
+  "Grenade lifecycle (static decode, pinned GameAssembly): explosionTimeout 3.0 s, explosionRadius 2.0, enemy damage 80 (Gibbet 100 HP -> 2 hits), player damage 100. The fuse starts when the Gibbet wields the spawned bomb (OnWielderChange 7260B0 -> AuthorityStartCooking 724580: idle -> armed, lifetimeTimer.StartTimer(explosionTimeout)); a pickup does not reset it (AuthorityStartCooking is a no-op while armed; OnPreAttach 725B10 disarms only when the player who armed it re-grabs within 0.1 s) and the release does not re-arm it (OnPreRelease 725CE0 -> AuthorityStartCooking no-op). Live v2: a caught bomb was armed=1 at pickup (tick 2196) and exploded in Mario's hands 59 native ticks later (tick 2255) because the old route never threw it (goto timeout); that explosion took the Gibbet 100 -> 20 (player-weapon, self=True, Gibbet 1 m away).",
+  "An enemy hit or the explosion makes SM64 drop the held bomb (decomp hurt/knockback releases); that shows as sm64-drop and the original drop. With -MarioQaImmortal Mario cannot die (TEST-ONLY refill).",
+  "Launch: -Quest lost-skulls -QuestStart -QuestRoom 4 -MarioFollow -MarioCombat -MarioCarry -MarioQaImmortal (plus the route drive / world input / route the helper always adds).",
+  "steps 13+ replaced. Old v2 evidence (bundle 42f1a642): bombs were seen mid-air (y 18.2 vs floor 16.1) and 'goto bomb' chased the moving bomb (stuck/none); catch-throw now steers to the predicted landing point, re-evaluates the fuse budget every tick (game seconds per native tick learned from the fuse countdown, prior 1/24 s), grabs only a resting/slow bomb within 0.6 m, and keeps a 6 m standoff from the Gibbet (back off when it walks in, close in when it stays beyond 7.5 m). NOT verified live.",
+  "(live skulls-gibbets-v4, bundle 83de1528: both grabs aborted, throws=0): bombs came down ~0.4 m from Mario and then ROLLED 1-5 m (~7 m/s at touchdown); waiting for a resting bomb cost ~1 s of fuse, and single-frame fuse-rate samples (0.025-0.077 s/tick around ~0.034) aborted grabs. catch-throw now intercepts: it stands just past the predicted touchdown point facing the incoming bomb and presses B when the predicted bomb (ballistic, then rolling) is inside SM64's grab reach during the first punch's grab window (SM64 has no speed condition); a press is never abandoned inside that window; the fuse rate is a windowed average starting at a frame boundary; armed bombs it is not catching are fled; standoff 6.5 m with band 5.5..7.25 m (the Gibbet's bombs fall short beyond ~6.5-7.5 m; the SM64 throw reaches ~10 m). BombWorld model: 60/60 rolling+jitter set-ups cleared, Mario never in a blast. NOT verified live.",
+  "(live skulls-gibbets-v5, bundle 43b34ba9: 19 throws, 1 hit 100 -> 20): every throw left with the SM64 velocity but 18 lost it within ~0.015 s: the bomb was released where the last hold tick left it (bounds bottom at the throw frame HOLP: centre 0.18 m BEHIND Mario, 0.11 m right, 1.25 m up), inside the hidden participant's own torso (authored [Player]/Torso/TorsoCollider 0.33 x 0.58 x 0.18 m; layer 12, collides with the bomb's DynamicPhysics layer) and was pushed back out. Level geometry and the Gibbet were ruled out by the same log (the one bomb that flew, tick 1164, crossed x -158.5 at 18.65 m from the same spot). Fix (mario-carry): the bomb is placed at the decomp release pose (interaction.c mario_throw_held_object: HOLP + 32 units forward) by the pickup's own SetRigidbodyTransform, and the thrower torso is ignored with the original Tool.IgnoreCollision(PlayerBody.BodyCollider) and re-enabled 0.5 s after the release (BowlingBall DisableThrowerBodyCollision / DeferredReEnablePlayerBodyCollision, authored reEnableBodyCollisionDelay 0.5) [T1]. catch-throw: release offsets from the live log (0.141 fwd / 0.112 right / 1.254 up); read-only lane checks (lane-probe while standing, lane-aim once per held bomb picks a clear safe facing, throw-b lane=clear|blocked:<collider>@<s>s, mario-carry thrown ... lane=...); a blocked lane rotates the stand 25 deg steps around the target; a throw that comes down near Mario is fled. Catch spot moved to (-159.8,113.0). NOT verified live."
+ ],
+ "launch": {
+  "quest": "lost-skulls",
+  "questRoom": 4,
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioCarry",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 4,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "skulls r4 Gibbet Jungle: spawn, walking east to the Encounter1 (Gibbet in place) overlap volume"
+  },
+  {
+   "kind": "goto",
+   "x": -174.0,
+   "z": 108.0
+  },
+  {
+   "kind": "goto",
+   "x": -170.1,
+   "z": 106.1
+  },
+  {
+   "kind": "goto",
+   "x": -167.1,
+   "z": 108.1
+  },
+  {
+   "kind": "goto",
+   "x": -163.8,
+   "z": 110.0
+  },
+  {
+   "kind": "goto",
+   "x": -161.0,
+   "z": 111.1,
+   "run": false
+  },
+  {
+   "kind": "log",
+   "text": "entering the Encounter1 overlap volume (x > -158.25 at z 111.4)"
+  },
+  {
+   "kind": "goto",
+   "x": -157.0,
+   "z": 111.4,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 45
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 20
+  },
+  {
+   "kind": "log",
+   "text": "Encounter1 started; to the catch spot (-159.8,113.0), 6.5 m from the Gibbets live stand (~-153.5,111"
+  },
+  {
+   "kind": "goto",
+   "x": -159.8,
+   "z": 113.0,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "x": -152.99,
+   "z": 110.87,
+   "toleranceDegrees": 8
+  },
+  {
+   "kind": "log",
+   "text": "catch-throw: catch each Gibbet bomb, throw it back at the Gibbet (fuse-timed), flee short fuses; until no enemy within 20 m"
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 20,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 9000
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 25
+  },
+  {
+   "kind": "log",
+   "text": "second catch-throw pass (a Gibbet that walked in later, or after attempts ran out)"
+  },
+  {
+   "kind": "catch-throw",
+   "radius": 9,
+   "enemyRadius": 20,
+   "standoff": 6.5,
+   "attempts": 10,
+   "clearTicks": 90,
+   "timeoutTicks": 6000
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 25
+  },
+  {
+   "kind": "log",
+   "text": "skulls r4 gibbet catch-throw route end"
+  }
+ ]
+}

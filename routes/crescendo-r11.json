@@ -1,0 +1,159 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "crescendo-r11",
+ "description": "crescendo room 11 only (launch at questRoom 11); same steps as in crescendo-full.",
+ "notes": [
+  "crescendo route for an S-rank attempt (rank = combat score only; solo deathless). UNVERIFIED live.",
+  "Native SM64 input only. Encounters start by walking the follow participant into their original trigger volume; far spawn clusters are walked and fought; the required trigger is re-walked before each door; rooms exit through use-door (B at the unlocked exit door, original portal path).",
+  "Fight plan is automatic (required encounter = wave, other = fight, last room = boss). Quest-specific mechanics (switches, carry objects, special doors) are NOT planned yet.",
+  "MarioQaImmortal is for unattended QA only: run an S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "crescendo",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ],
+  "questRoom": 11
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 11,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r11 start"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -93.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "cr r11 to door"
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -182.75,
+   "z": -101.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -192.69,
+   "y": -181.49,
+   "z": -109.39,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -179.75,
+   "z": -113.68,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.96,
+   "y": -177.75,
+   "z": -115.66,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -198.3,
+   "y": -177.75,
+   "z": -118.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -177.77,
+   "z": -124.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -193.35,
+   "y": -177.77,
+   "z": -124.9,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 0.8,
+   "x": -193.02,
+   "z": -125.56,
+   "note": "hop rise 0.50 gap 0.74"
+  },
+  {
+   "kind": "goto",
+   "x": -193.02,
+   "y": -177.27,
+   "z": -125.56,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 200
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": -193.02,
+   "y": -177.27,
+   "z": -125.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "use-door",
+   "x": -192.69,
+   "z": -129.52,
+   "yaw": 177.3,
+   "approach": 4.0,
+   "ticks": 90,
+   "attempts": 6
+  }
+ ]
+}

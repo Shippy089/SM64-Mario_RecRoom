@@ -1,0 +1,457 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "jumbotron-r9",
+ "description": "jumbotron room 9 only (launch at questRoom 9); same steps as in jumbotron-full.",
+ "notes": [
+  "jumbotron route for an S-rank attempt (rank = combat score only; solo deathless). UNVERIFIED live.",
+  "Native SM64 input only. Encounters start by walking the follow participant into their original trigger volume; far spawn clusters are walked and fought; the required trigger is re-walked before each door; rooms exit through use-door (B at the unlocked exit door, original portal path).",
+  "Fight plan is automatic (required encounter = wave, other = fight, last room = boss). Quest-specific mechanics (switches, carry objects, special doors) are NOT planned yet.",
+  "MarioQaImmortal is for unattended QA only: run an S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "jumbotron",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ],
+  "questRoom": 9
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 9,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "jt r9 start"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "goto",
+   "x": 103.47,
+   "y": -2.16,
+   "z": -116.15,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "jt r9 smash 5"
+  },
+  {
+   "kind": "goto",
+   "x": 97.86,
+   "y": -2.16,
+   "z": -113.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.54,
+   "y": -2.16,
+   "z": -114.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.62,
+   "y": -2.16,
+   "z": -114.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 80.7,
+   "y": -2.16,
+   "z": -115.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 77.07,
+   "y": -2.16,
+   "z": -116.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.73,
+   "z": -117.56,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 77.07,
+   "y": -2.16,
+   "z": -116.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.42,
+   "y": -2.16,
+   "z": -115.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 75.09,
+   "y": -2.16,
+   "z": -115.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 74.03,
+   "z": -117.01,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 75.09,
+   "y": -2.16,
+   "z": -115.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 80.7,
+   "y": -2.16,
+   "z": -112.85,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 79.84,
+   "y": -2.16,
+   "z": -113.95,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "long-jump",
+   "x": 84.33,
+   "z": -108.23,
+   "note": "long-jump rise -0.64 gap 5.88"
+  },
+  {
+   "kind": "goto",
+   "x": 84.33,
+   "y": -2.81,
+   "z": -108.23,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 85.32,
+   "y": -2.81,
+   "z": -107.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 85.32,
+   "y": -4.15,
+   "z": -106.91,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": 85.98,
+   "y": -4.15,
+   "z": -105.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 85.98,
+   "y": -4.15,
+   "z": -105.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 85.73,
+   "z": -103.95,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 85.98,
+   "y": -4.15,
+   "z": -105.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.61,
+   "y": -4.15,
+   "z": -105.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 90.98,
+   "z": -106.66,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "goto",
+   "x": 89.61,
+   "y": -4.15,
+   "z": -105.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 88.29,
+   "y": -4.15,
+   "z": -106.91,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 89.28,
+   "y": -5.17,
+   "z": -109.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 96.21,
+   "y": -5.17,
+   "z": -108.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.88,
+   "y": -5.17,
+   "z": -104.93,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 93.57,
+   "y": -5.17,
+   "z": -101.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.22,
+   "y": -5.17,
+   "z": -95.69,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 95.55,
+   "y": -5.17,
+   "z": -95.36,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 95.55,
+   "y": -5.17,
+   "z": -94.7,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": 96.21,
+   "y": -5.17,
+   "z": -93.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 94.23,
+   "y": -5.17,
+   "z": -84.47,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 97.86,
+   "y": -5.17,
+   "z": -82.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 100.17,
+   "y": -5.17,
+   "z": -81.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": 101.7,
+   "z": -82.7,
+   "tolerance": 0.9,
+   "run": false,
+   "stuckTicks": 20,
+   "unstickJumps": 0,
+   "nav": false,
+   "timeoutTicks": 150,
+   "note": "smash approach; stuck = touching"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "punch"
+  },
+  {
+   "kind": "log",
+   "text": "jt r9 boss (room load)"
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "boss",
+   "radius": 40,
+   "addRadius": 10,
+   "attack": "air-kick",
+   "clearTicks": 300,
+   "timeoutTicks": 36000
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 30,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 7200
+  }
+ ]
+}

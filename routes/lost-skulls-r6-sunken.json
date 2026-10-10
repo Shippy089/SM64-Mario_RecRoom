@@ -1,0 +1,2147 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "lost-skulls-r6-sunken",
+ "description": "Sunken Ship: Encounters 1-4, jigsaw pieces 4/3/1 to the jail-gate slots, exit.",
+ "notes": [
+  "Walk model: Golden Trophy v2 walk model = live-admitted collision, SM64 decomp ground step, floor y on every goto; gates the quest opens and moving platforms left out; lethal killzones +1 m, naval mines 3.5 m forbidden; jumps/backflips only where walking cannot reach, each air-step simulated). Not verified live.",
+  "Copied verified segments: room 0 padlock/jail/pirate fight/cannon (lost-skulls-r0-lock-and-lighter steps 2-55), room 4 Gibbet catch-throw (lost-skulls-gibbets-bomb). Cannon sections: aim-cannon, release, wait-until Idle, lighter, light-wick requireAim.",
+  "Needs component 19fd89f7 or later (light-wick requireAim). QA launch uses MarioQaImmortal; a real S attempt runs with -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "lost-skulls",
+  "questRoom": 6,
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioCarry",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 6,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "r6 v1 steps follow: no SM64 path in the v2 model"
+  },
+  {
+   "kind": "log",
+   "text": "r6 Sunken Ship: Encounter1 (x 182-210 z -300..-283); naval mines: keep away"
+  },
+  {
+   "kind": "goto",
+   "x": 184.95,
+   "z": -270.25,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 a running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 184.87,
+   "z": -270.24,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 186.5,
+   "z": -271.4,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 188.6,
+   "z": -272.9
+  },
+  {
+   "kind": "goto",
+   "x": 188.6,
+   "z": -272.9,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 b running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 188.34,
+   "z": -272.75,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 189.9,
+   "z": -274.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 191.9,
+   "z": -275.6
+  },
+  {
+   "kind": "goto",
+   "x": 191.9,
+   "z": -275.6,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 192.8,
+   "z": -276.5
+  },
+  {
+   "kind": "goto",
+   "x": 192.8,
+   "z": -280.1,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 c running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 192.85,
+   "z": -280.28,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 193.4,
+   "z": -282.2,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 194.0,
+   "z": -284.3
+  },
+  {
+   "kind": "goto",
+   "x": 194.0,
+   "z": -284.3,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 194.0,
+   "z": -289.4,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 16
+  },
+  {
+   "kind": "fight",
+   "radius": 16,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 210,
+   "timeoutTicks": 4800
+  },
+  {
+   "kind": "log",
+   "text": "r6: Encounter2 volume (212,-307), then down to piece 4 (229.7,-22.6,-306.5)"
+  },
+  {
+   "kind": "log",
+   "text": "climb r6 d rise 2.1 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 194.0,
+   "z": -289.4,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -29.7,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 195.2,
+   "z": -291.5,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 196.1,
+   "z": -292.1,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 e running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 195.84,
+   "z": -292.37,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 197.0,
+   "z": -294.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 199.7,
+   "z": -297.8
+  },
+  {
+   "kind": "goto",
+   "x": 199.7,
+   "z": -297.8,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 201.5,
+   "z": -298.1
+  },
+  {
+   "kind": "goto",
+   "x": 203.3,
+   "z": -299.3
+  },
+  {
+   "kind": "goto",
+   "x": 205.7,
+   "z": -301.7,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 f running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 205.84,
+   "z": -301.79,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 207.5,
+   "z": -302.9,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": 209.3,
+   "z": -304.1
+  },
+  {
+   "kind": "goto",
+   "x": 209.3,
+   "z": -304.1,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 212.3,
+   "z": -304.1,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 g running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 212.34,
+   "z": -304.25,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 213.3,
+   "z": -306.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 214.4,
+   "z": -308.0
+  },
+  {
+   "kind": "goto",
+   "x": 214.4,
+   "z": -308.0,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 h running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 214.48,
+   "z": -308.08,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 216.3,
+   "z": -308.9,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 218.3,
+   "z": -309.8
+  },
+  {
+   "kind": "goto",
+   "x": 218.3,
+   "z": -309.8,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 222.5,
+   "z": -309.5
+  },
+  {
+   "kind": "goto",
+   "x": 222.8,
+   "z": -309.2,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 i running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 223.03,
+   "z": -309.21,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 224.9,
+   "z": -308.5,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 227.0,
+   "z": -307.7
+  },
+  {
+   "kind": "goto",
+   "x": 227.0,
+   "z": -307.7,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 230.0,
+   "z": -307.4,
+   "run": false
+  },
+  {
+   "kind": "goto",
+   "x": 229.7,
+   "z": -306.6,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "grab",
+   "x": 229.7,
+   "z": -306.48,
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "log",
+   "text": "r6: carry piece 4 east and up with hold jumps only (rises <= 1.9 m, gaps <= 3 m)"
+  },
+  {
+   "kind": "goto",
+   "x": 231.19,
+   "z": -306.53,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 2 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 230.24,
+   "z": -306.85,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 231.19,
+   "z": -306.53,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 233.89,
+   "z": -305.63
+  },
+  {
+   "kind": "goto",
+   "x": 233.89,
+   "z": -305.63,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 235.09,
+   "z": -305.33,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 235.69,
+   "z": -304.73,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 239.89,
+   "z": -296.33,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 6 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 239.48,
+   "z": -297.24,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 239.89,
+   "z": -296.33,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 241.09,
+   "z": -293.63
+  },
+  {
+   "kind": "goto",
+   "x": 241.09,
+   "z": -293.63,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 7 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 240.38,
+   "z": -294.34,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 241.09,
+   "z": -293.63,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 242.29,
+   "z": -292.43
+  },
+  {
+   "kind": "goto",
+   "x": 242.29,
+   "z": -292.43,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 242.59,
+   "z": -292.13,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 9 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 241.88,
+   "z": -292.84,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 242.59,
+   "z": -292.13,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 243.49,
+   "z": -291.23
+  },
+  {
+   "kind": "goto",
+   "x": 243.49,
+   "z": -291.23,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 10 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 243.49,
+   "z": -292.23,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 243.49,
+   "z": -291.23,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 243.49,
+   "z": -290.93
+  },
+  {
+   "kind": "goto",
+   "x": 243.49,
+   "z": -290.93,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 11 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 242.78,
+   "z": -291.64,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 243.49,
+   "z": -290.93,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 244.99,
+   "z": -289.43
+  },
+  {
+   "kind": "goto",
+   "x": 244.99,
+   "z": -289.43,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 245.89,
+   "z": -288.53,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 13 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 245.78,
+   "z": -289.52,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 245.89,
+   "z": -288.53,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 246.19,
+   "z": -285.83
+  },
+  {
+   "kind": "goto",
+   "x": 246.19,
+   "z": -285.83,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 246.49,
+   "z": -285.53,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 15 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 246.08,
+   "z": -286.44,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 246.49,
+   "z": -285.53,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 247.69,
+   "z": -282.83
+  },
+  {
+   "kind": "goto",
+   "x": 247.69,
+   "z": -282.83,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 247.69,
+   "z": -281.33,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 17 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 247.69,
+   "z": -282.33,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 247.69,
+   "z": -281.33,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 247.69,
+   "z": -279.23
+  },
+  {
+   "kind": "goto",
+   "x": 247.69,
+   "z": -279.23,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 18 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 247.45,
+   "z": -280.2,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 247.69,
+   "z": -279.23,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 248.29,
+   "z": -276.83
+  },
+  {
+   "kind": "goto",
+   "x": 248.29,
+   "z": -276.83,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 19 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 247.29,
+   "z": -276.83,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 248.29,
+   "z": -276.83,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 249.49,
+   "z": -276.83
+  },
+  {
+   "kind": "goto",
+   "x": 249.49,
+   "z": -276.83,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 20 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 250.2,
+   "z": -277.54,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 249.49,
+   "z": -276.83,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 249.19,
+   "z": -276.53
+  },
+  {
+   "kind": "goto",
+   "x": 249.19,
+   "z": -276.53,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 248.29,
+   "z": -275.63,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry4 22 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 249.2,
+   "z": -276.04,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 248.29,
+   "z": -275.63,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 245.59,
+   "z": -274.43
+  },
+  {
+   "kind": "goto",
+   "x": 245.59,
+   "z": -274.43,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 244.99,
+   "z": -274.13,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 245.3,
+   "z": -274.3,
+   "run": false,
+   "tolerance": 0.15,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 90,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "wait",
+   "ticks": 30
+  },
+  {
+   "kind": "log",
+   "text": "r6: piece 3 (243.6,-12.1,-274.2) next to the gate"
+  },
+  {
+   "kind": "goto",
+   "x": 242.6,
+   "z": -273.3,
+   "run": false,
+   "stop": true
+  },
+  {
+   "kind": "grab",
+   "x": 243.63,
+   "z": -274.23,
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "goto",
+   "x": 245.3,
+   "z": -274.3,
+   "run": false,
+   "tolerance": 0.15,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 90,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "wait",
+   "ticks": 30
+  },
+  {
+   "kind": "log",
+   "text": "r6: Encounter3 (boat 230,-264 and tower 237.5,-6.5,-265.8)"
+  },
+  {
+   "kind": "goto",
+   "x": 238.69,
+   "z": -268.13,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 to enc3 2 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 240.57,
+   "z": -268.8,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 238.69,
+   "z": -268.13,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 234.49,
+   "z": -266.63
+  },
+  {
+   "kind": "goto",
+   "x": 234.49,
+   "z": -266.63,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 233.59,
+   "z": -265.73,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 to enc3 4 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 235.19,
+   "z": -266.93,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 233.59,
+   "z": -265.73,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 229.99,
+   "z": -263.03
+  },
+  {
+   "kind": "goto",
+   "x": 229.99,
+   "z": -263.03,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 12
+  },
+  {
+   "kind": "fight",
+   "radius": 12,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 210,
+   "timeoutTicks": 4200
+  },
+  {
+   "kind": "goto",
+   "x": 230.9,
+   "z": -263.0,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 tower a running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 231.08,
+   "z": -263.05,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 233.0,
+   "z": -263.6,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": 235.1,
+   "z": -264.2
+  },
+  {
+   "kind": "goto",
+   "x": 235.1,
+   "z": -264.2,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "climb r6 tower rise 4.1 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 235.1,
+   "z": -264.2,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -60.3,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 237.2,
+   "z": -265.4,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 6
+  },
+  {
+   "kind": "fight",
+   "radius": 6,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "goto",
+   "x": 235.1,
+   "z": -264.2
+  },
+  {
+   "kind": "goto",
+   "x": 233.6,
+   "z": -265.7,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 tower back running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 233.6,
+   "z": -265.7,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 232.0,
+   "z": -264.5,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": 230.0,
+   "z": -263.0
+  },
+  {
+   "kind": "goto",
+   "x": 230.0,
+   "z": -263.0,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "r6: Encounter4 catwalks (vol x 216-239 z -322..-301.5)"
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 to catwalk 1 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 229.32,
+   "z": -261.15,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 229.99,
+   "z": -263.03,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 231.49,
+   "z": -267.23
+  },
+  {
+   "kind": "goto",
+   "x": 231.49,
+   "z": -267.23,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 232.39,
+   "z": -268.43,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 232.69,
+   "z": -269.93,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 232.69,
+   "z": -270.23,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 232.39,
+   "z": -270.53,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 to catwalk 6 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 231.97,
+   "z": -268.57,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 232.39,
+   "z": -270.53,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 233.29,
+   "z": -274.73
+  },
+  {
+   "kind": "goto",
+   "x": 233.29,
+   "z": -274.73,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 234.19,
+   "z": -277.73,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 234.49,
+   "z": -278.03,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 to catwalk 9 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 233.14,
+   "z": -276.55,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 234.49,
+   "z": -278.03,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 237.49,
+   "z": -281.33
+  },
+  {
+   "kind": "goto",
+   "x": 237.49,
+   "z": -281.33,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 237.79,
+   "z": -282.23,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "climb r6 to catwalk 11 rise 3.6 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 237.79,
+   "z": -282.23,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -14.0,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 238.39,
+   "z": -284.63,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 237.19,
+   "z": -292.73,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 236.6,
+   "z": -300.8
+  },
+  {
+   "kind": "goto",
+   "x": 231.8,
+   "z": -309.2,
+   "stop": true
+  },
+  {
+   "kind": "wait",
+   "ticks": 90
+  },
+  {
+   "kind": "nearest-enemy",
+   "radius": 16
+  },
+  {
+   "kind": "fight",
+   "radius": 16,
+   "attack": "auto",
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 6300
+  },
+  {
+   "kind": "log",
+   "text": "r6: piece 1 (227.4,-18.8,-288.5): mines 3-5 m away"
+  },
+  {
+   "kind": "goto",
+   "x": 231.79,
+   "z": -309.23,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 231.79,
+   "z": -310.73,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 231.19,
+   "z": -311.33,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 222.49,
+   "z": -311.33,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 222.19,
+   "z": -311.63,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 221.59,
+   "z": -311.03,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 218.59,
+   "z": -303.83,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 218.59,
+   "z": -303.53,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 218.29,
+   "z": -303.23,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 217.99,
+   "z": -302.63,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 to piece1 top 11 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 218.83,
+   "z": -304.45,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 217.99,
+   "z": -302.63,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 216.19,
+   "z": -298.73
+  },
+  {
+   "kind": "goto",
+   "x": 216.19,
+   "z": -298.73,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "climb r6 to piece1 top 12 rise 3.8 m backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 216.19,
+   "z": -298.73,
+   "run": false,
+   "tolerance": 0.2,
+   "stop": true,
+   "stuckTicks": 60,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 140.2,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "backflip"
+  },
+  {
+   "kind": "goto",
+   "x": 214.69,
+   "z": -296.93,
+   "run": false,
+   "tolerance": 0.3,
+   "stuckTicks": 45,
+   "unstickJumps": 1,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": 214.09,
+   "z": -292.43,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 212.89,
+   "z": -291.23,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 214.39,
+   "z": -284.03,
+   "run": true,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 214.7,
+   "z": -284.0,
+   "stop": true
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 p1 a running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 212.62,
+   "z": -284.28,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 214.6,
+   "z": -284.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 4,
+   "stick": 1.0,
+   "x": 218.9,
+   "z": -283.4
+  },
+  {
+   "kind": "goto",
+   "x": 218.9,
+   "z": -283.4,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 p1 b running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 218.69,
+   "z": -283.44,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 220.5,
+   "z": -284.3,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 224.3,
+   "z": -286.1
+  },
+  {
+   "kind": "goto",
+   "x": 224.3,
+   "z": -286.1,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 p1 c running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 224.46,
+   "z": -286.35,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 225.6,
+   "z": -288.0,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 6,
+   "stick": 1.0,
+   "x": 227.6,
+   "z": -290.9
+  },
+  {
+   "kind": "goto",
+   "x": 227.6,
+   "z": -290.9,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "grab",
+   "x": 227.44,
+   "z": -288.53,
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "log",
+   "text": "r6: carry piece 1 to the gate with hold jumps"
+  },
+  {
+   "kind": "goto",
+   "x": 226.99,
+   "z": -290.93,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 2 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 227.97,
+   "z": -290.71,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 226.99,
+   "z": -290.93,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 224.29,
+   "z": -291.53
+  },
+  {
+   "kind": "goto",
+   "x": 224.29,
+   "z": -291.53,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 224.29,
+   "z": -291.23,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 223.69,
+   "z": -290.63,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 223.69,
+   "z": -289.43,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 6 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 223.58,
+   "z": -290.42,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 223.69,
+   "z": -289.43,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 223.99,
+   "z": -286.73
+  },
+  {
+   "kind": "goto",
+   "x": 223.99,
+   "z": -286.73,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 223.99,
+   "z": -285.83,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 8 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 224.44,
+   "z": -286.72,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 223.99,
+   "z": -285.83,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 222.79,
+   "z": -283.43
+  },
+  {
+   "kind": "goto",
+   "x": 222.79,
+   "z": -283.43,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 222.49,
+   "z": -283.73,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 10 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 222.61,
+   "z": -284.72,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 222.49,
+   "z": -283.73,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 222.19,
+   "z": -281.33
+  },
+  {
+   "kind": "goto",
+   "x": 222.19,
+   "z": -281.33,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 11 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 221.78,
+   "z": -282.24,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 222.19,
+   "z": -281.33,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 223.39,
+   "z": -278.63
+  },
+  {
+   "kind": "goto",
+   "x": 223.39,
+   "z": -278.63,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 223.99,
+   "z": -278.03,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 13 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 223.08,
+   "z": -278.44,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 223.99,
+   "z": -278.03,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 226.69,
+   "z": -276.83
+  },
+  {
+   "kind": "goto",
+   "x": 226.69,
+   "z": -276.83,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 229.69,
+   "z": -276.83,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 15 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 228.74,
+   "z": -277.15,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 229.69,
+   "z": -276.83,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 232.39,
+   "z": -275.93
+  },
+  {
+   "kind": "goto",
+   "x": 232.39,
+   "z": -275.93,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 16 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 231.41,
+   "z": -276.15,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 232.39,
+   "z": -275.93,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 235.09,
+   "z": -275.33
+  },
+  {
+   "kind": "goto",
+   "x": 235.09,
+   "z": -275.33,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 17 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 234.1,
+   "z": -275.44,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 235.09,
+   "z": -275.33,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 237.79,
+   "z": -275.03
+  },
+  {
+   "kind": "goto",
+   "x": 237.79,
+   "z": -275.03,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 238.39,
+   "z": -275.03,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "log",
+   "text": "gap r6 carry1 19 running jump"
+  },
+  {
+   "kind": "goto",
+   "x": 237.39,
+   "z": -275.03,
+   "tolerance": 0.3,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": 238.39,
+   "z": -275.03,
+   "tolerance": 0.3
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": 241.39,
+   "z": -275.03
+  },
+  {
+   "kind": "goto",
+   "x": 241.39,
+   "z": -275.03,
+   "run": false,
+   "tolerance": 0.35,
+   "timeoutTicks": 240
+  },
+  {
+   "kind": "goto",
+   "x": 244.99,
+   "z": -274.13,
+   "run": false,
+   "timeoutTicks": 600
+  },
+  {
+   "kind": "goto",
+   "x": 245.3,
+   "z": -274.3,
+   "run": false,
+   "tolerance": 0.15,
+   "stop": true
+  },
+  {
+   "kind": "face",
+   "yaw": 90,
+   "toleranceDegrees": 6
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "log",
+   "text": "r6: MidLevelGate volume (244.6,-274.2) + JigsawPuzzle -> gate opens (cinematic)"
+  },
+  {
+   "kind": "wait",
+   "ticks": 240
+  },
+  {
+   "kind": "log",
+   "text": "exit r6: use-door to room 7"
+  },
+  {
+   "kind": "use-door",
+   "x": 245.3,
+   "z": -274.3,
+   "yaw": 90,
+   "attempts": 6,
+   "approach": 3.0
+  },
+  {
+   "kind": "wait-until",
+   "room": 7,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "skulls r6-sunken route end"
+  }
+ ]
+}

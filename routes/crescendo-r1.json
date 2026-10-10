@@ -1,0 +1,60 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "crescendo-r1",
+ "description": "crescendo room 1 only (launch at questRoom 1); same steps as in crescendo-full.",
+ "notes": [
+  "crescendo route for an S-rank attempt (rank = combat score only; solo deathless). UNVERIFIED live.",
+  "Native SM64 input only. Encounters start by walking the follow participant into their original trigger volume; far spawn clusters are walked and fought; the required trigger is re-walked before each door; rooms exit through use-door (B at the unlocked exit door, original portal path).",
+  "Fight plan is automatic (required encounter = wave, other = fight, last room = boss). Quest-specific mechanics (switches, carry objects, special doors) are NOT planned yet.",
+  "MarioQaImmortal is for unattended QA only: run an S-rank attempt with Run-MarioRoute.ps1 -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "crescendo",
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioQaImmortal"
+  ],
+  "questRoom": 1
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 1,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cr r1 start"
+  },
+  {
+   "kind": "repeat",
+   "count": 10,
+   "body": 1,
+   "note": "wave sweeps until the room advances"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 25,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 7200
+  },
+  {
+   "kind": "log",
+   "text": "cr r1 wait advance"
+  },
+  {
+   "kind": "wait-until",
+   "room": 2,
+   "timeoutTicks": 18000
+  }
+ ]
+}

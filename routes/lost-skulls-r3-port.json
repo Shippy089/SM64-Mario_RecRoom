@@ -1,0 +1,1204 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "lost-skulls-r3-port",
+ "description": "Port Plunder Beach1: dock encounters, gate, town streets/towers/jugger (required), exit.",
+ "notes": [
+  "Walk model: Golden Trophy v2 walk model = live-admitted collision, SM64 decomp ground step, floor y on every goto; gates the quest opens and moving platforms left out; lethal killzones +1 m, naval mines 3.5 m forbidden; jumps/backflips only where walking cannot reach, each air-step simulated). Not verified live.",
+  "Copied verified segments: room 0 padlock/jail/pirate fight/cannon (lost-skulls-r0-lock-and-lighter steps 2-55), room 4 Gibbet catch-throw (lost-skulls-gibbets-bomb). Cannon sections: aim-cannon, release, wait-until Idle, lighter, light-wick requireAim.",
+  "Needs component 19fd89f7 or later (light-wick requireAim). QA launch uses MarioQaImmortal; a real S attempt runs with -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "lost-skulls",
+  "questRoom": 3,
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioCarry",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 3,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "r3 load1"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 2700,
+   "x": -64.53,
+   "z": -259.74,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep load1 1"
+  },
+  {
+   "kind": "goto",
+   "x": -59.58,
+   "y": -5.29,
+   "z": -260.73,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -54.63,
+   "y": -5.52,
+   "z": -258.75,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -54.63,
+   "y": -5.52,
+   "z": -257.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -54.96,
+   "y": -5.52,
+   "z": -256.77,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -54.96,
+   "y": -5.52,
+   "z": -256.44,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -55.29,
+   "y": -5.52,
+   "z": -256.11,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -55.95,
+   "y": -5.52,
+   "z": -255.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -53.64,
+   "y": -5.52,
+   "z": -248.19,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -52.65,
+   "y": -5.52,
+   "z": -246.54,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -54.3,
+   "y": -5.52,
+   "z": -244.89,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -58.26,
+   "y": -5.52,
+   "z": -243.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -60.24,
+   "y": -6.5,
+   "z": -236.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -60.24,
+   "y": -6.5,
+   "z": -236.31,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -148.0,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 1.07 gap 3.11 (air-step checked)"
+  },
+  {
+   "kind": "goto",
+   "x": -58.59,
+   "y": -5.43,
+   "z": -233.67,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -57.6,
+   "y": -5.59,
+   "z": -229.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -57.27,
+   "y": -5.59,
+   "z": -229.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -57.27,
+   "z": -229.71,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 to enc2"
+  },
+  {
+   "kind": "goto",
+   "x": -58.26,
+   "y": -5.56,
+   "z": -230.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": -58.26,
+   "z": -230.37,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r3 to enc4"
+  },
+  {
+   "kind": "goto",
+   "x": -56.28,
+   "y": -5.59,
+   "z": -229.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -57.57,
+   "y": -5.59,
+   "z": -229.6,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "long-jump",
+   "x": -51.66,
+   "z": -227.07,
+   "note": "long-jump rise 0.10 gap 5.03 (air-step checked)"
+  },
+  {
+   "kind": "goto",
+   "x": -51.66,
+   "y": -5.49,
+   "z": -227.07,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -45.72,
+   "y": -5.49,
+   "z": -225.09,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -44.73,
+   "y": -5.49,
+   "z": -225.09,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": -44.73,
+   "z": -225.09,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep enc4 1"
+  },
+  {
+   "kind": "goto",
+   "x": -39.78,
+   "y": -5.49,
+   "z": -230.04,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -38.46,
+   "y": -5.49,
+   "z": -236.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.81,
+   "y": -4.49,
+   "z": -243.57,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -36.81,
+   "z": -243.57,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep enc4 2"
+  },
+  {
+   "kind": "goto",
+   "x": -36.81,
+   "y": -4.49,
+   "z": -243.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.48,
+   "y": -4.49,
+   "z": -244.23,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -36.48,
+   "y": -4.49,
+   "z": -244.56,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -34.83,
+   "y": -4.49,
+   "z": -246.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -34.83,
+   "y": -4.49,
+   "z": -248.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -35.49,
+   "y": -4.49,
+   "z": -249.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -35.16,
+   "y": -3.55,
+   "z": -255.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -39.45,
+   "y": -3.55,
+   "z": -256.44,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -39.45,
+   "z": -256.44,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep enc4 3"
+  },
+  {
+   "kind": "goto",
+   "x": -40.77,
+   "y": -3.55,
+   "z": -262.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -40.77,
+   "z": -262.38,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 to enc3"
+  },
+  {
+   "kind": "goto",
+   "x": -38.79,
+   "y": -3.55,
+   "z": -256.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -34.83,
+   "y": -3.55,
+   "z": -255.12,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -35.16,
+   "y": -4.49,
+   "z": -248.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -34.5,
+   "y": -4.49,
+   "z": -247.53,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -35.16,
+   "y": -4.49,
+   "z": -245.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.48,
+   "y": -4.49,
+   "z": -244.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.48,
+   "y": -4.49,
+   "z": -244.23,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -37.14,
+   "y": -4.49,
+   "z": -243.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -38.46,
+   "y": -5.49,
+   "z": -235.65,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -39.45,
+   "y": -5.49,
+   "z": -234.33,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": -39.45,
+   "z": -234.33,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep enc3 1"
+  },
+  {
+   "kind": "goto",
+   "x": -40.11,
+   "y": -5.49,
+   "z": -229.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -45.72,
+   "y": -5.49,
+   "z": -225.09,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -45.72,
+   "z": -225.09,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 to enc5"
+  },
+  {
+   "kind": "goto",
+   "x": -40.11,
+   "y": -5.49,
+   "z": -229.05,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -38.46,
+   "y": -5.49,
+   "z": -236.64,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.81,
+   "y": -4.49,
+   "z": -243.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.48,
+   "y": -4.49,
+   "z": -244.23,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -36.48,
+   "y": -4.49,
+   "z": -244.56,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -34.83,
+   "y": -4.49,
+   "z": -246.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -34.83,
+   "y": -4.49,
+   "z": -248.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -35.49,
+   "y": -4.49,
+   "z": -249.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -35.16,
+   "y": -3.55,
+   "z": -255.45,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -39.45,
+   "y": -3.55,
+   "z": -256.77,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -40.11,
+   "y": -3.45,
+   "z": -262.71,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "x": -40.11,
+   "z": -262.71,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep enc5 1"
+  },
+  {
+   "kind": "goto",
+   "x": -37.14,
+   "y": -3.71,
+   "z": -264.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.15,
+   "y": -3.75,
+   "z": -264.36,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -31.2,
+   "y": -3.85,
+   "z": -264.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -28.89,
+   "y": -3.89,
+   "z": -263.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -23.94,
+   "y": -3.81,
+   "z": -263.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -23.94,
+   "z": -263.37,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 to gate"
+  },
+  {
+   "kind": "goto",
+   "x": -31.2,
+   "y": -3.84,
+   "z": -263.7,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -32.19,
+   "y": -3.79,
+   "z": -264.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.15,
+   "y": -3.75,
+   "z": -264.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -37.14,
+   "y": -3.71,
+   "z": -264.36,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -38.46,
+   "y": -3.45,
+   "z": -264.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 120
+  },
+  {
+   "kind": "log",
+   "text": "r3 to streets"
+  },
+  {
+   "kind": "goto",
+   "x": -37.14,
+   "y": -3.71,
+   "z": -264.36,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -36.15,
+   "y": -3.75,
+   "z": -264.36,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -31.2,
+   "y": -3.85,
+   "z": -264.03,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -28.89,
+   "y": -3.89,
+   "z": -263.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -28.56,
+   "y": -3.87,
+   "z": -263.37,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800,
+   "x": -28.56,
+   "z": -263.37,
+   "leash": 10
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": -28.56,
+   "z": -263.37,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep streets 1"
+  },
+  {
+   "kind": "goto",
+   "x": -23.61,
+   "y": -3.79,
+   "z": -262.38,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -22.62,
+   "y": -3.26,
+   "z": -261.06,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -15.69,
+   "y": -2.33,
+   "z": -257.43,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -9.75,
+   "y": -2.33,
+   "z": -257.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -9.75,
+   "z": -257.1,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep streets 2"
+  },
+  {
+   "kind": "goto",
+   "x": -7.44,
+   "y": -2.33,
+   "z": -254.46,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -7.44,
+   "y": -2.33,
+   "z": -246.54,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -7.77,
+   "y": -2.33,
+   "z": -242.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -7.77,
+   "z": -242.25,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep streets 3"
+  },
+  {
+   "kind": "goto",
+   "x": -13.05,
+   "y": -2.33,
+   "z": -238.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -17.34,
+   "y": -2.33,
+   "z": -238.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -18.99,
+   "y": -2.33,
+   "z": -242.25,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -18.99,
+   "y": -2.33,
+   "z": -242.58,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -18.99,
+   "z": -242.58,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 to towers"
+  },
+  {
+   "kind": "goto",
+   "x": -18.99,
+   "y": -2.33,
+   "z": -249.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800,
+   "x": -18.99,
+   "z": -249.51,
+   "leash": 10
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": -18.99,
+   "z": -249.51,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 sweep towers 1"
+  },
+  {
+   "kind": "goto",
+   "x": -16.68,
+   "y": -2.33,
+   "z": -255.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -8.76,
+   "y": -2.33,
+   "z": -256.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -5.79,
+   "y": -2.33,
+   "z": -252.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -4.47,
+   "y": -2.33,
+   "z": -252.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "x": -4.47,
+   "z": -252.48,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r3 to jugger"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800,
+   "x": -4.47,
+   "z": -252.48,
+   "leash": 10
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": -4.47,
+   "z": -252.48,
+   "leash": 10
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": -4.47,
+   "z": -252.48,
+   "leash": 12
+  },
+  {
+   "kind": "log",
+   "text": "r3 to door"
+  },
+  {
+   "kind": "goto",
+   "x": -6.45,
+   "y": -2.33,
+   "z": -251.82,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -5.79,
+   "y": -2.33,
+   "z": -245.88,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -3.15,
+   "y": -2.33,
+   "z": -244.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "x": -3.15,
+   "z": -244.56,
+   "leash": 8
+  },
+  {
+   "kind": "goto",
+   "x": -3.15,
+   "y": -2.33,
+   "z": -244.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "exit r3 use-door to room 4"
+  },
+  {
+   "kind": "use-door",
+   "x": 0.48,
+   "z": -243.9,
+   "yaw": 96.8,
+   "approach": 5.0,
+   "ticks": 90,
+   "attempts": 6
+  },
+  {
+   "kind": "wait-until",
+   "room": 4,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "skulls r3-port route end"
+  }
+ ]
+}

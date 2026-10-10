@@ -1,0 +1,1362 @@
+{
+ "schemaVersion": 1,
+ "style": "mayhem",
+ "name": "lost-skulls-r7-ghostbeard",
+ "description": "Ghostbeard: defenders, cannoneers, skeleton waves, cannon at FP1/FP2/FP3 (repeated until dead).",
+ "notes": [
+  "Walk model: Golden Trophy v2 walk model = live-admitted collision, SM64 decomp ground step, floor y on every goto; gates the quest opens and moving platforms left out; lethal killzones +1 m, naval mines 3.5 m forbidden; jumps/backflips only where walking cannot reach, each air-step simulated). Not verified live.",
+  "Copied verified segments: room 0 padlock/jail/pirate fight/cannon (lost-skulls-r0-lock-and-lighter steps 2-55), room 4 Gibbet catch-throw (lost-skulls-gibbets-bomb). Cannon sections: aim-cannon, release, wait-until Idle, lighter, light-wick requireAim.",
+  "Needs component 19fd89f7 or later (light-wick requireAim). QA launch uses MarioQaImmortal; a real S attempt runs with -NoQaImmortal."
+ ],
+ "launch": {
+  "quest": "lost-skulls",
+  "questRoom": 7,
+  "switches": [
+   "MarioFollow",
+   "MarioCombat",
+   "MarioCarry",
+   "MarioQaImmortal"
+  ]
+ },
+ "steps": [
+  {
+   "kind": "wait-until",
+   "questRunning": true,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "wait-until",
+   "room": 7,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "log",
+   "text": "r7 defenders"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 12,
+   "reach": 1.0,
+   "clearTicks": 120,
+   "timeoutTicks": 2700,
+   "excludeType": 24,
+   "x": -171.47,
+   "z": 161.2,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r7 sweep load1 1"
+  },
+  {
+   "kind": "goto",
+   "x": -168.17,
+   "y": -4.06,
+   "z": 160.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -167.84,
+   "y": -4.06,
+   "z": 159.88,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -167.51,
+   "y": -5.13,
+   "z": 159.55,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -166.85,
+   "y": -5.13,
+   "z": 158.56,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -166.85,
+   "y": -5.13,
+   "z": 157.9,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -166.85,
+   "y": -6.41,
+   "z": 157.57,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "note": "walk-off drop"
+  },
+  {
+   "kind": "goto",
+   "x": -166.85,
+   "y": -6.33,
+   "z": 157.24,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -162.89,
+   "y": -6.53,
+   "z": 150.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -160.91,
+   "y": -6.53,
+   "z": 151.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -160.58,
+   "y": -6.53,
+   "z": 151.63,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -159.26,
+   "y": -6.55,
+   "z": 152.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -157.61,
+   "y": -6.55,
+   "z": 152.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -156.62,
+   "y": -6.54,
+   "z": 151.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -155.63,
+   "y": -6.55,
+   "z": 151.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -153.32,
+   "y": -6.55,
+   "z": 151.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -152.0,
+   "y": -6.55,
+   "z": 152.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -148.37,
+   "y": -5.14,
+   "z": 154.93,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -145.73,
+   "y": -3.91,
+   "z": 150.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -138.14,
+   "y": -4.23,
+   "z": 152.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -137.48,
+   "y": -4.79,
+   "z": 154.27,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -137.48,
+   "y": -5.5,
+   "z": 155.92,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "excludeType": 24,
+   "x": -137.48,
+   "z": 155.92,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r7 sweep load1 2"
+  },
+  {
+   "kind": "goto",
+   "x": -138.47,
+   "y": -5.5,
+   "z": 160.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -136.49,
+   "y": -5.24,
+   "z": 162.52,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -136.82,
+   "y": -4.75,
+   "z": 163.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -138.47,
+   "y": -4.75,
+   "z": 165.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -138.47,
+   "y": -4.75,
+   "z": 167.14,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -138.47,
+   "y": -4.75,
+   "z": 167.14,
+   "tolerance": 0.2,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -125.5,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "backflip",
+   "note": "backflip rise 3.64 gap 2.84 (air-step checked)"
+  },
+  {
+   "kind": "goto",
+   "x": -136.16,
+   "y": -1.11,
+   "z": 168.79,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -135.83,
+   "y": -1.11,
+   "z": 168.79,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "excludeType": 24,
+   "x": -135.83,
+   "z": 168.79,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r7 to ship"
+  },
+  {
+   "kind": "goto",
+   "x": -135.83,
+   "y": -1.01,
+   "z": 170.11,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -139.13,
+   "y": -0.98,
+   "z": 171.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 5400,
+   "excludeType": 24,
+   "x": -139.13,
+   "z": 171.1,
+   "leash": 8
+  },
+  {
+   "kind": "log",
+   "text": "r7 sweep ship 1"
+  },
+  {
+   "kind": "goto",
+   "x": -141.11,
+   "y": -0.99,
+   "z": 171.1,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -139.62,
+   "y": -0.99,
+   "z": 171.3,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "goto",
+   "x": -141.11,
+   "y": -0.99,
+   "z": 171.1,
+   "tolerance": 0.3,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "jump",
+   "holdA": 8,
+   "stick": 1.0,
+   "x": -146.06,
+   "z": 170.44,
+   "note": "jump rise -1.49 gap 4.99 (air-step checked)"
+  },
+  {
+   "kind": "goto",
+   "x": -146.06,
+   "y": -2.48,
+   "z": 170.44,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -146.39,
+   "y": -2.48,
+   "z": 169.78,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -146.08,
+   "y": -2.48,
+   "z": 171.15,
+   "tolerance": 0.25,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true
+  },
+  {
+   "kind": "long-jump",
+   "x": -148.04,
+   "z": 162.52,
+   "note": "long-jump rise -2.34 gap 7.45 (air-step checked)"
+  },
+  {
+   "kind": "goto",
+   "x": -148.04,
+   "y": -4.82,
+   "z": 162.52,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 300
+  },
+  {
+   "kind": "goto",
+   "x": -146.39,
+   "y": -4.41,
+   "z": 160.87,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -140.45,
+   "y": -5.32,
+   "z": 159.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.11,
+   "y": -5.5,
+   "z": 157.24,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "excludeType": 24,
+   "x": -141.11,
+   "z": 157.24,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r7 to ghost"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 10800,
+   "excludeType": 24,
+   "x": -141.11,
+   "z": 157.24,
+   "leash": 10
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3600,
+   "excludeType": 24,
+   "x": -141.11,
+   "z": 157.24,
+   "leash": 10
+  },
+  {
+   "kind": "log",
+   "text": "r7 sweep ghost 1"
+  },
+  {
+   "kind": "goto",
+   "x": -140.45,
+   "y": -5.32,
+   "z": 159.55,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -147.71,
+   "y": -4.45,
+   "z": 161.53,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -148.37,
+   "y": -5.67,
+   "z": 164.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -152.99,
+   "y": -6.28,
+   "z": 165.49,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -154.64,
+   "y": -6.55,
+   "z": 165.16,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -155.3,
+   "y": -6.55,
+   "z": 164.17,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -156.29,
+   "y": -6.56,
+   "z": 163.18,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -156.29,
+   "y": -7.08,
+   "z": 162.52,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -156.62,
+   "y": -7.08,
+   "z": 161.2,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -162.89,
+   "y": -7.08,
+   "z": 160.87,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -163.88,
+   "y": -7.08,
+   "z": 155.59,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -164.21,
+   "y": -7.08,
+   "z": 155.59,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -164.54,
+   "y": -6.87,
+   "z": 155.26,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -165.2,
+   "y": -6.73,
+   "z": 154.27,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -165.2,
+   "y": -6.73,
+   "z": 152.29,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 15,
+   "reach": 1.0,
+   "clearTicks": 240,
+   "timeoutTicks": 7200,
+   "excludeType": 24,
+   "x": -165.2,
+   "z": 152.29,
+   "leash": 10
+  },
+  {
+   "kind": "wait-until",
+   "enemyType": 24,
+   "x": -160.48,
+   "z": 169.13,
+   "radius": 4,
+   "timeoutTicks": 1800
+  },
+  {
+   "kind": "log",
+   "text": "cannon r7 fp1 handle at the wield point"
+  },
+  {
+   "kind": "goto",
+   "x": -162.56,
+   "y": -6.53,
+   "z": 150.31,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -160.58,
+   "y": -6.53,
+   "z": 151.63,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -159.26,
+   "y": -6.55,
+   "z": 152.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -157.61,
+   "y": -6.55,
+   "z": 152.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -156.62,
+   "y": -6.54,
+   "z": 151.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -155.63,
+   "y": -6.55,
+   "z": 151.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -153.32,
+   "y": -6.55,
+   "z": 151.3,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -152.0,
+   "y": -6.55,
+   "z": 152.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -148.37,
+   "y": -5.14,
+   "z": 154.93,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -145.73,
+   "y": -3.91,
+   "z": 150.97,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -138.14,
+   "y": -4.23,
+   "z": 152.95,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -137.48,
+   "y": -4.79,
+   "z": 154.27,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -137.81,
+   "y": -5.5,
+   "z": 156.91,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -142.1,
+   "y": -5.42,
+   "z": 162.85,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.77,
+   "y": -4.76,
+   "z": 163.84,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.11,
+   "y": -4.75,
+   "z": 164.83,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.11,
+   "y": -4.75,
+   "z": 165.16,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -141.18,
+   "y": -4.75,
+   "z": 165.63,
+   "tolerance": 0.15,
+   "run": false,
+   "stuckTicks": 45,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 291,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "grab",
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "aim-cannon",
+   "x": -160.48,
+   "y": -2.5,
+   "z": 169.13,
+   "toleranceDegrees": 2,
+   "attempts": 4,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "release",
+   "mode": "b",
+   "note": "no-op when aim-cannon already released the handle"
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Idle",
+   "timeoutTicks": 90
+  },
+  {
+   "kind": "log",
+   "text": "cannon r7 fp1 lighter stand drop edge 1.50 m"
+  },
+  {
+   "kind": "goto",
+   "x": -140.45,
+   "y": -4.75,
+   "z": 164.5,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -140.45,
+   "y": -4.75,
+   "z": 166.48,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -140.57,
+   "y": -4.75,
+   "z": 166.43,
+   "tolerance": 0.1,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -90.0,
+   "toleranceDegrees": 8
+  },
+  {
+   "kind": "grab",
+   "x": -141.07,
+   "z": 166.43,
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 270,
+   "attempts": 4,
+   "again": true,
+   "requireAim": true
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 180,
+   "attempts": 3,
+   "requireAim": true,
+   "note": "fallback; skips when the first one lit"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "log",
+   "text": "r7 phase 1 waves"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 8400,
+   "excludeType": 24,
+   "x": -140.57,
+   "z": 166.43,
+   "leash": 12
+  },
+  {
+   "kind": "wait-until",
+   "enemyType": 24,
+   "x": -156.13,
+   "z": 148.1,
+   "radius": 4,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cannon r7 fp2 handle at the wield point"
+  },
+  {
+   "kind": "goto",
+   "x": -140.45,
+   "y": -4.75,
+   "z": 164.5,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.44,
+   "y": -4.75,
+   "z": 164.17,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.77,
+   "y": -4.97,
+   "z": 163.51,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.77,
+   "y": -5.5,
+   "z": 161.86,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -140.12,
+   "y": -5.5,
+   "z": 160.21,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -137.48,
+   "y": -5.5,
+   "z": 155.26,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -137.48,
+   "y": -4.29,
+   "z": 153.61,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.11,
+   "y": -4.2,
+   "z": 151.96,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -141.77,
+   "y": -4.2,
+   "z": 152.62,
+   "tolerance": 0.5,
+   "timeoutTicks": 900
+  },
+  {
+   "kind": "goto",
+   "x": -142.43,
+   "y": -4.23,
+   "z": 153.28,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -142.43,
+   "y": -4.23,
+   "z": 153.61,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -142.76,
+   "y": -4.23,
+   "z": 153.94,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -142.93,
+   "y": -4.23,
+   "z": 153.7,
+   "tolerance": 0.15,
+   "run": false,
+   "stuckTicks": 45,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 246,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "grab",
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "aim-cannon",
+   "x": -156.13,
+   "y": -2.32,
+   "z": 148.1,
+   "toleranceDegrees": 2,
+   "attempts": 4,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "release",
+   "mode": "b",
+   "note": "no-op when aim-cannon already released the handle"
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Idle",
+   "timeoutTicks": 90
+  },
+  {
+   "kind": "log",
+   "text": "cannon r7 fp2 lighter stand drop edge 0.83 m"
+  },
+  {
+   "kind": "goto",
+   "x": -142.76,
+   "y": -4.35,
+   "z": 154.27,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -142.93,
+   "y": -4.35,
+   "z": 154.25,
+   "tolerance": 0.1,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -80.0,
+   "toleranceDegrees": 8
+  },
+  {
+   "kind": "grab",
+   "x": -143.42,
+   "z": 154.34,
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 270,
+   "attempts": 4,
+   "again": true,
+   "requireAim": true
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 0,
+   "attempts": 3,
+   "requireAim": true,
+   "note": "fallback; skips when the first one lit"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "log",
+   "text": "r7 phase 2 waves"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 300,
+   "timeoutTicks": 12600,
+   "excludeType": 24,
+   "x": -142.93,
+   "z": 154.25,
+   "leash": 12
+  },
+  {
+   "kind": "log",
+   "text": "r7 fp3 cycle until Ghostbeard is dead"
+  },
+  {
+   "kind": "repeat",
+   "count": 6,
+   "body": 21,
+   "enemyType": 24,
+   "x": -150.0,
+   "z": 160.0,
+   "radius": 40,
+   "clearTicks": 90
+  },
+  {
+   "kind": "wait-until",
+   "enemyType": 24,
+   "x": -158.96,
+   "z": 158.95,
+   "radius": 4,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "cannon r7 fp3 handle at the wield point"
+  },
+  {
+   "kind": "goto",
+   "x": -142.76,
+   "y": -4.23,
+   "z": 153.94,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -142.93,
+   "y": -4.23,
+   "z": 153.7,
+   "tolerance": 0.15,
+   "run": false,
+   "stuckTicks": 45,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": 246,
+   "toleranceDegrees": 5
+  },
+  {
+   "kind": "grab",
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "aim-cannon",
+   "x": -158.96,
+   "y": -2.78,
+   "z": 158.95,
+   "toleranceDegrees": 2,
+   "attempts": 4,
+   "timeoutTicks": 5400
+  },
+  {
+   "kind": "release",
+   "mode": "b",
+   "note": "no-op when aim-cannon already released the handle"
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Idle",
+   "timeoutTicks": 90
+  },
+  {
+   "kind": "log",
+   "text": "cannon r7 fp3 lighter stand drop edge 0.83 m"
+  },
+  {
+   "kind": "goto",
+   "x": -142.76,
+   "y": -4.35,
+   "z": 154.27,
+   "tolerance": 0.35,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200
+  },
+  {
+   "kind": "goto",
+   "x": -142.93,
+   "y": -4.35,
+   "z": 154.25,
+   "tolerance": 0.1,
+   "run": false,
+   "stuckTicks": 60,
+   "timeoutTicks": 1200,
+   "stop": true,
+   "unstickJumps": 0
+  },
+  {
+   "kind": "face",
+   "yaw": -80.0,
+   "toleranceDegrees": 8
+  },
+  {
+   "kind": "grab",
+   "x": -143.42,
+   "z": 154.34,
+   "attempts": 3
+  },
+  {
+   "kind": "wait-until",
+   "carry": "Holding",
+   "timeoutTicks": 30
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 270,
+   "attempts": 4,
+   "again": true,
+   "requireAim": true
+  },
+  {
+   "kind": "light-wick",
+   "yaw": 0,
+   "attempts": 3,
+   "requireAim": true,
+   "note": "fallback; skips when the first one lit"
+  },
+  {
+   "kind": "wait",
+   "ticks": 60
+  },
+  {
+   "kind": "release",
+   "mode": "z"
+  },
+  {
+   "kind": "fight",
+   "attack": "auto",
+   "radius": 20,
+   "reach": 1.0,
+   "clearTicks": 150,
+   "timeoutTicks": 3000,
+   "excludeType": 24,
+   "x": -142.93,
+   "z": 154.25,
+   "leash": 12
+  },
+  {
+   "kind": "log",
+   "text": "r7 Ghostbeard dead: quest ends"
+  },
+  {
+   "kind": "wait-until",
+   "questRunning": false,
+   "timeoutTicks": 3600
+  },
+  {
+   "kind": "log",
+   "text": "skulls r7-ghostbeard route end"
+  }
+ ]
+}
