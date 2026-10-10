@@ -74,7 +74,7 @@ so on). You pick it on the **Map** tab. Some scenes are only a piece of a bigger
 doesn't load.
 
 The quests work too: Golden Trophy, Jumbotron, Crimson Cauldron, Lost Skulls and Crescendo of the Blood Moon, as many as your
-build has. Start from the beginning or from any room. Mario walks through the doors on his own.
+build has. Start from the beginning or from any room.
 
 - **Combat.** His punches, kicks and stomps hurt Rec Room enemies, and their attacks hurt him. This only works in quests. The Rec
   Center and the other rooms have no fighting to hook into.
