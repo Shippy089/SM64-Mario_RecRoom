@@ -12,8 +12,8 @@ These are the versions the mod is built and tested with. Other versions may not 
 | Super Mario 64 ROM | USA, .z64, SHA-256 `17ce077343c6133f8c9f2d6d6d9a4ab62c8cd2aa57c40aea1f490b4c8bb21d91` | your own cartridge |
 | .NET | SDK 10 to build; nothing to run (the release launcher carries its own) | https://dotnet.microsoft.com/download/dotnet/10.0 |
 
-A release zip carries its own build stamp in `VERSION.txt` (the commit, the build time and the SHA-256 of the native library); quote it
-when you report a problem. `NOTICE.txt` lists what is in the package and where it comes from.
+Each release zip has a build stamp in `VERSION.txt`. It holds the commit, the build time and the SHA-256 (a fingerprint) of the
+native library. Include it when you report a problem. `NOTICE.txt` lists what is in the package and where each part comes from.
 
 ## Getting the libsm64 source
 
@@ -25,5 +25,5 @@ python import-mario-geo.py
 cd ../..
 ```
 
-The launcher's Set up then builds `dist/native/sm64-mario.dll` from it. The build checks the checkout against
-`native/libsm64-source.json` first.
+After that, the launcher's Set up builds `dist/native/sm64-mario.dll` from it. Before building, it compares the checkout with
+`native/libsm64-source.json`.

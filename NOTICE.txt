@@ -1,20 +1,20 @@
 Mario for Rec Room - by Shippy089
 
-A fan project. It is not affiliated with or endorsed by Rec Room Inc. or Nintendo.
+This is a fan project. Rec Room Inc. and Nintendo have nothing to do with it and don't endorse it.
 The launcher, the mod, the route files and the build scripts are MIT-licensed (LICENSE.txt).
 
 What is in this package
-  - The launcher (dist\MarioLauncher.*), the Mario mod for the BepInEx loader (dist\plugins) and route files (routes\).
+  - The launcher (dist\MarioLauncher.*), the Mario mod for the BepInEx loader (dist\plugins) and the route files (routes\).
   - dist\native\sm64-mario.dll: a build of libsm64 (https://github.com/libsm64/libsm64, commit
-    fd11813208272b4271d92bd92feb8f3fdbe61be5, built with zig; the recipe is in native\). libsm64 reimplements Super Mario 64's
+    fd11813208272b4271d92bd92feb8f3fdbe61be5, built with zig; the recipe is in native\). libsm64 rebuilds Super Mario 64's
     movement and physics from the community decompilation (https://github.com/n64decomp/sm64). Read the licence and credits of
-    those projects before you pass the package on. The library contains no copy of the Super Mario 64 ROM: textures and sounds are
-    read from your own ROM when the game starts.
+    those projects before you pass the package on. The library has no copy of the Super Mario 64 ROM in it. The textures and
+    sounds are read from your own ROM when the game starts.
   - BepInEx-pack\: the BepInEx 6.0.0-be.788 IL2CPP win-x64 mod loader, unmodified, as published at builds.bepinex.dev
     (https://github.com/BepInEx/BepInEx). Its licences and the sources of its parts are listed in BepInEx-pack\README.txt.
 
-What is NOT in this package, and what you supply
-  - Rec Room: an old IL2CPP client build (2019 to April 8, 2020) is yours to download with your own Steam account.
-  - Super Mario 64: your own cartridge dump (USA, .z64). It is read on your computer and never copied or sent anywhere.
+What is NOT in this package, and what you bring yourself
+  - Rec Room: an old IL2CPP client build (2019 to April 8, 2020). You download it with your own Steam account.
+  - Super Mario 64: a dump of your own cartridge (USA, .z64). It is read on your computer and never copied or sent anywhere.
 
 Rec Room and Super Mario 64 belong to their owners. Check the terms of the games before you share recordings or builds.
