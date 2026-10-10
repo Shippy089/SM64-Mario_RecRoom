@@ -8,7 +8,7 @@ will know exactly what is missing.
 | | From a release zip | Building from source |
 |---|---|---|
 | The **.NET 10 SDK** ([download](https://dotnet.microsoft.com/download/dotnet/10.0)) | no, the launcher carries its own .NET | yes |
-| An **old IL2CPP Rec Room client, 2019 or later** (below) | yes | yes |
+| An **old IL2CPP Rec Room client, December 14, 2018 or later** (below) | yes | yes |
 | Your **Super Mario 64 ROM** (USA, .z64) | yes | yes |
 | **BepInEx 6**, the mod loader (below) | yes | yes |
 | **zig**, to compile the native Mario library once | no, the zip has it already built | yes |
@@ -19,7 +19,7 @@ client folder. Everything below (settings, logs) is kept in that folder. `VERSIO
 
 ## 1. An old IL2CPP Rec Room client
 
-The mod works with old IL2CPP builds of Rec Room: 2019 or later, from before Rec Room added anti-cheat. Setup checks the folder
+The mod works with old IL2CPP builds of Rec Room: December 14, 2018 or later, from before Rec Room added anti-cheat. Setup checks the folder
 and accepts a build when:
 
 - it is an IL2CPP build (it has `GameAssembly.dll` and `global-metadata.dat`) with metadata version 24 or newer, which is what
@@ -28,9 +28,9 @@ and accepts a build when:
 - it isn't your normal Steam install (`steamapps\common`): the mod is never installed into the live game.
 
 Mono builds (no `GameAssembly.dll`, a `Managed` folder instead) can't be loaded by BepInEx's IL2CPP loader and are refused.
-**Rec Room was a Mono game through at least November 2018** (the October 12 and November 15, 2018 builds are Mono, Unity
-2018.1.5), and is IL2CPP by September 2019 (Unity 2018.3.5). The switch is somewhere in between; step 1b below checks a
-build before you download it.
+**Rec Room switched from Mono to IL2CPP on December 14, 2018** (manifest `1421943146240504109`: that update adds
+`GameAssembly.dll` and removes the Mono runtime). Every build before it is Mono and won't work; that one and later ones are
+IL2CPP. Step 1b below checks a build before you download it.
 
 **The tested build** is September 9, 2019. It is the build the mod was developed and tested on, and setup shows it as *tested*:
 
@@ -51,7 +51,7 @@ current Rec Room install.
    the *Manifests* tab).
 2. Each row is one build: the date it went out and its **manifest ID**, a long number such as `3817258843939969587`. SteamDB may
    ask you to sign in with Steam before it shows the full history.
-3. Pick a date from 2019 on, before anti-cheat, and copy its manifest ID. The one above is the tested build; any other
+3. Pick a date from December 14, 2018 on, before anti-cheat, and copy its manifest ID. The one above is the tested build; any other
    date is a *compatible build* if it passes setup's check.
 
 Rooms and quests depend on the date: an earlier build doesn't have the quests that came out later, and the Map tab only
@@ -93,7 +93,7 @@ DepotDownloader -app 471710 -depot 471711 -manifest 3817258843939969587 -usernam
 That is the tested build. For another date, change `-manifest` and the folder name:
 
 ```
-DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID_FROM_STEAMDB -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2019-06
+DepotDownloader -app 471710 -depot 471711 -manifest MANIFEST_ID_FROM_STEAMDB -username YOUR_STEAM_NAME -remember-password -dir C:\Games\RecRoom-2019-02
 ```
 
 - DepotDownloader asks for your password, and a Steam Guard code if your account uses one, in the terminal. Type them there

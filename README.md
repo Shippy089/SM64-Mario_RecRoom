@@ -2,7 +2,7 @@
 
 # Mario for Rec Room
 
-**Super Mario 64's Mario in old IL2CPP builds of Rec Room (2019 or later). Offline, single player, real SM64 physics.**
+**Super Mario 64's Mario in old IL2CPP builds of Rec Room (December 14, 2018 or later). Offline, single player, real SM64 physics.**
 
 [![Latest release](https://img.shields.io/github/v/release/Shippy089/SM64-Mario_RecRoom?label=download&color=e52521)](https://github.com/Shippy089/SM64-Mario_RecRoom/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-049cd8)](LICENSE.txt)
@@ -17,7 +17,7 @@ by Shippy089
 </div>
 
 > [!IMPORTANT]
-> You need your own **Super Mario 64 (USA) ROM** and your own copy of an **old IL2CPP Rec Room client (2019 or later)**. Neither is
+> You need your own **Super Mario 64 (USA) ROM** and your own copy of an **old IL2CPP Rec Room client (December 14, 2018 or later)**. Neither is
 > included, neither is downloaded for you, and the mod never talks to Rec Room's servers.
 
 > [!NOTE]
@@ -61,7 +61,7 @@ It's offline and single player. No servers, no other players, no accounts.
 
 ## Getting started
 
-**You need** Windows 10 or 11 (64-bit), an **old IL2CPP Rec Room client (2019 or later)** and a **Super Mario 64 (USA) ROM**. **BepInEx
+**You need** Windows 10 or 11 (64-bit), an **old IL2CPP Rec Room client (December 14, 2018 or later)** and a **Super Mario 64 (USA) ROM**. **BepInEx
 6** (the mod loader) comes in the zip, and the launcher has .NET built in, so there's nothing else to install.
 [docs/INSTALL.md](docs/INSTALL.md) covers where each part comes from (including how to download an old build with SteamDB and
 DepotDownloader) and what the launcher checks. Allow about 15 minutes the
@@ -119,7 +119,7 @@ This is a work in progress by one person. Where things stand:
 
 ## Known limits
 
-- **Any old build, one tested.** Any IL2CPP Rec Room build without anti-cheat installs. 2018 builds are Mono and can't load the mod.
+- **Any old build, one tested.** Any IL2CPP Rec Room build without anti-cheat installs. Builds before December 14, 2018 are Mono and can't load the mod.
   Only the September 9, 2019 build has been tested; parts of the mod may not fit others. Builds with anti-cheat, and your live
   Steam install, are always refused; the mod never works around anti-cheat.
 - **150 m world.** SM64 uses 16-bit coordinates, so the world ends about 150 m from where Mario starts. Very large rooms get

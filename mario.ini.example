@@ -8,7 +8,7 @@
 # ---------------------------------------------------------------------------
 
 [paths]
-# Folder that contains Recroom_Release.exe from an old IL2CPP Rec Room build (2019 or later; tested: September 9, 2019)
+# Folder that contains Recroom_Release.exe from an old IL2CPP Rec Room build (December 14, 2018 or later; tested: September 9, 2019)
 # (Steam depot 471711, manifest 3817258843939969587). See docs/INSTALL.md.
 client = C:\Games\RecRoom-2019
 
