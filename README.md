@@ -14,6 +14,10 @@
 
 by Shippy089
 
+<a href="https://youtu.be/UF2uwklFTF0"><img src="https://img.youtube.com/vi/UF2uwklFTF0/maxresdefault.jpg" alt="Watch: Mario in Rec Room (Beta testing mod)" width="720"></a>
+
+<sub>Click to watch on YouTube</sub>
+
 </div>
 
 > [!IMPORTANT]
@@ -24,16 +28,12 @@ by Shippy089
 > This repo holds the docs, routes and native build scripts. The playable package (launcher, mod, native library and the
 > BepInEx loader in one zip) is on the [Releases](https://github.com/Shippy089/SM64-Mario_RecRoom/releases) page.
 
-## Videos
+## Gallery
 
-<table>
-<tr>
-<td align="center" width="50%"><a href="https://youtu.be/UF2uwklFTF0"><img src="https://img.youtube.com/vi/UF2uwklFTF0/maxresdefault.jpg" alt="Mario in Rec Room (Beta testing mod)" width="100%"></a><br><b>Mario in Rec Room</b> (beta testing)</td>
-<td align="center" width="50%"><a href="https://youtu.be/82K-5s4_zy8"><img src="https://img.youtube.com/vi/82K-5s4_zy8/hqdefault.jpg" alt="Wing Cap showcase (Mario x Rec Room PoC/Beta)" width="100%"></a><br><b>Wing Cap showcase</b></td>
-</tr>
-</table>
+<details>
+<summary><b>Screenshots and the Wing Cap video</b> (click to open)</summary>
 
-## Screenshots
+<br>
 
 <table>
 <tr>
@@ -44,7 +44,12 @@ by Shippy089
 <td align="center" width="50%"><img src="docs/images/wing-cap-world-edge.jpg" alt="Mario flying with the Wing Cap into the orange tape at the world edge" width="100%"><br>Wing Cap flight at the world edge (orange tape). Metal cap from the testing-only Immortal switch</td>
 <td align="center" width="50%"><img src="docs/images/park-fountain.jpg" alt="Mario at the fountain in the Park" width="100%"><br>The Park. Metal cap from the testing-only Immortal switch</td>
 </tr>
+<tr>
+<td align="center" colspan="2"><a href="https://youtu.be/82K-5s4_zy8"><img src="https://img.youtube.com/vi/82K-5s4_zy8/hqdefault.jpg" alt="Watch: Wing Cap showcase (Mario x Rec Room PoC/Beta)" width="60%"></a><br><b>Wing Cap showcase</b> (YouTube)</td>
+</tr>
 </table>
+
+</details>
 
 ## What it is
 
