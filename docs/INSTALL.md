@@ -8,7 +8,7 @@ will know exactly what is missing.
 | | From a release zip | Building from source |
 |---|---|---|
 | The **.NET 10 SDK** ([download](https://dotnet.microsoft.com/download/dotnet/10.0)) | no, the launcher carries its own .NET | yes |
-| An **old IL2CPP Rec Room client, December 14, 2018 or later** (below) | yes | yes |
+| An **old IL2CPP Rec Room client, 2019 to April 8, 2020** (below) | yes | yes |
 | Your **Super Mario 64 ROM** (USA, .z64) | yes | yes |
 | **BepInEx 6**, the mod loader (below) | yes | yes |
 | **zig**, to compile the native Mario library once | no, the zip has it already built | yes |
@@ -19,7 +19,7 @@ client folder. Everything below (settings, logs) is kept in that folder. `VERSIO
 
 ## 1. An old IL2CPP Rec Room client
 
-The mod works with old IL2CPP builds of Rec Room: December 14, 2018 or later, from before Rec Room added anti-cheat. Setup checks the folder
+The mod works with old IL2CPP builds of Rec Room: 2019 to April 8, 2020, from before Rec Room added anti-cheat. Setup checks the folder
 and accepts a build when:
 
 - it is an IL2CPP build (it has `GameAssembly.dll` and `global-metadata.dat`) with metadata version 24 or newer, which is what
@@ -29,8 +29,13 @@ and accepts a build when:
 
 Mono builds (no `GameAssembly.dll`, a `Managed` folder instead) can't be loaded by BepInEx's IL2CPP loader and are refused.
 **Rec Room switched from Mono to IL2CPP on December 14, 2018** (manifest `1421943146240504109`: that update adds
-`GameAssembly.dll` and removes the Mono runtime). Every build before it is Mono and won't work; that one and later ones are
-IL2CPP. Step 1b below checks a build before you download it.
+`GameAssembly.dll` and removes the Mono runtime). Every build before it is Mono and won't work. Those first IL2CPP builds
+were made with **Unity 2018.1**, though, and BepInEx 6 can't load them: tested on the December 14 build, its code generator
+fails before any mod loads. The September 9, 2019 build uses Unity 2018.3 and works. The exact update where Rec Room moved
+to Unity 2018.3 isn't pinned down yet, so setup reads each build's Unity version and refuses 2018.1 and older.
+**Rec Room started launching through Easy Anti-Cheat with the April 20, 2020 update** (manifest
+`9119006898280485087`, per Rec Room's own patch notes; Rec Room's Referee replaced it in 2025), so the last usable build is
+April 8, 2020 (manifest `3706709507199582170`). Step 1b below checks a build before you download it.
 
 **The tested build** is September 9, 2019. It is the build the mod was developed and tested on, and setup shows it as *tested*:
 
@@ -51,7 +56,7 @@ current Rec Room install.
    the *Manifests* tab).
 2. Each row is one build: the date it went out and its **manifest ID**, a long number such as `3817258843939969587`. SteamDB may
    ask you to sign in with Steam before it shows the full history.
-3. Pick a date from December 14, 2018 on, before anti-cheat, and copy its manifest ID. The one above is the tested build; any other
+3. Pick a date from 2019 up to April 8, 2020, and copy its manifest ID. The one above is the tested build; any other
    date is a *compatible build* if it passes setup's check.
 
 Rooms and quests depend on the date: an earlier build doesn't have the quests that came out later, and the Map tab only
@@ -305,7 +310,8 @@ The loading bar shows the first problem the mod logs. The usual ones:
 - **"The Rec Room client isn't set up" / "Mario isn't installed in the Rec Room client folder yet"**: run Setup (the wizard), or
   fix the paths on the Setup tab.
 - **"This Rec Room build has anti-cheat"**: use an older IL2CPP build from before anti-cheat.
-- **"too old for BepInEx 6"**: the build's IL2CPP metadata is older than version 24. Use a newer IL2CPP build.
+- **"too old for BepInEx 6"**: the build was made with Unity 2018.1 or older (Rec Room's December 2018 builds), or its
+  IL2CPP metadata is older than version 24. Use a 2019 build.
 - **"Compatible build"**: it installs and starts; if Mario doesn't appear, `BepInEx\LogOutput.log` says which part didn't fit
   that build. The tested build above is the one known to work.
 - **"BepInEx's interop cache was incomplete"**: fixed for you. BepInEx rebuilds it on that start (a few minutes).

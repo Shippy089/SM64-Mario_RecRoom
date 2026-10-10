@@ -4,7 +4,7 @@ These are the versions the mod is built and tested with. Other versions may not 
 
 | What | Version | Where |
 |---|---|---|
-| Rec Room client | any compatible old IL2CPP build, December 14, 2018 or later, without anti-cheat (tested: September 9, 2019, Steam app 471710, depot 471711, manifest 3817258843939969587) | your own Steam account |
+| Rec Room client | any compatible old IL2CPP build, 2019 to April 8, 2020, without anti-cheat (tested: September 9, 2019, Steam app 471710, depot 471711, manifest 3817258843939969587) | your own Steam account |
 | BepInEx | 6.0.0-be.788 (commit 5b766a3), IL2CPP win-x64 | https://builds.bepinex.dev/projects/bepinex_be/788/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788%2B5b766a3.zip (SHA-256 `f4cc496bd098a0df4164b81e3737297707f13a47c2478dba2f60eefab784817a`) |
 | zig | 0.17.0 | https://ziglang.org/download/ |
 | libsm64 | commit `fd11813208272b4271d92bd92feb8f3fdbe61be5` | https://github.com/libsm64/libsm64 |
