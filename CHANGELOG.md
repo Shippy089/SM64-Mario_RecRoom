@@ -5,7 +5,7 @@
 ### New
 
 - Luigi. Pick him as the character on the Mario tab. Super Luigi 64 v2.0 by Cjes and CyberTanuki comes with the mod, unchanged, in `characters\`, and is applied to your ROM in memory. He looks and sounds like Luigi and moves like Mario.
-- There is one more character. It isn't in the zip, and the Character list only shows it once what it needs is already on your PC. Its numbers don't add up.
+- One more character, not in the zip. This copy is personalized.
 - Skins: the Mario tab loads `.marioskin` files from the `skins` folder and shows each one's credits. None come with the mod. See `skins\README.txt`.
 - Free roam: past 100 m from the centre of Mario's SM64 world, the centre moves to him between two frames, so the orange tape and the freeze at the edge no longer stop him. It's the same Mario: speed, facing, action, health and camera carry on, in the air or on the ground. Height doesn't move, so the ceiling tape is still there about 150 m up.
 - Mario has SM64's round shadow on the floor under him. It shrinks and fades as he goes up and is gone about 6 m up. `shadow = off` turns it off.

@@ -90,8 +90,8 @@ build has. Start from the beginning or from any room.
   Mario, so he can keep walking or flying as far as the room goes. Same Mario the whole way: speed, health and the camera carry
   on. Straight up there's still a ceiling with orange construction tape, about 150 m up.
 - **Characters.** Luigi from Super Luigi 64 v2.0 by Cjes and CyberTanuki. Their patch comes in the zip, unchanged, and is
-  applied to your ROM in memory. He looks and sounds like Luigi and moves like Mario. There's one more character, and it
-  doesn't come with the mod.
+  applied to your ROM in memory. He looks and sounds like Luigi and moves like Mario. There's one more character. It doesn't
+  come with the mod. This copy is personalized.
 - **Skins.** `.marioskin` files in the `skins` folder show up on the Mario tab with their credits. None come with the mod.
 - **Shadow.** SM64's round shadow under Mario, so you can tell where a jump lands (`shadow`, on by default).
 - **Pause screen.** Esc (Start on a controller) pauses Mario. While paused, C (RB) puts the camera back behind him and
