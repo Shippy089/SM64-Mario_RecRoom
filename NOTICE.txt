@@ -13,6 +13,12 @@ What is in this package
   - BepInEx-pack\: the BepInEx 6.0.0-be.788 IL2CPP win-x64 mod loader, unmodified, as published at builds.bepinex.dev
     (https://github.com/BepInEx/BepInEx). Its licences and the sources of its parts are listed in BepInEx-pack\README.txt.
 
+  - characters\Super Luigi 64 v2.0.zip: Super Luigi 64 v2.0 by Cjes and CyberTanuki (True64, True64.webs.com), with their
+    thanks to Dudaw, Flotonic and Subdrag. Unchanged from their release; their readme and changelog are inside. It is a
+    patch, not a ROM: the launcher applies it in memory to your own ROM. Luigi belongs to Nintendo.
+  - B3313 (Super Mario 64 Internal Plexus) by Chillu and the B3313 team is not in this package. Its sounds, animations and
+    art belong to them.
+
 What is NOT in this package, and what you bring yourself
   - Rec Room: an old IL2CPP client build (2019 to April 8, 2020). You download it with your own Steam account.
   - Super Mario 64: a dump of your own cartridge (USA, .z64). It is read on your computer and never copied or sent anywhere.

@@ -15,6 +15,10 @@ client = C:\Games\RecRoom-2019
 # Your own Super Mario 64 (USA) ROM, in .z64 format. It is never copied or shared.
 rom = C:\Games\sm64\baserom.us.z64
 
+# Super Luigi 64 v2.0 (the .zip or its .ppf), for character = luigi. Empty: the one in characters\ is used, or one next to
+# your ROM or in Downloads. The patch is applied in memory. No patched ROM is ever written.
+luigi =
+
 # The BepInEx 6 (IL2CPP, x64) folder or .zip. Only setup needs it. The release has it in BepInEx-pack\.
 bepinex = BepInEx-pack\BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.788.zip
 
@@ -64,6 +68,9 @@ health_meter = on
 # instead of the quest ending the moment he touches it. Off = the original rule, where lava kills him on contact.
 sm64_lava = on
 
+# The round SM64 shadow under Mario, on the floor below him. It shrinks and fades as he goes up.
+shadow = on
+
 # Mario can pick up and throw bombs, torches, lighters, jigsaw pieces,
 # pallets and cannon handles.
 carry = on
@@ -84,6 +91,22 @@ constant_flying = off
 # Let the camera pick its own angles (made for routes). Off = it stays behind Mario and you steer it.
 auto_camera = off
 
+# Who Mario looks like: mario, or luigi (needs your Super Luigi 64 v2.0 patch, see [paths] luigi).
+character = mario
+
+# A skin from the skins folder next to the launcher (its file name without .marioskin), or empty for Mario's own body.
+# The Mario tab lists them with their credits.
+skin =
+
+# Camera up and down: normal (moving the mouse or stick up looks up) or inverted.
+camera_vertical = normal
+
+# Camera left and right: normal or inverted.
+camera_horizontal = normal
+
+# Camera turning speed, 0.1 to 5 (1.0 = the original speed).
+camera_sensitivity = 1.0
+
 # Turn off Mario's voice and sounds.
 mute = off
 
@@ -97,6 +120,9 @@ controller = auto
 # Microsoft's recommended 0.24 (left) and 0.27 (right).
 controller_deadzone = 0.2
 
+# Xbox pads shake when Mario gets hurt, dies or lands a ground pound. Other pads have no motors the mod can reach.
+rumble = on
+
 [advanced]
 # You normally don't need to change anything below.
 
@@ -106,3 +132,20 @@ logs =
 # TESTING ONLY: Mario can't die (and wears SM64's Metal cap). Scores from these runs don't count.
 immortal = off
 
+[launcher]
+# How the launcher looks. theme: default, mario, soft or mono (no colours). accent: the cursor and the current tab:
+# theme (the theme's own), cyan, green, yellow, blue, magenta, red, white, orange or sky.
+theme = default
+accent = theme
+
+# The gradient on the author name: two to eight colours as hex, comma-separated, left to right.
+gradient = ff9c09, ffe047, 05a4fa
+# Use the same gradient on the "Mario for Rec Room" title too.
+gradient_title = off
+# The gradient scrolls. off keeps it still.
+animations = on
+
+# Tabs by name, comma-separated: their order, and which ones are hidden. Empty = the usual order, all shown.
+# Play, Setup and Advanced are always shown. The Advanced tab changes these for you.
+tab_order =
+hidden_tabs =

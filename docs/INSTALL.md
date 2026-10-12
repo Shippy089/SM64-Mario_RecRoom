@@ -208,7 +208,7 @@ The **Map** tab picks where **Play** starts:
 
 Only Play (the Rec Center or another room) and quests start from the Map tab. Routes have their own tab.
 
-## Flying and the edge of the world
+## Flying, free roam and the camera
 
 The **Wing cap** (Mario tab, `wing_cap` in `mario.ini`) gives Mario SM64's flight cap. *Auto* wears it whenever the original game
 lets you fly (the room allows it, or you hold the Maker Pen). *Always* and *Never* force it on or off. The wings need a
@@ -219,10 +219,14 @@ wings. The Metal cap that Immortal mode adds works with either library.
 **Constant flying** (Mario tab, `constant_flying = on`; off by default) keeps a Wing-cap flight at one steady speed. You don't
 dive to gain speed, and you don't stall in a climb.
 
-SM64's world is small. Mario can go about **150 m** from the spot where he starts, in every direction and upwards. This limit
-comes from SM64 itself, because its coordinates are 16-bit. The mod puts a solid wall there. When you're within about 12 m of
-it, orange construction tape fades in on the wall, and it gets stronger the closer you are (the log says
-`mario-world-edge shown` the first time). If the tape ever misbehaves, only the tape is switched off. The wall stays.
+SM64's world is small: about **150 m** from its centre, because its coordinates are 16-bit. Since 2.00, when Mario is 100 m
+sideways from that centre, the centre moves to him between two frames (the log says `mario-roam-rebase`). Nothing resets:
+speed, facing, health and the camera carry on, so a long run or flight doesn't stop. Height doesn't move, so the ceiling and
+its orange construction tape (`mario-world-edge shown`) are still there about 150 m up. If a move ever fails, he
+gets a new SM64 world at the player instead (`mario-roam-reanchor`).
+
+**Camera** (Mario tab): *Up/down* and *Left/right* can each be normal or flipped, and *Camera speed* goes from 0.1 to 5
+(`camera_vertical`, `camera_horizontal`, `camera_sensitivity`). Up looks up by default.
 
 If fights are too hard, turn on **Casual mode** on the **Mario** tab. You get more reach, a wider punch angle and softer knockback. It's
 off by default, and it isn't the real SM64 rules.
@@ -242,6 +246,8 @@ ROM when the game starts, so no Nintendo art ships with the mod.
 | R | Re-centre the camera behind Mario |
 | 1 | Open / close the Mario menu (2 and 3 move through it) |
 | Esc | Pause Mario's controls (press again to resume) |
+| C (paused) | Put the camera back behind Mario |
+| R (paused) | Respawn Mario at the last solid ground, health kept |
 
 Controls only respond while the game window is focused.
 
@@ -260,6 +266,8 @@ touch drives Mario. The controller wins if both are in use, and both can turn th
 | R | Re-centre the camera behind Mario | RB | R1 | R (button 6) | Button 6 |
 | L | Open / close the Mario menu | LB | L1 | L (button 5) | Button 5 |
 | Start | Pause Mario's controls (press again to resume) | Start | Options | Start (button 4) | Button 10 |
+| R (paused) | Put the camera back behind Mario | RB | R1 | R (button 6) | Button 6 |
+| Z (paused) | Respawn Mario at the last solid ground, health kept | LT or RT | L2 or R2 | Z (button 3) | Button 7 or 8 |
 | C-left, C-right | Turn the camera (they page through the open menu) | Right stick left / right | Right stick left / right | C-left (button 9), C-right (button 10) | Right stick left / right |
 | C-up, C-down | Tilt the camera | Right stick up / down | Right stick up / down | C-up (button 7), C-down (button 8) | Right stick up / down |
 
@@ -275,6 +283,9 @@ present themselves as an Xbox pad, work too. The mod picks up a pad while the ga
 in. The log says `mario-controller found=xinput|winmm family=xbox|playstation|n64|generic vid=.. pid=.. name=..` and
 `mario-controller lost=..`. The button numbers for PlayStation, N64 and generic pads follow the usual Windows DirectInput order.
 They haven't been tried on every make. If a button is wrong, send the `found` line and what each button did.
+
+Xbox-compatible pads rumble when Mario gets hurt, dies or lands a ground pound (`rumble = on`, the **Controller rumble** row on the
+Mario tab). PlayStation, N64 and generic pads don't: the Windows joystick API has no motors.
 
 To go through a quest door, point the camera at the door, walk up close (about 2 m) and press the left mouse button.
 
@@ -335,6 +346,12 @@ The loading bar shows the first problem the mod logs. These are the usual ones:
 - **A `BepInEx-before-mario-<date>` folder appeared**: setup moved files that were in the way into it (an old loader, a
   hand-copied mod). Nothing was deleted. Remove the folder once everything works.
 - **"Not Super Mario 64 (USA) in .z64 format"** (or "not found"): check the path, the region and the byte order.
+- **"Luigi (Super Luigi 64) needs your own copy of its patch"**: `characters\Super Luigi 64 v2.0.zip` is missing from the mod
+  folder. Unzip the release again, or put that zip next to your ROM or in Downloads, or set `[paths] luigi`. It must be the
+  v2.0 one; a different file is ignored.
+- **"... did not produce the expected ROM"**: the patch is right but the ROM isn't the clean USA one it was made for.
+- **"...'s sounds need the 2.00 native"**: your `dist\native\sm64-mario.dll` is from before 2.00. Delete it and run Setup again,
+  or rebuild it with `native\build.ps1`. Mario still plays, without sound.
 - **The bar sits still on "Starting Rec Room" or says BepInEx has not started**: either BepInEx isn't installed in the client
   folder (run Setup again), or antivirus blocked `winhttp.dll`.
 - **Nothing for a long time on a first start**: that's normal for the first few minutes (see above). With no internet

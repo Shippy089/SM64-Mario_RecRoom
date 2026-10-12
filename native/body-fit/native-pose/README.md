@@ -73,6 +73,19 @@ the gfx, silent-audio and carry overlays, and compiles one `sm64-mario.dll`. Fir
 file hashes (`native/libsm64-source.json`). Every overlay edit has an exact anchor. So a different libsm64 commit stops the build
 instead of producing a different library.
 
+## ROM hack data (2.00)
+
+Four more edits let the library read a ROM hack's own data. With the clean USA ROM they change nothing: the same ROM gives the
+same Mario frames and the same audio samples as before.
+
+- Mario's shape and colours. `model.inc.c` is filled in from the ROM's Mario block at start-up, at the places listed in
+  `mario_model_offsets.json`. `python scripts/rom_model.py --offsets <model.inc.c> <clean rom> <out.json>` writes that file again.
+- `sm64_audio_layout(ctl, tbl, seq, bankSets, romSize)` says where the sound data sits. Call it before `sm64_audio_init`. A layout
+  that doesn't fit inside `romSize` (8 MiB to 64 MiB) is ignored. The bank sets table is converted to this machine's byte order,
+  where upstream shifted it by one byte and only worked while every offset was under 256.
+- Room for the parsed instrument banks: upstream sizes the buffer for the US ROM's and writes past it on a bigger one.
+- Animation offsets are read as signed, the way the N64 adds them. A hack can put an animation in front of the table.
+
 The test that uses the ROM is `tests/body-pose/probe.py --reviewed-body-pose`. It needs matching Defender receipts before it loads
 any native files. It takes a Windows read lock on each DLL and limits native dependency lookup to its own directory and System32.
 It compares every named native state field, and every returned position, normal, color and UV byte, to the original reviewed DLL.

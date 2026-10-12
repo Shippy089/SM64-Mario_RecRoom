@@ -397,6 +397,74 @@ def carry_libsm64_overlay(pose_libsm64):
 # compile
 
 
+def rom_model_overlay(source):
+    """model.inc.c whose vertex arrays and light (colour) groups are filled in from the ROM's own Mario block at start-up
+    (body_model_from_segment, called by the texture loader with the block it already unpacked). With the clean USA ROM
+    that rewrites the same numbers; with a hack that redraws Mario in place (Super Luigi 64) it gives that character's
+    shape and colours. The offsets come from body-fit/native-pose/mario_model_offsets.json (scripts/rom_model.py)."""
+    text = read_text(source / "src/decomp/mario/model.inc.c")
+    table = json.loads((OVERLAY_POSE / "mario_model_offsets.json").read_text(encoding="utf-8"))
+    vertices, lights, size = table["vertices"], table["lights"], table["segmentSize"]
+    count_v = text.count("static const Vtx ")
+    count_l = text.count("static const Lights1 ")
+    if count_v != len(vertices) or count_l != len(lights):
+        fail("model.inc.c has %d vertex arrays and %d light groups; mario_model_offsets.json lists %d and %d"
+             % (count_v, count_l, len(vertices), len(lights)))
+    text = text.replace("static const Vtx ", "static Vtx ").replace("static const Lights1 ", "static Lights1 ")
+    # Compiled from the build cache: the includes become plain names (the pose overlay's load_tex_data.h sits next to it).
+    text = replace_once(text, '#include "../../load_tex_data.h"', '#include "load_tex_data.h"')
+    text = replace_once(text, '#include "../../gfx_macros.h"', '#include "gfx_macros.h"')
+    rows = ["    { (void *)%s, %d, (int)(sizeof(%s) / sizeof(%s[0])), 0 }," % (n, o, n, n) for n, o in vertices.items()]
+    rows += ["    { (void *)&%s, %d, 1, 1 }," % (n, o) for n, o in lights.items()]
+    text += """
+
+/* Mario from the ROM (build_native.py rom_model_overlay). */
+typedef struct { void *data; int offset; int count; int kind; } BodyRomPart;
+static const BodyRomPart body_rom_parts[] = {
+%s
+};
+
+static short body_be16( const unsigned char *p ) { return (short)((p[0] << 8) | p[1]); }
+
+void body_model_from_segment( const unsigned char *segment, unsigned int size )
+{
+    if( size != %du ) return; /* another layout: keep the decomp's own model */
+    for( unsigned int i = 0; i < sizeof(body_rom_parts) / sizeof(body_rom_parts[0]); ++i )
+    {
+        const BodyRomPart *part = &body_rom_parts[i];
+        const unsigned char *p = segment + part->offset;
+        if( part->kind == 0 )
+        {
+            Vtx *v = (Vtx *)part->data;
+            for( int k = 0; k < part->count; ++k, p += 16 )
+            {
+                v[k].v.ob[0] = body_be16( p );
+                v[k].v.ob[1] = body_be16( p + 2 );
+                v[k].v.ob[2] = body_be16( p + 4 );
+                v[k].v.flag = (unsigned short)body_be16( p + 6 );
+                v[k].v.tc[0] = body_be16( p + 8 );
+                v[k].v.tc[1] = body_be16( p + 10 );
+                for( int c = 0; c < 4; ++c ) v[k].v.cn[c] = p[12 + c];
+            }
+        }
+        else
+        {
+            Lights1 *l = (Lights1 *)part->data;
+            for( int c = 0; c < 3; ++c )
+            {
+                l->a.l.col[c] = p[c];
+                l->a.l.colc[c] = p[4 + c];
+                l->l[0].l.col[c] = p[8 + c];
+                l->l[0].l.colc[c] = p[12 + c];
+                l->l[0].l.dir[c] = (signed char)p[16 + c];
+            }
+        }
+    }
+}
+""" % ("\n".join(rows), size)
+    return text
+
+
 def metal_wings_overlay(source):
     """load_tex_data.h/.c with Metal Mario's two wing textures extracted from the ROM (the texture bank right after the
     plain wings, 32x64 RGBA16 each) as atlas slots 11 and 12: the atlas grows from 11 to 13 slots (832x64)."""
@@ -409,7 +477,150 @@ def metal_wings_overlay(source):
     header = replace_once(header, "{ 64, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32 };", "{ 64, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32 };")
     header = replace_once(header, "{ 32, 32, 32, 32, 32, 32, 32, 32, 32, 64, 64 };", "{ 32, 32, 32, 32, 32, 32, 32, 32, 32, 64, 64, 64, 64 };")
     loader = read_text(source / "src/load_tex_data.c")
+    loader = replace_once(loader, '#define MARIO_TEX_ROM_OFFSET 1132368',
+                          'extern void body_model_from_segment( const unsigned char *segment, unsigned int size );\n\n#define MARIO_TEX_ROM_OFFSET 1132368')
+    loader = replace_once(loader, "    free( out_buf );\n}", "    body_model_from_segment( out_buf, head.dest_size );\n    free( out_buf );\n}")
     return header, loader
+
+
+AUDIO_LOADER = '''
+    // Where the sound data sits in the ROM: the US ROM's own places unless sm64_audio_layout said otherwise first.
+    uint8_t *rom_copy = malloc( s_audio_rom_size );
+
+    memcpy( rom_copy, rom, s_audio_rom_size );
+
+    gSoundDataADSR = parse_seqfile( rom_copy+s_audio_ctl ); //ctl
+    gSoundDataRaw = parse_seqfile( rom_copy+s_audio_tbl ); //tbl
+    gMusicData = parse_seqfile( rom_copy+s_audio_seq );
+    gBankSetsData = bank_sets_native( rom_copy+s_audio_bank_sets, gMusicData->seqCount );
+    audio_memory_from_rom( rom_copy );
+'''
+
+AUDIO_LAYOUT = '''
+#include "libsm64.h"
+#include "decomp/audio/data.h"
+#include <stdlib.h>
+
+#define AUDIO_HEAP_ROOM 0x40000  // gAudioHeap's size in heap.c's overlay
+
+static uint32_t s_audio_ctl = 0x57B720, s_audio_tbl = 0x593560, s_audio_seq = 0x7B0860, s_audio_bank_sets = 0x7CC620;
+static uint32_t s_audio_rom_size = 0x800000;
+
+/* Sound data offsets for a ROM that keeps them elsewhere (a ROM hack). romSize is how many bytes of the ROM to keep for
+   audio; every offset must sit inside it. Call before sm64_audio_init. A layout that doesn't add up is ignored (the
+   previous one stays), because sm64_audio_init copies romSize bytes from the ROM it is handed. */
+SM64_LIB_FN void sm64_audio_layout( uint32_t ctl, uint32_t tbl, uint32_t seq, uint32_t bankSets, uint32_t romSize )
+{
+    if( romSize < 0x800000 || romSize > 0x4000000 || ctl >= romSize || tbl >= romSize || seq >= romSize || bankSets >= romSize )
+        return;
+    s_audio_ctl = ctl; s_audio_tbl = tbl; s_audio_seq = seq; s_audio_bank_sets = bankSets; s_audio_rom_size = romSize;
+}
+
+/* The sound memory sizes, read from the ROM the way the game sets itself up: the US ROM gives the usual ones, a bigger hack its
+   bigger ones (its banks don't fit in the US pools and play as noise there). Sizes that don't look right are left alone. */
+static uint32_t rom_u32( const uint8_t *at ) { return ( (uint32_t)at[0] << 24 ) | ( at[1] << 16 ) | ( at[2] << 8 ) | at[3]; }
+
+static void audio_memory_from_rom( const uint8_t *rom )
+{
+    const uint8_t *preset = rom + 0xEE2A0;  // gAudioSessionPresets[0], the one audio_init uses
+    uint32_t heap = rom_u32( rom + 0xEFFFC ), init = rom_u32( rom + 0xF0000 );
+    uint32_t pools = rom_u32( preset + 0x0C ) + rom_u32( preset + 0x10 ) + rom_u32( preset + 0x14 ) + rom_u32( preset + 0x18 );
+    if( rom_u32( preset ) != 32000 || heap < 0x30000 || heap > AUDIO_HEAP_ROOM || init < 0x2000 || init > 0x8000 || pools > heap - init - 0x8000 )
+        return;
+    gAudioHeapSize = DOUBLE_SIZE_ON_64_BIT( heap );
+    gAudioInitPoolSize = DOUBLE_SIZE_ON_64_BIT( init );
+    gAudioSessionPresets[0].persistentSeqMem = rom_u32( preset + 0x0C );
+    gAudioSessionPresets[0].persistentBankMem = rom_u32( preset + 0x10 );
+    gAudioSessionPresets[0].temporarySeqMem = rom_u32( preset + 0x14 );
+    gAudioSessionPresets[0].temporaryBankMem = rom_u32( preset + 0x18 );
+}
+
+/* The bank sets table (one big-endian u16 offset per sequence, then a count and bank ids for each) in this machine's byte
+   order. libsm64 read it one byte off with a patch-up, which only holds while every offset is under 256. */
+static uint8_t *bank_sets_native( const uint8_t *sets, int count )
+{
+    int end = 2 * count;
+    for( int i = 0; i < count; i++ )
+    {
+        int at = ( sets[2 * i] << 8 ) | sets[2 * i + 1];
+        if( at + 1 + sets[at] > end ) end = at + 1 + sets[at];
+    }
+    uint8_t *out = malloc( end );
+    memcpy( out, sets, end );
+    for( int i = 0; i < count; i++ )
+    {
+        uint16_t offset = (uint16_t)( ( sets[2 * i] << 8 ) | sets[2 * i + 1] );
+        memcpy( out + 2 * i, &offset, 2 );
+    }
+    return out;
+}
+'''
+
+
+def audio_layout_overlay(source):
+    """load_audio_data.c that reads the sound data where sm64_audio_layout says (the US ROM's places by default), so a
+    ROM hack that moved its sequences plays its own sounds. Its rom_copy still leaks once, as upstream's does."""
+    src = source / "src"
+    text = absolute_includes(read_text(src / "load_audio_data.c"), src, source, 5)
+    text = replace_once(text, "bool g_is_audio_initialized = false;\n", "bool g_is_audio_initialized = false;\n" + AUDIO_LAYOUT)
+    text = replace_once(text, '''
+    // FIXME: rom_copy purposfully leaks here
+    uint8_t *rom_copy = malloc( 0x800000 );
+
+    memcpy( rom_copy, rom, 0x800000 );
+
+    gSoundDataADSR = parse_seqfile( rom_copy+0x57B720 ); //ctl
+    gSoundDataRaw = parse_seqfile( rom_copy+0x593560 ); //tbl
+    gMusicData = parse_seqfile( rom_copy+0x7B0860 );
+    gBankSetsData = rom_copy+0x7CC621;
+    memmove( gBankSetsData+0x45,gBankSetsData+0x45-1,0x5B );
+    gBankSetsData[0x45]=0x00;
+''', AUDIO_LOADER)
+    return text
+
+
+def anim_offsets_overlay(source):
+    """load_anim_data.c reading each animation's table offset as signed, as the N64's 32-bit sums do. A ROM hack can move an
+    animation in front of the table (one hack puts three near 0x109000); upstream adds it unsigned and reads 4 GB past the ROM."""
+    src = source / "src"
+    text = absolute_includes(read_text(src / "load_anim_data.c"), src, source, 1)
+    return replace_once(text, "#define GET_OFFSET( n ) (read_u32_be(", "#define GET_OFFSET( n ) ((int32_t)read_u32_be(")
+
+
+def audio_heap_overlay(source):
+    """heap.c with room for a ROM hack's bigger audio heap (0x32600 in one, US 0x31150); how much is used still comes from the ROM."""
+    audio = source / "src/decomp/audio"
+    text = absolute_includes(read_text(audio / "heap.c"), audio, source, 6)
+    text = replace_once(text, "#else\nALIGNED16 u8 gAudioHeap[DOUBLE_SIZE_ON_64_BIT(0x31200)];", "#else\nALIGNED16 u8 gAudioHeap[DOUBLE_SIZE_ON_64_BIT(AUDIO_HEAP_ROOM)];")
+    return replace_once(text, "#include <ultra64.h>\n", "#include <ultra64.h>\n#define AUDIO_HEAP_ROOM 0x40000\n")
+
+
+def ctl_room_overlay(source):
+    """convUtils.c with more room for the parsed instrument banks: upstream sizes it for the US ROM's (0x20B40 bytes) and
+    writes past the end on a ROM with bigger banks."""
+    tools = source / "src/decomp/tools"
+    text = absolute_includes(read_text(tools / "convUtils.c"), tools, source, 4)
+    text = replace_once(text, "gCtlSeqs = (unsigned char*)calloc(0x20B40, 1);", "gCtlSeqs = (unsigned char*)calloc(0x200000, 1);")
+    # struct CBook holds 32 entries (order 2, 2 predictors). Some hacks' voices use 4 predictors, so the book ran into the
+    # loop parsed right after it and those frames decoded as loud noise. Reserve what the book needs instead, up to the
+    # mixer's own limit (16 entries of 8).
+    text = replace_once(text, "#include <stdlib.h>", "#include <stdlib.h>\n#include <stddef.h>")
+    return replace_once(text, """    struct CBook* book_ptr = (struct CBook*)(*pos);
+    *pos += sizeof(struct CBook);
+    *pos = ALIGN16(*pos);
+    book_ptr->order = read_u32_be(book);
+    book_ptr->npredictors = read_u32_be(book + 4); // both are signed
+""", """    struct CBook* book_ptr = (struct CBook*)(*pos);
+    book_ptr->order = read_u32_be(book);
+    book_ptr->npredictors = read_u32_be(book + 4); // both are signed
+    if (book_ptr->order < 0 || book_ptr->npredictors < 0 || book_ptr->order * book_ptr->npredictors > 16){
+        book_ptr->order = 2;
+        book_ptr->npredictors = 0;
+    }
+    size_t book_size = offsetof(struct CBook, table) + sizeof(short) * 8 * book_ptr->order * book_ptr->npredictors;
+    *pos += book_size > sizeof(struct CBook) ? book_size : sizeof(struct CBook);
+    *pos = ALIGN16(*pos);
+""")
 
 
 def source_files(source):
@@ -444,6 +655,7 @@ def main():
     (work / "pose").mkdir(parents=True, exist_ok=True)
     (work / "silent").mkdir(exist_ok=True)
     (work / "carry").mkdir(exist_ok=True)
+    (work / "audio").mkdir(exist_ok=True)
     gfx, pose_libsm64, objects = pose_overlay(source, tag_body_regions(source))
     tex_header, tex_loader = metal_wings_overlay(source)
     outputs = {
@@ -456,6 +668,11 @@ def main():
         work / "carry" / "libsm64.c": carry_libsm64_overlay(pose_libsm64),
         work / "carry" / "interaction.c": carry_interaction_overlay(source),
         work / "carry" / "rendering_graph_node.c": carry_render_overlay(source),
+        work / "pose" / "model.inc.c": rom_model_overlay(source),
+        work / "audio" / "load_audio_data.c": audio_layout_overlay(source),
+        work / "audio" / "convUtils.c": ctl_room_overlay(source),
+        work / "audio" / "load_anim_data.c": anim_offsets_overlay(source),
+        work / "audio" / "heap.c": audio_heap_overlay(source),
     }
     for path, text in outputs.items():
         path.write_text(text, encoding="utf-8", newline="\n")
@@ -468,6 +685,11 @@ def main():
         "src/decomp/audio/external.c": work / "silent" / "external.c",
         "src/decomp/game/interaction.c": work / "carry" / "interaction.c",
         "src/decomp/game/rendering_graph_node.c": work / "carry" / "rendering_graph_node.c",
+        "src/decomp/mario/model.inc.c": work / "pose" / "model.inc.c",
+        "src/load_audio_data.c": work / "audio" / "load_audio_data.c",
+        "src/decomp/tools/convUtils.c": work / "audio" / "convUtils.c",
+        "src/load_anim_data.c": work / "audio" / "load_anim_data.c",
+        "src/decomp/audio/heap.c": work / "audio" / "heap.c",
     }
     files = [str(replacements[f]) if f in replacements else f for f in source_files(source)]
     missing = [f for f in replacements if f not in source_files(source)]

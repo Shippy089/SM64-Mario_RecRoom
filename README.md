@@ -86,15 +86,32 @@ build has. Start from the beginning or from any room.
   you hold the Maker Pen). You can also set it to always or never (`wing_cap`).
 - **Constant flying** (toggleable, off by default). Mario flies at one steady speed. SM64's own flight speeds up in a dive and
   stalls in a climb.
-- **World edge.** SM64's world is small, about **150 m** from where Mario starts, in every direction and up. A solid wall stands
-  there. Orange construction tape fades in on it when you get within about 12 m.
+- **Free roam.** SM64's world is small, about **150 m** from its centre. Every 100 m sideways, the centre quietly moves to
+  Mario, so he can keep walking or flying as far as the room goes. Same Mario the whole way: speed, health and the camera carry
+  on. Straight up there's still a ceiling with orange construction tape, about 150 m up.
+- **Characters.** Luigi from Super Luigi 64 v2.0 by Cjes and CyberTanuki. Their patch comes in the zip, unchanged, and is
+  applied to your ROM in memory. He looks and sounds like Luigi and moves like Mario. There's one more character, and it
+  doesn't come with the mod.
+- **Skins.** `.marioskin` files in the `skins` folder show up on the Mario tab with their credits. None come with the mod.
+- **Shadow.** SM64's round shadow under Mario, so you can tell where a jump lands (`shadow`, on by default).
+- **Pause screen.** Esc (Start on a controller) pauses Mario. While paused, C (RB) puts the camera back behind him and
+  R (LT / RT) respawns him at the last solid ground he stood on, with the health he had.
 - **Controllers.** Xbox, PlayStation and N64 USB adapters work, and so do other gamepads. They all use SM64's N64 layout
-  ([button tables](docs/INSTALL.md)). Keyboard and mouse still work too.
+  ([button tables](docs/INSTALL.md)). Keyboard and mouse still work too. Xbox pads rumble when Mario gets hurt, dies or lands a
+  ground pound (`rumble`). The pause screen and the Mario Controls menu name your controller's own buttons while it's the last
+  thing you touched.
+- **Camera settings.** Up/down and left/right can each be flipped, and the camera speed set. Up looks up by default.
 - **Casual mode** (off by default). More reach and softer knockback, for when SM64 fights are too hard.
 - **Routes.** JSON files (plain text files that list steps) that make Mario play by himself with controller input only. Nothing
   teleports him ([docs/ROUTES.md](docs/ROUTES.md)).
 
 There's also a follow camera that you steer, SM64 sound, and SM64's power meter on screen. All of it is drawn from your ROM.
+
+## What's new in 2.00
+
+Luigi, skins, free roam that never swaps Mario out, his shadow, rumble, the pause screen, controller button names on screen,
+camera settings, and a launcher you can recolour and rearrange. Settings now carry over to new versions. The full list,
+fixes included, is in [CHANGELOG.md](CHANGELOG.md).
 
 ## Getting started
 
@@ -115,7 +132,8 @@ old build with SteamDB and DepotDownloader, and what the launcher checks. Allow 
    it fills. **The first start takes a few minutes and needs the internet once**, because BepInEx downloads Unity's base files
    and gets itself ready for your client. Later starts take under a minute.
 5. Play. W A S D moves, Space jumps, left click punches and grabs, Shift crouches, and the mouse turns the camera
-   ([all controls](docs/INSTALL.md#controls-keyboard)). Esc pauses Mario's controls.
+   ([all controls](docs/INSTALL.md#controls-keyboard)). Esc pauses Mario; on the pause screen C resets the camera and R
+   respawns him.
 
 The launcher has tabs for the rest. Tab or 1 to 7 switches between them, and the arrow keys and Enter change things.
 
@@ -123,10 +141,10 @@ The launcher has tabs for the rest. Tab or 1 to 7 switches between them, and the
 |---|---|
 | Play | The Play button, what to start, Immortal Mario (testing only), and live status (health, room, position) |
 | Map | The Rec Center, any other room of your client, or any room of the five quests, checked against your own build |
-| Mario | Fighting, Casual mode, SM64 health meter, SM64 lava, carrying, Wing cap, constant flying, controller, camera, sound |
+| Mario | Character, skin, fighting, Casual mode, SM64 health meter, SM64 lava, Mario's shadow, carrying, Wing cap, constant flying, controller and rumble, camera, sound |
 | Routes | Pick a route file for Mario to play by himself |
 | Setup | Your file paths, a status check, set up / update, uninstall |
-| Advanced | Start the quest right away, where logs go, and the flags Play would pass to the game |
+| Advanced | Start the quest right away, where logs go, the flags Play would pass to the game, the launcher's colours and tab order, and reset to defaults |
 | Log | Mario's live log while the game runs |
 
 Mario only shows up when Rec Room is started from this menu. Each Play gives the game a one-time pass. If you start Rec Room any
@@ -145,12 +163,15 @@ This is a work in progress by one person. Current status:
 | Building the native library from a fresh libsm64 download | Carrying and placing objects (pallets) |
 | Mario in the Rec Center: controls, camera, sound | Most quest routes (Jumbotron, Crimson Cauldron, Crescendo). A Golden Trophy route fight still times out |
 | Starting in the Park with the Wing cap on | Finishing a whole quest with an S rank |
-| Quests: start, fight, open doors, Mario in the next room | Game controllers: only the mapping tables, no real pad tried |
+| Quests: start, fight, open doors, Mario in the next room | PlayStation and N64 controllers: only the mapping tables, no real pad tried |
 | Fighting goblins and taking damage | Builds other than the tested one (they install as *compatible build*) |
 | Firing a cannon with the lighter (Lost Skulls) | |
 | SM64 lava: burn hop, fire puffs, health loss, death ends the quest cleanly | |
 | Constant flying, the Wing cap's wings, the orange world-edge tape | |
-| Casual mode loading and punches landing | |
+| Casual mode loading and punches landing | New in 2.00: Luigi, skins, the camera settings, free roam past 100 m |
+| An Xbox controller: moving, rumble, the button names on the pause screen | |
+| Mario's shadow, the pause screen's camera reset and respawn | |
+| The other character | |
 
 ## Known limits
 
@@ -159,8 +180,11 @@ are either Mono (a different way of building Unity games) or IL2CPP on Unity 201
 September 9, 2019 build has been tested, so parts of the mod may not fit other builds. Builds with anti-cheat, and your live Steam
 install, are always refused. The mod never works around anti-cheat.
 
-SM64 uses 16-bit coordinates, so the world ends about 150 m from where Mario starts. Very large rooms get cut off by the
-wall.
+SM64 uses 16-bit coordinates, so its world only reaches about 150 m from its centre. Since 2.00 the centre moves with Mario
+sideways, so big rooms aren't cut off anymore. The ceiling about 150 m up is still there.
+
+Rumble only works on Xbox-compatible pads. Other pads go through the Windows joystick API, which has no motors. Steam Input and
+DS4Windows show a PlayStation pad as an Xbox one, and then it rumbles too.
 
 There's no online play, no other players, no accounts, and no scores sent anywhere. A run that starts mid-quest, or one with
 Immortal on, isn't a full run.
@@ -172,6 +196,25 @@ It's Windows only, on a flat screen with a keyboard and mouse or a controller. N
 
 If loading stops or hangs, the loading bar says what went wrong in plain words. The full detail is in `BepInEx\LogOutput.log` in
 the client folder (look for lines starting with `mario-`) and in `logs\<date>\player.log`.
+
+## Workarounds and fixes
+
+- **Mario is stuck in a wall, on a ledge he can't leave, or falling forever:** press Esc, then R. He respawns at the last solid
+  ground he stood on, with the health he had. If he's already standing on solid ground, that's where he stays.
+- **The camera ended up somewhere useless:** Esc, then C puts it back behind Mario.
+- **Controls stopped working:** Esc pauses Mario, so a stray Esc looks like the game ignoring you. The PAUSE text says so. Press
+  Esc again. Clicking another window also pauses him until you click back.
+- **The controller does nothing:** plug it in while the game is running and wait two seconds. The Log tab says
+  `mario-controller found=...` once it's picked up. Check that the controller setting on the Mario tab is *Auto*.
+- **No rumble:** only Xbox-compatible pads rumble (see above), and `rumble` has to be on.
+- **Luigi is missing from the Character list:** `characters\Super Luigi 64 v2.0.zip` has to be there. Unzip the release again,
+  or put that zip next to your ROM or in Downloads.
+- **Settings got into a weird state:** Advanced tab, *Reset to defaults*, or `Start-Mario reset`. File paths stay. To start
+  completely fresh, also delete `%APPDATA%\MarioForRecRoom\mario.ini`.
+- **A new version starts with your old settings:** that's on purpose. The launcher keeps a copy in `%APPDATA%`. Reset to defaults
+  if you don't want them.
+- **Anything else:** the loading bar says what went wrong, and [the troubleshooting list](docs/INSTALL.md#troubleshooting) covers
+  the usual messages.
 
 ## What isn't included
 
